@@ -1,0 +1,106 @@
+\tikzset{%
+    block/.style={draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {draw, fill=white, circle, minimum size=2mm, node distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+% Figura
+\begin{figure}[h]
+\centering
+\caption{Inferência em Lógica \textit{Fuzzy}}
+	\label{fig:FuzzyInferencia}
+	\begin{subfigure}[b]{0.33\textwidth}%
+		\centering
+%		\resizebox{\linewidth}{!}{
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\begin{tikzpicture}[scale = 0.65, auto, node distance=2cm, on grid, >=latex']%
+		\begin{axis}[xmax=38,ymax=1.1, samples=50]
+	
+		\addplot [thick, color=gray] table {
+			5 0
+			15 1
+			25 0
+		};
+		
+		\addplot [thick, color=gray] table {
+			15 0
+			25 1
+			35 0
+		};
+		
+		\node[] at (75,95) {C};
+		\node[] at (225,95) {D};
+  		%\addplot[blue, ultra thick] (x,x/10);
+  		%\addplot[red,  ultra thick] (x,x/10 + 1);
+	\end{axis}		
+		%\draw[smooth, samples=100,domain=0:2] plot(\x,{(\x)});
+		\end{tikzpicture}%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		
+		\label{fig:exemploAnd}%
+		\caption{Funções de pertinência para C e D}%
+		\end{subfigure}%
+    	~
+    	\begin{subfigure}[b]{0.33\textwidth}%
+		\centering
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		\resizebox{\linewidth}{!}{
+		\begin{tikzpicture}[scale = 0.65, auto, node distance=2cm, on grid, >=latex']%
+	\begin{axis}[xmax=38,ymax=1.1, samples=50]
+	
+		\addplot [color=gray] table {
+			5 0
+			15 1
+			25 0
+		};
+		
+		\addplot [thick, color=black] table {
+			5 0
+			12.5 0.75
+			17.5 0.75
+			25 0
+		};
+	\end{axis}		
+	%\draw[smooth, samples=100,domain=0:2] plot(\x,{(\x)});
+\end{tikzpicture}%
+%}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\label{fig:exemploOr}%
+		\caption{Função de pertinência para regra $A \rightarrow C$, com $\mu_A =
+		0,75$}%
+		\end{subfigure}%
+		~
+		\begin{subfigure}[b]{0.33\textwidth}%
+		\centering
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%		\resizebox{\linewidth}{!}{
+		\begin{tikzpicture}[scale = 0.65, auto, node distance=2cm, on grid, >=latex']%
+	\begin{axis}[xmin = 2, xmax=38,ymax=1.1, samples=50]
+		
+		\addplot [color=gray] table {
+			15 0
+			25 1
+			35 0
+		};
+		
+		\addplot [thick, color=black] table {
+			15 0
+			17.5 0.25
+			32.5 0.25
+			35 0
+		};
+		
+	\end{axis}	
+\end{tikzpicture}%
+%}
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
+		\label{fig:fig3}%
+		\caption{Função de pertinência para regra $B \rightarrow D$, com $\mu_B =
+		0,25$}%
+		\end{subfigure}%
+		
+		\textbf{Fonte: baseado em \citeonline{fuzzy_passino}, p. 43 e 44.}
+\end{figure}

@@ -1,0 +1,97 @@
+%% configuração do template beamer
+\usetheme{Warsaw}
+\useoutertheme{infolines}
+\setbeamercolor{structure}{fg=azulclaro}
+\setbeamercolor{section in head/foot}{parent=palette quaternary}
+\setbeamercolor{subsection in head/foot}{parent=palette primary}
+\setbeamercolor{author in head/foot}{parent=section in head/foot}
+\setbeamercolor{date in head/foot}{parent=section in head/foot}
+\setbeamertemplate{headline}
+{%
+   \hbox{%
+   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{section in
+   head/foot}%
+     \usebeamerfont{section in head/foot}\insertsectionhead\hspace*{2ex}
+   \end{beamercolorbox}%
+   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{subsection in head/foot}%
+     \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
+   \end{beamercolorbox}}%
+   \vskip-0.2pt
+   \pgfuseshading{beamer@topshade}
+   \vskip-2pt
+}
+
+% Define a cor da estrutura
+%\definecolor{azulescuro}{rgb}{0.24,0.3,0.48} 
+%\definecolor{azulclaro}{rgb}{0,0.38,0.58} 
+%\setbeamercolor{structure}{fg=azulclaro}
+
+\definecolor{amarelo-uttfr}{rgb}{1,0.75,0} 
+\setbeamercolor{structure}{fg=amarelo-uttfr}
+
+
+\pgfdeclareimage[width=1.6cm]{logo}{Logo/utfpr}
+\logo{\pgfuseimage{logo}}
+
+
+%%%% pacotes necessários
+\usepackage{amssymb,amsmath}               % simbolos matematicos
+\usepackage[brazil,english]{babel}         % idioma considerado para hifenizacao
+\usepackage[T1]{fontenc}                   % força latex considerar um bloco só caracteres acentuados
+\usepackage{ae} 			   % para tratar efeito colateral do pacote T1 em arquivos PDF
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url,color}
+\usepackage{listings,upquote}
+
+
+%--------- Insercao de codigo fonte nos slides --------------------%
+\definecolor{hellgelb}{rgb}{1,1,0.9}
+\definecolor{colKeys}{rgb}{0,0,0}
+\definecolor{colIdentifier}{rgb}{0,0,0.9}
+\definecolor{colComments}{rgb}{0.133,0.545,0.133}
+\definecolor{colString}{rgb}{0.627,0.126,0.941}
+
+% keywordstyle=\color[rgb]{0,0,1}\bfseries,
+% commentstyle=\color[rgb]{0.133,0.545,0.133},
+% stringstyle=\color[rgb]{0.627,0.126,0.941}\itshape,
+% backgroundcolor=\color[rgb]{1,1,0.92},
+% basicstyle=\footnotesize\ttfamily,
+% frame=single
+% }
+
+
+% \lstset{ %
+%        language=java,        % choose the language of the code
+%                   % where to put the line-numbers
+% numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
+% frameround=fttt,
+% numbers=left,
+% stepnumber=1,                   % the step between two line-numbers. If it's 1 each line 
+% numberblanklines=true,
+% numbersep=5pt,                  % how far the line-numbers are from the code
+% backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+% showspaces=false,               % show spaces adding particular underscores
+% showstringspaces=false,         % underline spaces within strings
+% showtabs=false,                 % show tabs within strings adding particular underscores
+% frame=single,	                % adds a frame around the code
+% tabsize=2,	                % sets default tabsize to 2 spaces
+% captionpos=b,                   % sets the caption-position to bottom
+% breaklines=true,                % sets automatic line breaking
+% breakatwhitespace=false,        % sets if automatic breaks should only happen at whitespace
+% title=\lstname,                 % show the filename of files included with \lstinputlisting;
+%                                 % also try caption instead of title
+% keywordstyle=\color[rgb]{0,0,1}\bfseries,
+% commentstyle=\color[rgb]{0.133,0.545,0.133},
+% stringstyle=\color[rgb]{0.627,0.126,0.941}\itshape,
+% backgroundcolor=\color[rgb]{1,1,0.92},
+% basicstyle=\footnotesize\ttfamily,
+% frame=single
+% }
+% 
+% % Comando: \java
+ \newcommand{\java}
+ {\lstset{language=java,basicstyle=\ttfamily\scriptsize,tabsize=3,frame=single,showtabs=false,showspaces=false,firstnumber=last,numbers=left,numberstyle=\tiny,linewidth=0.98\linewidth,xleftmargin=21pt,tab=$\to$,float=tbph,extendedchars,breaklines,showstringspaces=false,identifierstyle=\color{colIdentifier},keywordstyle=\color{colKeys},stringstyle=\color{colString},commentstyle=\color{colComments},backgroundcolor=\color{hellgelb},columns=flexible,captionpos=b,aboveskip=\bigskipamount}} 
+
+\java
+

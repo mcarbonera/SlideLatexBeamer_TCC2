@@ -1,0 +1,71 @@
+%\begin{tikzpicture}[x=0.5cm,y=0.5cm,z=0.3cm,>=stealth]
+% The axes
+
+\newcommand{\coordsys}[1]{
+	\draw[->] (xyz cs:x=0) -- (xyz cs:x=1.5) node[right] {$\hat{X}_{#1}$};
+	\draw[->] (xyz cs:y=0) -- (xyz cs:y=1.5) node[above] {$\hat{Y}_{#1}$};
+	\draw[->] (xyz cs:z=0) -- (xyz cs:z=1.5) node[below] {$\hat{Z}_{#1}$};
+	% The thin ticks
+	%\foreach \coo in {-13,-12,...,13}
+	%{
+	%  \draw (\coo,-1.5pt) -- (\coo,1.5pt);
+	%  \draw (-1.5pt,\coo) -- (1.5pt,\coo);
+	%  \draw (xyz cs:y=-0.15pt,z=\coo) -- (xyz cs:y=0.15pt,z=\coo);
+	%}
+	
+	% The thick ticks
+	%\foreach \coo in {-10,-5,5,10}
+	%{
+	%\draw[thick] (\coo,-3pt) -- (\coo,3pt) node[below=6pt] {\coo};
+	%\draw[thick] (-3pt,\coo) -- (3pt,\coo) node[left=6pt] {\coo};
+	%\draw[thick] (xyz cs:y=-0.3pt,z=\coo) -- (xyz cs:y=0.3pt,z=\coo)
+	% node[below=8pt] {\coo}; }
+	
+	% Dashed lines for the points P, Q
+	%\draw[dashed] 
+	%\draw[dashed] (u) -- (v);
+	%\draw[dashed] (-5,7) -- (-5,0) -- (w);
+	%\draw[dashed] (3,0) |- (0,5);
+	
+	% Dots and labels for P, Q
+	%\node[fill,circle,inner sep=1.5pt,label={left:$Q(-5,-5,7)$}] at (0,0) {};
+	%\node[fill,circle,inner sep=1.5pt,label={above:$P(3,0,5)$}] at (3,5) {};
+	% The origin
+
+	% Ponto na origem do sistema de coordenadas
+	\node[fill,circle,inner sep=1pt] at (0,0) {};
+	
+	% Seta para indicar Sistema de coordenadas {X}
+	\node[align=center] at (2,-2) (ori) {\{#1\}};
+	\draw[->,help lines,shorten >=3pt] (ori) .. controls (0.6,-1.3) and (1,-1) ..
+	(0,0,0);
+}
+
+\begin{figure}[h]
+\centering
+	\begin{tikzpicture}
+		\coordsys{A}
+		\draw[-{latex}, shorten >=1.5pt] (0,0) -- (4,1) node[above] at
+		(2.1,0.6){$^{A}Q_{B_{origem}}$};
+		% Translação
+		\begin{scope}[shift={(4, 1)}]
+			%\coordsys{A'}
+			% Rotação
+			\begin{scope}[rotate=40]
+				\coordsys{B}
+				% Flecha até P
+				\draw[-{latex}, shorten >=1.5pt] (0,0) -- (1,2.4) node[right] {$^{B}P$};
+				% Ponto em P
+				\node[fill,circle,inner sep=1pt] at (1,2.4) {}; 
+				% Definir ponto para desenhar reta
+				\node[align=center,inner sep=0pt] at (1,2.4) (Ponto) {};
+			\end{scope}	
+		\end{scope}
+	% Ponto de {A} para {B}
+	\draw[dashed, -{latex}, shorten >=1pt] (0,0) -- (Ponto) node[above] at (1.5,
+	1.8) {$^{A}P$};
+	\end{tikzpicture}
+\caption{Transformada de um vetor} \label{fig:homo}
+\end{figure}
+
+%\begin{tikzpicture}[x=0.5cm,y=0.5cm,z=0.3cm,>=stealth]

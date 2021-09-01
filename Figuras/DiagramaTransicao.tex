@@ -1,0 +1,35 @@
+\tikzset{%
+    block/.style={draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {draw, fill=white, circle, minimum size=2mm, node
+    distance=1cm, inner sep=0pt},
+    pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+\begin{figure}[h]
+    \centering
+\begin{tikzpicture}[scale = 1, ->,auto,node distance =4 cm and 5cm ,on grid,
+>=latex',
+state/.style ={scale = 1, circle, draw, minimum width =0.7cm},
+finalstate/.style ={scale = 1, circle, draw, minimum width =0.7cm}]
+
+	\node[finalstate, double, double distance=1pt, outer sep = 1pt] (x) {$x$};
+	\node[state, right = 3.4cm of x] (y) {$y$};
+	\node[finalstate, double, double distance = 1pt, outer sep = 1pt, below right
+	= 2.5cm of x] (z) {$z$};
+	
+	\path[->] (x) edge node[below left] {$g$} (z);
+	\path[->] (z) edge node[below right] {$a,g$} (y);
+	\path[->] (y) edge node[above] {$a$} (x);
+	
+	\draw (x) to [out=60,in=120,looseness=6] node[above] {$a$} (x);
+	\draw (y) to [out=60,in=120,looseness=6] node[above] {$b$} (y);
+	\draw (z) to [out=240,in=300,looseness=6] node[below] {$b$} (z);
+	
+	% Input
+	\coordinate[left = 1cm of x, inner sep = 0pt] (input) {};
+	\path[->] (input) edge (x);
+\end{tikzpicture}%    
+\end{figure}

@@ -1,0 +1,93 @@
+\tikzset{%
+    block/.style={draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {draw, fill=white, circle, minimum size=2mm, node distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+\newcommand{\sliding}{
+\begin{tikzpicture}[scale = 1,->,auto ,node distance =4 cm and 5cm ,on grid ,
+>=latex',
+state/.style ={scale = 0.9,circle, draw, minimum width =0.7cm},
+finalstate/.style ={scale = 0.9,circle, draw, minimum width =0.7cm}]
+
+	\coordinate (supa) {};
+	\coordinate[right = 4cm of supa] (supb) {};
+	\draw[-,dashed] (supa) to [out=45,in=135] (supb);
+	
+	\coordinate[above right = 2cm of supa, inner sep = 0pt] (in1) {};
+	\coordinate[below = 1.25cm of in1, inner sep = 0pt] (in2) {};
+	\coordinate[below right = 0.835cm of in1] (dest) {};
+	\path[->] (in1) edge node[above right] {$f_1$} (dest);
+	\path[->] (in2) edge node[below right] {$f_2$}(dest);
+	
+	\coordinate[right = 0.7cm of dest, inner sep = 0pt] (dest2) {};
+	\path[->] (dest) edge node[above right] {$f_S$}(dest2);
+	
+	\node[above = 0.5cm of supb] (b) {$\sigma = 0$};
+\end{tikzpicture}%
+}
+
+\newcommand{\diagreg}{
+\begin{tikzpicture}[scale = 1,->,auto ,node distance =4 cm and 5cm ,on grid ,
+>=latex' ,
+state/.style ={scale = 0.9,circle, draw, minimum width =0.7cm},
+finalstate/.style ={scale = 0.9,circle, draw, minimum width =0.7cm}]
+	
+	\node[ellipse, draw] (f1) {$\dot{x} = f_1$};
+	\node[ellipse, draw, right = 3.5cm of f1] (f2) {$\dot{x} = f_2$};
+	
+	\draw (f1) to [out=30,in=150] node[above] {$\sigma \leq 0$} (f2);
+	\draw (f2) to [out=210,in=330] node[below] {$\sigma \geq 0$} (f1);
+	
+	\node[ellipse, draw, below = 2.8cm of f1] (f1l) {$\dot{x} = f_1$};
+	\node[ellipse, draw, right = 2.5cm of f1l] (fsl) {$\dot{x} = f_S$};
+	\node[ellipse, draw, right = 2.5cm of fsl] (f2l) {$\dot{x} = f_2$};
+	
+	\draw (f1l) to [out=30,in=150] node[above] {$\sigma \leq 0$} (fsl);
+	\draw (fsl) to [out=210,in=330] node[below] {$\sigma > 0$} (f1l);
+	\draw (fsl) to [out=30,in=150] node[above] {$\sigma < 0$} (f2l);
+	\draw (f2l) to [out=210,in=330] node[below] {$\sigma \geq 0$} (fsl);
+	
+	%(f1) {$\dot{x} = f_1$};
+	
+	%\node[state] (a) {0};
+	%\node[state, above right = 2.5cm of a] (b) {1};
+	%\node[state, below right = 2.5cm of b, align = center] (c) {2 \\ $c_1<1$};
+	%\node[state, below left = 2.5cm of c] (d) {3};
+	
+	%\path[->] (a) edge node[above left] {$\emptyset; a; c_1$} (b);
+	%\path[->] (b) edge node[above right] {$0<c_1<1; a; c_1$} (c);
+	%\path[->] (c) edge node[below right] {$\emptyset; b; \emptyset$} (d);
+	%\draw (b) to [out=120,in=60,looseness=6] node[above] {$c_1\geq1;a;c_1$} (b);
+	
+	% Input
+	%\coordinate[left = 1cm of a, inner sep = 0pt] (input) {};
+	%\path[->] (input) edge (a);	
+\end{tikzpicture}%
+}
+
+% Figura
+\begin{figure}[h]
+\centering
+%\caption{Modo deslizante e diagramas de transição} 
+	%\label{fig:Sliding}
+	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering
+		\raisebox{15mm}
+		\sliding%
+		%\label{fig:sliding2}%
+		\caption{Solução deslizante}%
+		\end{subfigure}%
+    	~
+    	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering
+		\diagreg%
+		%\label{fig:diagreg}%
+		\caption{Diagramas de transição original e regularizado}%
+		\end{subfigure}%
+		
+		%\textbf{Fonte: baseado em \citeonline{art:Magnus_Behavior}}
+\end{figure}

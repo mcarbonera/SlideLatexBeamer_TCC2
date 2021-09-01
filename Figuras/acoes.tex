@@ -1,0 +1,140 @@
+\tikzset{%
+    block/.style={scale = 0.9, draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {scale = 0.9, draw, fill=white, circle, minimum size=2mm, node
+    distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {scale = 0.9, pin edge={to-,thin,black}}
+}
+
+\begin{figure}[h]%
+    %\caption{Arbitragem e fusão de comportamentos}%
+    \label{fig:subfig2}%
+    \centering
+    
+    \begin{subfigure}[t]{0.5\textwidth}%
+	\centering
+    
+    %\resizebox{0.1\linewidth}{!}{
+\begin{tikzpicture}[scale = 0.5, auto, node distance=2cm, on grid, >=latex']%
+	\node[block] (C1) {Comportamento 1};
+	\node[block, below = 1.6cm of C1] (C2) {Comportamento 2};
+	\node[block, below = 1.6cm of C2] (C3) {Comportamento 3};
+	\node[input, left = 2cm of C3] (int) {};
+	\node[input, below = 1cm of int] (input) {};
+	
+	\node[right = 2cm of C2, inner sep = 0.2 cm] (sum) {};
+	\node[right = 2.22cm of C2, inner sep = 0] (sum1int) {};
+	\filldraw (sum1int) circle (0.8pt);
+	\node[right = 1.8cm of C2, inner sep = 0] (sum2int) {};
+	\node[above = 0.2cm of sum2int, inner sep = 0] (sum2) {};
+	\node[output, right = 1cm of sum] (atu) {};
+	 
+	\coordinate[left = 2cm of C1, inner sep = 0pt] (lC1) {};
+	\coordinate[left = 2cm of C2, inner sep = 0] (lC2) {};
+	\coordinate[left = 2cm of C3, inner sep = 0] (lC3) {};
+	
+	\draw [draw,->] (sum) node[below right] {Atuadores} --
+	(atu);
+	
+	\draw [draw,-] (input) node[above right] {Sensores} --
+	(lC1);
+	\draw [->] (lC1) -- (C1); 
+	\draw [->] (lC2) -- (C2);
+	\draw [->] (lC3) -- (C3);
+	
+	\draw [->] (C1) -| node[]{} node[near end] {} (sum);
+	\draw [->] (C2) -- (sum);
+	\draw [->] (C3) -| node[]{} node[near end] {} (sum);
+	
+	\draw [-, very thick] (sum1int) -- (sum2);
+	
+\end{tikzpicture}%    
+    %}
+    
+    \label{fig:subfig1}%
+	\caption{Arbitragem}%
+	\end{subfigure}%
+    ~
+    \begin{subfigure}[t]{0.5\textwidth}%
+	\centering
+	%\resizebox{0.5\linewidth}{!}{
+\begin{tikzpicture}[scale = 0.8,auto, node distance=2cm, on grid,
+>=latex']%
+	\node[block] (C1) {Comportamento 1};
+	\node[block, below = 1.6cm of C1] (C2) {Comportamento 2};
+	\node[block, below = 1.6cm of C2] (C3) {Comportamento 3};
+	\node[input, left = 2cm of C3] (int) {};
+	\node[input, below = 1cm of int] (input) {};
+	
+	\node[sum, right = 2cm of C2] (sum) {+};
+	\node[output, right = 1cm of sum] (atu) {};
+	 
+	\coordinate[left = 2cm of C1, inner sep = 0pt] (lC1) {};
+	\coordinate[left = 2cm of C2, inner sep = 0] (lC2) {};
+	\coordinate[left = 2cm of C3, inner sep = 0] (lC3) {};
+	
+	\draw [draw,->] (sum) node[below right] {Atuadores} --
+	(atu);
+	
+	\draw [draw,-] (input) node[above right] {Sensores} --
+	(lC1);
+	\draw [->] (lC1) -- (C1); 
+	\draw [->] (lC2) -- (C2);
+	\draw [->] (lC3) -- (C3);
+	
+	\draw [->] (C1) -| node[]{} node[near end] {} (sum);
+	\draw [->] (C2) -- (sum);
+	\draw [->] (C3) -| node[]{} node[near end] {} (sum);
+	
+\end{tikzpicture}%    
+%}
+	\caption{Fusão}%
+	\end{subfigure}%
+	
+	%\textbf{Fonte: baseado em \citeonline{Livro_Mataric}, p. 167.}
+    \label{fig:arbfus}%
+\end{figure}
+
+%\begin{tikzpicture}[auto, node distance=2cm, on grid, >=latex']
+
+%\node[input] (input) {};
+%\node[input, above = of input] (input1) {};
+%\node [sum, right = of input] (sum) {};
+%\node [block, right = of sum] (controller) {$K(s)$};
+%\node [sum, right = of controller] (sum1) {};
+%\node [block, right = of sum1] (filterinv) {$H^{-1}(s)$};
+%\node [block, right = 2.5cm of filterinv] (system) {$G(s)$};
+%\node [output, right = of system] (output) {};
+%\node [output, above = of output] (output1) {};
+%\node [block, above = of controller] (delay) {$D(s)$};
+%\node [sum, below = of sum1] (sum2) {};
+%\node [block] (filter) at (sum2-|filterinv) {$H(s)$};
+
+%\draw [draw,->] (input) node[above right] {$s_{i-1}$} -- (sum);
+%\draw [->] (sum) -- node {$e_{i}$} (controller);
+%\draw [->] (controller) -- node {} (sum1);
+%\draw [->] (sum1) -- node[name=xi] {$\xi_{i}$} (filterinv);
+%\draw [->] (filterinv) -- node[name=u, pos=.3] {$u_{i}$} (system);
+%\draw [->] (system) -- (output) node [name=q, above left] {$q_{i}$};
+
+%\draw [->] ([xshift=-5mm]q.south) |- (filter);
+%\draw [->] (filter) -- node {} (sum2);
+%\draw [draw,<-] (sum2) -- ++(90:.6cm) node[above]{$L_i+r_i$};
+
+%\draw [->] (sum2) -| node[pos=0.99, right] {$-$} 
+%    node [pos=.25, above] {$\tilde{s}_i$} (sum);
+
+%\draw [draw,->] (input1) node[above right] (ui-1) {$u_{i-1}$} -- (delay);
+%\draw [->] (delay) -| node[] {} 
+%    node [near end] {} (sum1);
+
+%\draw [->] (u.east|-system) |-  
+%    (output1) node[above left] (ui) {$u_i$};
+
+%\node[text=red, above left= 5mm and 6mm of ui.west] (veh) {vehicle $i$};
+%\draw[red, dashed]
+% (veh.east)-|(ui.west)|-([yshift=-3mm]filter.south)-|(ui-1.east)|-(veh.west);
+
+%\end{tikzpicture}

@@ -1,0 +1,88 @@
+\tikzset{%
+    block/.style={draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {draw, fill=white, circle, minimum size=2mm, node distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+% Figura
+\begin{figure}[h]
+\centering
+\caption{Operações união e intersecção em conjuntos \textit{Fuzzy}} 
+	\label{fig:ANDOR}
+	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering
+		
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\begin{tikzpicture}[scale = 1, auto, node distance=2cm, on grid, >=latex']%
+	\begin{axis}[xmax=38,ymax=1.1, samples=50]
+	
+		\addplot[color=gray] table {
+			5 0
+			15 1
+			25 0
+		};
+		
+		\addplot [color=gray] table {
+			15 0
+			25 1
+			35 0
+		};
+		
+		%% And - intersecção
+		\addplot [thick, color=black] table {
+			15 0
+			20 0.5
+			25 0
+		};
+  		%\addplot[blue, ultra thick] (x,x/10);
+  		%\addplot[red,  ultra thick] (x,x/10 + 1);
+	\end{axis}	
+	%\draw[smooth, samples=100,domain=0:2] plot(\x,{(\x)});
+\end{tikzpicture}%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+		\label{fig:exemploAnd}%
+		\caption{Intersecção usando função ``min''}%
+		\end{subfigure}%
+    	~
+    	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\begin{tikzpicture}[scale = 1, auto, node distance=2cm, on grid, >=latex']%
+	\begin{axis}[xmax=38,ymax=1.1, samples=50]
+	
+		\addplot [color=gray] table {
+			5 0
+			15 1
+			25 0
+		};
+		
+		\addplot [color=gray] table {
+			15 0
+			25 1
+			35 0
+		};
+		
+		%% Or - União
+		\addplot [thick, color=black] table {
+			5 0
+			15 1
+			20 0.5
+			25 1
+			35 0
+		};
+  		%\addplot[blue, ultra thick] (x,x/10);
+  		%\addplot[red,  ultra thick] (x,x/10 + 1);
+	\end{axis}	
+	%\draw[smooth, samples=100,domain=0:2] plot(\x,{(\x)});
+\end{tikzpicture}%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		\label{fig:exemploOr}%
+		\caption{União usando função ``max''}%
+		\end{subfigure}%
+		
+		\textbf{Fonte: baseado em \citeonline{fuzzylilly}, p. 20 e 21.}
+\end{figure}

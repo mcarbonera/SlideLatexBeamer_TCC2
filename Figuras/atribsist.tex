@@ -1,0 +1,300 @@
+\newcommand{\sysxy}[3]
+{
+	\draw[gray, -{latex}] (xyz cs:x=0) -- (xyz cs:x=#3) node[above] {x};
+	\draw[gray, -{latex}] (xyz cs:y=0) -- (xyz cs:y=#3) node[above] {y};
+	
+	\node[align=center] at (1,-1) (ori) {$ #1_{#2} $};
+	\draw[dashed, ->,help lines,shorten >=3pt] (ori) .. controls (0.3,-0.65) and
+	(0.5,-0.5) ..
+	(0,0,0);
+}
+%\draw [double distance=1.5mm, very thick] (0,0)--(3,0);
+		 
+\def\UserDefLb{10}
+\def\UserDefLe{2}
+\def\UserDefbraco{5}
+\def\UserDefAngulo{45}
+\def\UserCoordx{5.5}
+\def\UserCoordy{3.5}
+
+\newcommand{\AtribSys}[3]{%
+	%Coordenadas dos vértices da base
+	\def\UserBbx{\fpeval{\UserDefLb}}
+	\def\UserBby{0}
+	\def\UserBcx{\fpeval{\UserDefLb/2}}
+	\def\UserBcy{\fpeval{\UserDefLb*sqrt(3)/2}}
+	
+	%Coordenadas dos vértices do efetuador
+	\def\UserEbx{\fpeval{\fpeval{\UserDefLe*cosd(#3)} + #1}}
+	\def\UserEby{\fpeval{#2 + \UserDefLe*sind(#3)}}
+	\def\UserEcx{\fpeval{#1 + \UserDefLe*cosd(#3+60)}}
+	\def\UserEcy{\fpeval{#2 + \UserDefLe*sind(#3+60)}}
+	
+	%Meios vetores (entre base e efetuador)
+	\def\UserVetAx{\fpeval{#1/2}}
+	\def\UserVetAy{\fpeval{#2/2}}
+	\def\UserVetBx{\fpeval{(\UserEbx - \UserBbx)/2}}
+	\def\UserVetBy{\fpeval{(\UserEby - \UserBby)/2}}
+	\def\UserVetCx{\fpeval{(\UserEcx - \UserBcx)/2}}
+	\def\UserVetCy{\fpeval{(\UserEcy - \UserBcy)/2}}
+	
+	%Modulo dos meios vetores
+	\def\UserModA{\fpeval{sqrt(\UserVetAx*\UserVetAx + \UserVetAy*\UserVetAy)}}
+	\def\UserModB{\fpeval{sqrt(\UserVetBx*\UserVetBx + \UserVetBy*\UserVetBy)}}
+	\def\UserModC{\fpeval{sqrt(\UserVetCx*\UserVetCx + \UserVetCy*\UserVetCy)}}
+	
+	%Modulo do vetor perpendicular (não unitário)
+	\def\UserModXA{\fpeval{sqrt(\UserDefbraco*\UserDefbraco-\UserModA*\UserModA)}}
+	\def\UserModXB{\fpeval{sqrt(\UserDefbraco*\UserDefbraco-\UserModB*\UserModB)}}
+	\def\UserModXC{\fpeval{sqrt(\UserDefbraco*\UserDefbraco-\UserModC*\UserModC)}}
+	
+	%vetor perpendicular (não unitario)
+	\def\UserXAy{\fpeval{-(\UserVetAx*\UserModXA)/\UserModA}}
+ 	\def\UserXAx{\fpeval{(\UserVetAy*\UserModXA)/\UserModA}}
+ 	
+ 	\def\UserXBy{\fpeval{-(\UserVetBx*\UserModXB)/\UserModB}}
+ 	\def\UserXBx{\fpeval{(\UserVetBy*\UserModXB)/\UserModB}}
+ 	
+ 	\def\UserXCy{\fpeval{-(\UserVetCx*\UserModXC)/\UserModC}}
+ 	\def\UserXCx{\fpeval{(\UserVetCy*\UserModXC)/\UserModC}}
+	
+	% Definindo angulos theta A, B e C
+	\def\tetaA{atan2(\SomavetoresAy,\SomavetoresAx))}
+	\def\tetaB{atan2(\SomavetoresBy,\SomavetoresBx)}
+	\def\tetaC{atan2(\SomavetoresCy,\SomavetoresCx))+360}
+	
+	% Soma de vetores (braço + perpendicular)
+	\def\SomavetoresAx{\fpeval{\UserVetAx + \UserXAx}}
+	\def\SomavetoresAy{\fpeval{\UserVetAy + \UserXAy}}
+	\def\SomavetoresBx{\fpeval{\UserVetBx + \UserXBx}}
+	\def\SomavetoresBy{\fpeval{\UserVetBy + \UserXBy}}
+	\def\SomavetoresCx{\fpeval{\UserVetCx + \UserXCx}}
+	\def\SomavetoresCy{\fpeval{\UserVetCy + \UserXCy}}
+	
+	%Inicio da figura
+	\node[fill,circle,inner sep=1.5pt] at (0,0) {};
+	
+	% Efetuador
+	\begin{scope}[shift={(#1,#2)}, rotate = #3] 
+		\node[fill,circle,inner sep=1.5pt] at
+		(\UserDefLe/2,\fpeval{\UserDefLe*sqrt(3)/6}) (tool) {};
+			
+		\draw[-{latex},shorten >= 3.5pt] (tool) -- (0,0) node[below]
+		{};
+		\node[fill,circle,inner sep=1.5pt] at (0,0) {};
+		\draw[-{latex},shorten >= 3.5pt] (tool) -- (\UserDefLe,0) node[below] {};
+		\node[fill,circle,inner sep=1.5pt] at (\UserDefLe,0) {};
+		\draw[-{latex},shorten >= 3.5pt] (tool) -- (\UserDefLe/2,
+		\fpeval{\UserDefLe*sqrt(3)/2}) node[below] {};
+		\node[fill,circle,inner sep=1.5pt] at (\UserDefLe/2,
+		\fpeval{\UserDefLe*sqrt(3)/2}) {};
+			
+		\triangulo{\UserDefLe}
+	\end{scope}
+		
+	% Flecha até tool
+	\draw[-{latex},shorten >= 3.5pt] (0,0) -- (tool) node[below] {};
+			
+	% Braço 1
+	\draw[-{latex},shorten >=3.5pt] (0,0) -- (\SomavetoresAx,\SomavetoresAy);
+	\node[fill,circle,inner sep=1.5pt] at (\SomavetoresAx,\SomavetoresAy) {};
+	\draw[-{latex},shorten >=3.5pt] (\SomavetoresAx,\SomavetoresAy) --
+	 (#1, #2);
+	
+	% Braço 2
+	\draw[-{latex},shorten >= 3.5pt] (\UserBbx, \UserBby) --
+	+(\SomavetoresBx, \SomavetoresBy);
+	\node[fill,circle,inner sep=1.5pt] at (\UserBbx + \SomavetoresBx, \UserBby +
+	\SomavetoresBy) {};
+	\draw[-{latex},shorten >= 3.5pt]
+	(\UserBbx+\SomavetoresBx, \UserBby+\SomavetoresBy) -- (\UserEbx,\UserEby);
+	
+	% Braço 3
+	\draw[-{latex},shorten >= 3.5pt] (\UserBcx, \UserBcy) --
+		+(\SomavetoresCx, \SomavetoresCy);
+	\node[fill,circle,inner sep=1.5pt] at (\UserBcx + \SomavetoresCx,
+		\UserBcy + \SomavetoresCy) {};
+		\draw[-{latex},shorten >= 3.5pt]
+		(\UserBcx+\SomavetoresCx, \UserBcy+\SomavetoresCy) -- (\UserEcx,\UserEcy);
+	 		
+	% 1 - 2
+	\node[fill,circle,inner sep=1.5pt] at (\UserDefLb,0) {};
+	\draw[-{latex}, shorten >=3.5pt] (0,0) -- (\UserDefLb,0) node[below] {};
+		
+	% 1 - 3
+	\begin{scope}[rotate=60]
+		\node[fill,circle,inner sep=1.5pt] at (\UserDefLb,0) {};
+		\draw[-{latex}, shorten >=3.5pt] (0,0) -- (\UserDefLb,0) node[below] {};
+	\end{scope}
+	
+	%%%%% Sistemas de coordenadas
+	%% Bi: 
+	\sysxy{B}{1}{1} % B1
+	\begin{scope}[shift={(\UserBbx,\UserBby)}] % B2
+		\sysxy{B}{2}{1}
+	\end{scope}
+	
+	\begin{scope}[shift={(\UserBcx,\UserBcy)}] % B3
+		\sysxy{B}{3}{1}
+	\end{scope}
+	
+	% Sistema O:
+	%\begin{scope}[rotate=-30]
+		\node[align=center] at (1.45,-1) (ori) {$, O$};
+		%\draw[dashed, ->,help lines,shorten >=3pt] (ori) .. controls (0.3,-0.65) and
+		%(0.5,-0.5) ..
+		%(0,0,0);	
+	%\end{scope}
+	
+	%% Mi:
+	%%%%%%%%%%%%%% M2
+	\draw[gray, -{latex}] (\SomavetoresAx,\SomavetoresAy) --
+	+(\fpeval{\SomavetoresAx/(sqrt(\SomavetoresAx*\SomavetoresAx+\SomavetoresAy*\SomavetoresAy))},
+	\fpeval{\SomavetoresAy/sqrt(\SomavetoresAx*\SomavetoresAx+\SomavetoresAy*\SomavetoresAy)})
+	node[above] {x};
+	
+	\draw[gray, -{latex}] (\SomavetoresAx,\SomavetoresAy) --
+	+(\fpeval{-\SomavetoresAy/(sqrt(\SomavetoresAx*\SomavetoresAx+\SomavetoresAy*\SomavetoresAy))},
+	\fpeval{\SomavetoresAx/sqrt(\SomavetoresAx*\SomavetoresAx+\SomavetoresAy*\SomavetoresAy)})
+	node[right] {y};
+	
+	\begin{scope}[shift={(\SomavetoresAx,\SomavetoresAy)}]
+		\node[align=center] at (1,-1) (ori) {$ M_{1} $};
+		\draw[dashed, ->,help lines,shorten >=3pt] (ori) .. controls (0.3,-0.65) and
+		(0.5,-0.5) ..
+		(0,0,0);
+	\end{scope}
+	
+	%%%%%%%%%%%%%% M2
+	\begin{scope}[shift={(\UserBbx,\UserBby)}]	
+		\draw[gray, -{latex}] (\SomavetoresBx,\SomavetoresBy) --
+		+(\fpeval{\SomavetoresBx/(sqrt(\SomavetoresBx*\SomavetoresBx+\SomavetoresBy*\SomavetoresBy))},
+		\fpeval{\SomavetoresBy/sqrt(\SomavetoresBx*\SomavetoresBx+\SomavetoresBy*\SomavetoresBy)})
+		node[above] {x};
+		
+		\draw[gray, -{latex}] (\SomavetoresBx,\SomavetoresBy) --
+		+(\fpeval{-\SomavetoresBy/(sqrt(\SomavetoresBx*\SomavetoresBx+\SomavetoresBy*\SomavetoresBy))},
+		\fpeval{\SomavetoresBx/sqrt(\SomavetoresBx*\SomavetoresBx+\SomavetoresBy*\SomavetoresBy)})
+		node[above] {y};
+		
+		\begin{scope}[shift={(\SomavetoresBx,\SomavetoresBy)}]
+			\node[align=center] at (1,-1) (ori) {$ M_{2} $};
+			\draw[dashed, ->,help lines,shorten >=3pt] (ori) .. controls (0.3,-0.65) and
+			(0.5,-0.5) ..
+			(0,0,0);
+		\end{scope}
+	\end{scope}
+	
+	%%%%%%%%%%%%%% M3
+	\begin{scope}[shift={(\UserBcx,\UserBcy)}]	
+		\draw[gray, -{latex}] (\SomavetoresCx,\SomavetoresCy) --
+		+(\fpeval{\SomavetoresCx/(sqrt(\SomavetoresCx*\SomavetoresCx+\SomavetoresCy*\SomavetoresCy))},
+		\fpeval{\SomavetoresCy/sqrt(\SomavetoresCx*\SomavetoresCx+\SomavetoresCy*\SomavetoresCy)})
+		node[above] {x};
+		
+		\draw[gray, -{latex}] (\SomavetoresCx,\SomavetoresCy) --
+		+(\fpeval{-\SomavetoresCy/(sqrt(\SomavetoresCx*\SomavetoresCx+\SomavetoresCy*\SomavetoresCy))},
+		\fpeval{\SomavetoresCx/sqrt(\SomavetoresCx*\SomavetoresCx+\SomavetoresCy*\SomavetoresCy)})
+		node[below] {y};
+		
+		\begin{scope}[shift={(\SomavetoresCx,\SomavetoresCy)}]
+			\node[align=center] at (1,-1) (ori) {$ M_{3} $};
+			\draw[dashed, ->,help lines,shorten >=3pt] (ori) .. controls (0.3,-0.65) and
+			(0.5,-0.5) ..
+			(0,0,0);
+		\end{scope}
+	\end{scope}
+	
+	% Ei
+	\begin{scope}[shift={(\UserCoordx,\UserCoordy)}]
+		\node[align=center] at (1,-1) (ori) {$ E_{1} $};
+		\draw[dashed, ->,help lines,shorten >=3pt] (ori) .. controls (0.3,-0.65) and
+		(0.5,-0.5) ..
+		(0,0,0);
+	\end{scope}
+	\begin{scope}[shift={(\UserEbx,\UserEby)}]
+		\node[align=center] at (1,-1) (ori) {$ E_{2} $};
+		\draw[dashed, ->,help lines,shorten >=3pt] (ori) .. controls (0.3,-0.65) and
+		(0.5,-0.5) ..
+		(0,0,0);
+	\end{scope}
+	\begin{scope}[shift={(\UserEcx,\UserEcy)}, rotate=90]
+		\node[align=center] at (1,-1) (ori) {$ E_{3} $};
+		\draw[dashed, ->,help lines,shorten >=3pt] (ori) .. controls (0.3,-0.65) and
+		(0.5,-0.5) ..
+		(0,0,0);
+	\end{scope}
+	
+	\begin{scope}[shift={(#1,#2)}, rotate=#3]
+		\begin{scope}[shift={(\UserDefLe/2,\fpeval{\UserDefLe*sqrt(3)/6})}]
+			\draw[gray, -{latex}] (xyz cs:x=0) -- (xyz cs:x=0.6) node[above] {x};
+			\draw[gray, -{latex}] (xyz cs:y=0) -- (xyz cs:y=0.6) node[above] {y};
+			
+			\begin{scope}[rotate=-45]
+				\node[align=center] at (1,-1) (ori) {$W$};
+				\draw[dashed, ->,help lines,shorten >=3pt] (ori) .. controls (0.3,-0.65) and
+				(0.5,-0.5) ..
+				(0,0,0);		
+			\end{scope}			
+		\end{scope}
+	\end{scope}
+	
+	%% Angulos
+	% Theta
+	\draw[-latex, lightgray] (0:1.5) arc
+	(0:\tetaA):1.5) node[right] at +(0.1,0.1) {$-\theta_{1}$};
+	
+	\begin{scope}[shift={(\UserBbx,\UserBby)}]
+		%\draw[lightgray] (0.5,0) -- (0.9,0);
+		\draw[-latex, lightgray] (0:0.7) arc (0:\tetaB:0.7)
+		node[right] at +(0.1,0.1) {$\theta_{2}$};
+	\end{scope}
+	
+	\begin{scope}[shift={(\UserBcx,\UserBcy)}]
+		%\draw[lightgray] (1.3,0) -- (1.7,0);
+		\draw[-latex, lightgray] (0:0.7) arc
+		(0:\tetaC:0.7) node[right] at +(-0.6,0.8)
+		{$\theta_{3}$};
+	\end{scope}
+	
+	% Phi:
+	\begin{scope}[shift={(\UserCoordx, \UserCoordy)}]
+		\draw[lightgray] (0.3,0) -- (0.7,0);
+		\draw[-latex, lightgray] (0:0.5) arc (0:#3:0.5) node[right] at +(0,-0.1)
+		{$\phi$};
+	\end{scope}
+	
+	% Psi
+	\begin{scope}[shift={(\SomavetoresAx,\SomavetoresAy)}, rotate=\tetaA]
+		%\draw[lightgray] (0.3,0) -- (0.7,0);
+		\draw[-latex, lightgray] (0:0.5) arc
+		(0:atan2(\UserCoordy-\SomavetoresAy,\UserCoordx-\SomavetoresAx)):0.7)
+		node[right] at +(0.4,-0.3) {$\psi_{1}$};
+	\end{scope}
+	
+	\begin{scope}[shift={(\UserBbx+\SomavetoresBx,\UserBby+\SomavetoresBy)},
+	rotate = \tetaB]
+		%\draw[lightgray] (0.3,0) -- (0.7,0);
+		\draw[-latex, lightgray] (0:0.5)
+		arc
+		(0:atan2(\UserEby-\UserBby-\SomavetoresBy,\UserEbx-\UserBbx-\SomavetoresBx))-\tetaB:0.5)
+		node[right] at +(0.55,0.35) {$\psi_{2}$};
+	\end{scope}
+	
+	\begin{scope}[shift={(\UserBcx+\SomavetoresCx,\UserBcy+\SomavetoresCy)},
+	rotate = \tetaC]
+		%\draw[lightgray] (0.3,0) -- (0.7,0);
+		\draw[-latex, lightgray] (0:0.5)
+		arc
+		(0:atan2(\UserEcy-\UserBcy-\SomavetoresCy,\UserEcx-\UserBcx-\SomavetoresCx))-\tetaC-360:0.5)
+		node[right] at +(1.3,0.1) {$\psi_{3}$};
+	\end{scope}
+}
+
+\begin{figure}[h]
+\centering
+	\begin{tikzpicture}[scale=0.85]
+		\AtribSys{\UserCoordx}{\UserCoordy}{\UserDefAngulo}
+	\end{tikzpicture}
+\caption{Atribuição dos sistemas de coordenadas} \label{fig:atribsist}
+\end{figure}

@@ -1,0 +1,24 @@
+\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}
+		\node[anchor=south west,inner sep=0] (image) at (0,0) {\includegraphics[trim =
+		{0cm 0cm 0cm 0cm}, clip,scale=0.1]{Figuras/ENGRENAGEM.eps}};
+		
+		\begin{scope}[x={(image.south east)},y={(image.north west)}]
+			\draw[gray, help lines,xstep=.05,ystep=.05] (0,0) grid (1,1);
+			\foreach \x in {0,1,...,9} { \node [anchor=north] at (\x/10,0) {0.\x}; }
+			\foreach \y in {0,1,...,9} { \node [anchor=east] at (0,\y/10) {0.\y}; }
+			
+			%(0.3413,0.189)
+			\node[red, fill, circle, inner sep =0] at (0.2166, 0.2355) (A) {};
+			\node[align=center] at (0.466,0.1425) (B) {};
+			
+			\draw[-latex, red, shorten >=0] (A) -- (0.2997333333,0.2045);
+			\draw[-latex, red, shorten >=0] (A) -- (0.1834, 0.3645);
+			
+		\end{scope}
+	\end{tikzpicture}
+% 	\vspace{-1cm}
+	\caption{Atribuições de coordenadas e parâmetros de Denavit-Hartenberg}		
+	\label{fig:ImagemDH}
+\end{figure}

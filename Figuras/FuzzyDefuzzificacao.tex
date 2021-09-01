@@ -1,0 +1,46 @@
+\tikzset{%
+    block/.style={draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {draw, fill=white, circle, minimum size=2mm, node distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+% Figura
+\begin{figure}[h]
+\centering
+\caption{Defuzzificação COG} 
+	\label{fig:Defuzzificacao}
+	
+\begin{tikzpicture}[scale = 1, auto, node distance=2cm, on grid, >=latex']%
+	\begin{axis}[xmax=38,ymax=1.1, samples=50]
+	
+		\addplot [thick, color=black] table {
+			5 0
+			12.5 0.75
+			17.5 0.75
+			25 0
+		};
+		
+		\addplot [thick, color=black] table {
+			15 0
+			17.5 0.25
+			32.5 0.25
+			35 0
+		};
+		
+		\addplot [thick, color=gray] table {
+			18.1818 0
+			18.1818 1
+		};
+		
+		\node[] at (210,90) {$u_{crisp} = 18,182$};
+  		%\addplot[blue, ultra thick] (x,x/10);
+  		%\addplot[red,  ultra thick] (x,x/10 + 1);
+	\end{axis}	
+	%\draw[smooth, samples=100,domain=0:2] plot(\x,{(\x)});
+\end{tikzpicture}%
+		
+		\textbf{Fonte: baseado em \citeonline{fuzzy_passino}, p. 47.}
+\end{figure}

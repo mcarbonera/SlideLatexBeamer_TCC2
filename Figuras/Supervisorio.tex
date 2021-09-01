@@ -1,0 +1,64 @@
+\tikzset{%
+    block/.style={scale = 1.2,draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {scale = 1.2,draw, fill=white, circle, minimum size=2mm, node
+    distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {scale = 1.2,pin edge={to-,thin,black}}
+}
+
+\begin{figure}[h]%
+    %\caption{Controlador Híbrido}%
+    %\label{fig:subfig2}%
+    \centering
+    
+\resizebox{7cm}{!}{
+\begin{tikzpicture}[scale = 1,auto, node distance=2cm, on grid, >=latex']%
+	\node[block] (C1) {Controlador Supervisório};
+	\node[block, below = 2.7cm of C1] (C2) {Interface};
+	\node[block, below = 2.7cm of C2] (C3) {Controlador de Variável Contínua};
+	\node[block, below = 2.7cm of C3] (C4) {Sistema};
+	
+	\coordinate[left = 0.5cm of C1.south, inner sep = 0pt] (c1vai) {};
+	\coordinate[right = 0.5cm of C1.south, inner sep = 0pt] (c1vem) {};
+	\coordinate[right = 0.5cm of C2.north, inner sep = 0pt] (c2vai) {};
+	\coordinate[left = 0.5cm of C2.north, inner sep = 0pt] (c2vem) {};
+	\draw [draw,->] (c1vai.south) -- (c2vem.north);
+	\draw [draw,->] (c2vai.north) -- (c1vem.south);
+	
+	\node[below = 0.7cm of C1.south, inner sep = 0pt] (comand) {};
+	\node (com1) {};
+	\node[left = 1.6cm of comand, inner sep = 0pt] (com) {Comandos};
+	\node[right = 2.5cm of comand, inner sep = 0pt] (ev) {Eventos Observáveis};
+	
+	%\node[below = 2cm of C1, inner sep = 0 cm] (C1) {Comandos};
+	%\node[below right = 1.5cm of C1, inner sep = 0.2 cm] () {Eventos Observáveis};
+	
+	\coordinate[left = 0.5cm of C2.south, inner sep = 0pt] (c2vaibelow) {};
+	\coordinate[right = 0.5cm of C2.south, inner sep = 0pt] (c2vembelow) {};
+	\coordinate[right = 0.5cm of C3.north, inner sep = 0pt] (c3vai) {};
+	\coordinate[left = 0.5cm of C3.north, inner sep = 0pt] (c3vem) {};
+	\draw [draw,->] (c2vaibelow.south) -- (c3vem.north);
+	\draw [draw,->] (c3vai.north) -- (c2vembelow.south);
+	
+	\coordinate[left = 1.4cm of C3.south, inner sep = 0pt] (c3vaibelow) {};
+	\coordinate[right = 1.4cm of C3.south, inner sep = 0pt] (c3vembelow) {};
+	\coordinate[above = 0.15cm of C4.east, inner sep = 0pt] (c41vai) {};
+	\coordinate[above = 0.15cm of C4.west, inner sep = 0pt] (c41vem) {};
+	
+	\draw [->] (c3vaibelow) |- (c41vem);
+	\draw [->] (c41vai) -| (c3vembelow);
+	
+	\coordinate[below = 0.15cm of C4.east, inner sep = 0pt] (c42vai) {};
+	\coordinate[below = 0.15cm of C4.west, inner sep = 0pt] (c42vem) {};
+	\coordinate[left = 3cm of c42vem, inner sep = 0pt] (int1) {};
+	\coordinate[right = 3cm of c42vai, inner sep = 0pt] (int2) {};
+	
+	\draw [->] (C2.west) -| (int1) |- (c42vem);
+	\draw [->] (c42vai) -| (int2) |- (C2.east);
+\end{tikzpicture}%    
+}
+	%\textbf{Fonte: baseado em \citeonline{book:SED}, p. 43.}
+    %\label{fig:supervisorio}%
+\end{figure}

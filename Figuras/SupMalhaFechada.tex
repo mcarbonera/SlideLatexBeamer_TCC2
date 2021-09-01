@@ -1,0 +1,27 @@
+\tikzset{%
+    block/.style={scale = 1, draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {scale = 1, draw, fill=white, circle, minimum size=2mm, node
+    distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {scale = 1, pin edge={to-,thin,black}}
+}
+
+\begin{figure}[h]%
+    \centering
+\begin{tikzpicture}[scale = 1, auto, node distance=2cm, on grid,
+>=latex']%
+	\node[block] (P) {Planta};
+	\node[block, below = 1.8cm of P] (S) {Supervisor};
+	
+	\coordinate[left = 2cm of S, inner sep = 0pt] (int1) {};
+	\coordinate[right = 2cm of P, inner sep = 0pt] (int2) {};
+	
+	\draw [->] (P) -| (int2) node[below right] {Eventos Observados} |- (S);
+	\draw [->] (S) -| (int1) node[above left] {Eventos Desabilitados} |- (P);
+	
+	%node[above] {$a$}
+\end{tikzpicture}%    
+\end{figure}
+

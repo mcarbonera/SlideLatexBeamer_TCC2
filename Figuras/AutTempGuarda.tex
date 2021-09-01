@@ -1,0 +1,79 @@
+\tikzset{%
+    block/.style={draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {draw, fill=white, circle, minimum size=2mm, node distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+\newcommand{\diagum}{
+\begin{tikzpicture}[scale = 1,->,auto ,node distance =4 cm and 5cm , on grid,
+>=latex' ,
+state/.style ={scale = 0.9, circle, draw, minimum width =0.7cm},
+finalstate/.style ={scale = 0.9, circle, draw, minimum width =0.7cm}]
+	
+	\node[state] (a) {0};
+	\node[state, above right = 2.5cm of a] (b) {1};
+	\node[state, below right = 2.5cm of b] (c) {2};
+	\node[state, below left = 2.5cm of c] (d) {3};
+	
+	\path[->] (a) edge node[above left] {$\emptyset; a; c_1$} (b);
+	\small
+	\path[->] (b) edge node[above right] {$0<c_1<1; a; c_1$} (c);
+	\normalsize
+	\path[->] (c) edge node[below right] {$c_1<1; b; \emptyset$} (d);
+	\draw (b) to [out=120,in=60,looseness=6] node[above] {$c_1\geq1;a;c_1$} (b);
+	
+	% Input
+	\coordinate[left = 1cm of a, inner sep = 0pt] (input) {};
+	\path[->] (input) edge (a);
+\end{tikzpicture}%
+}
+
+\newcommand{\diagdois}{
+\begin{tikzpicture}[->,auto ,node distance =4 cm and 5cm ,on grid ,
+>=latex' ,
+state/.style ={scale = 0.9, circle, draw, minimum width =0.7cm},
+finalstate/.style ={scale = 0.9, circle, draw, minimum width =0.7cm}]
+
+	\node[state] (a) {0};
+	\node[state, above right = 2.5cm of a] (b) {1};
+	\node[state, below right = 2.5cm of b, align = center] (c) {2 \\ $c_1<1$};
+	\node[state, below left = 2.5cm of c] (d) {3};
+	
+	\path[->] (a) edge node[above left] {$\emptyset; a; c_1$} (b);
+	\small
+	\path[->] (b) edge node[above right] {$0<c_1<1; a; c_1$} (c);
+	\normalsize
+	\path[->] (c) edge node[below right] {$\emptyset; b; \emptyset$} (d);
+	\draw (b) to [out=120,in=60,looseness=6] node[above] {$c_1\geq1;a;c_1$} (b);
+	
+	% Input
+	\coordinate[left = 1cm of a, inner sep = 0pt] (input) {};
+	\path[->] (input) edge (a);	
+\end{tikzpicture}%
+}
+
+% Figura
+\begin{figure}[h]
+\centering
+%\caption{Exemplos de diagramas de transição para autômatos temporizados com
+%guarda} 
+	%\label{fig:ATG}
+	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering
+		\diagum%
+		%\label{fig:guardadiag1}%
+		%\caption{Exemplo 1}%
+		\end{subfigure}%
+    	~
+    	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering
+		\diagdois%
+		%\label{fig:guardadiag2}%
+		%\caption{Exemplo 2}%
+		\end{subfigure}%
+		
+		%\textbf{Fonte: baseado em \citeonline{book:SED}, p. 301.}
+\end{figure}

@@ -1,0 +1,66 @@
+\tikzset{%
+    block/.style={draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em, align=center},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {draw, fill=white, circle, minimum size=2mm, node distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+\begin{figure}[h]%
+    %\caption{Diagrama de blocos para um sistema com controlador
+    % \textit{Fuzzy}}%
+    \centering
+   
+\resizebox{12cm}{!}{
+\begin{tikzpicture}[auto, node distance=2cm, on grid,
+>=latex']%
+	\node[block] (Fat) {Fatores \\ de escala, \\ normalização};
+	\node[block, right = 3.2 cm of Fat] (Fuz) {Fuzzyficação};
+	\node[block, right = 2.9 cm of Fuz] (Inf) {Mecanismo \\ de Inferência};
+	\node[block, right = 3.1 cm of Inf] (Defuz) {Defuzzyficação};
+		
+	\node[block, right = 2.6 cm of Defuz] (Planta) {Planta};
+	
+	\node[block, above = 2 cm of Fuz] (kno) {Base de \\ conhecimento};
+	\node[block, above = 2 cm of Inf] (Base) {Base de \\ regras};
+	\node[block, below = 2 cm of Defuz] (Sensor) {Sensores};
+	\node[block, below = 2 cm of Inf] (outfat) {Fatores de \\ escala de
+	saída, \\ normalização};
+	
+	\coordinate[left = 2cm of Fat] (input) {};
+	\coordinate[right = 1.2cm of Planta] (output) {};
+	
+	\draw[->] (input) node[above] {Entrada} -- (Fat);
+	\draw[<->] (kno) -- (Fuz);
+	\draw[<->] (Base) -- (Inf);
+	\draw[->] (Fuz) -- (Inf);
+	\draw[->] (Inf) -- (Defuz);
+	\draw[->] (Defuz) -- (Planta);
+	\draw[->] (Sensor) -- (outfat);
+	\draw[->] (Planta) -- (output) node[above] {Saída};
+	
+	\draw [->] (output) -- (output)+(-0.3cm,0) |- (Sensor);
+	
+	\coordinate[above = 0.15cm of Fuz.west] (infuz1) {};
+	\coordinate[below = 0.15cm of Fuz.west] (infuz2) {};
+	\coordinate[above = 0.15cm of Fat.east] (int1) {};
+	\coordinate[left = 0.5cm of infuz2] (int2) {};
+	
+	\draw [->] (outfat) -| (int2) |- (infuz2);
+	\draw [->] (int1) -- (infuz1);
+	
+	% Quadrado - Controlador Fuzzy
+	%\draw[gray,thick,dashed] ($(Fuz.north west)+(-0.2,0.5)$)  rectangle
+	%($(Defuz.south east)+(0.2,-0.5)$);
+	%\node[above = 1.15 cm of Defuz] (escrita) {Controlador \textit{Fuzzy}};
+	
+	\draw[gray,thick,dashed] ($(kno.north west)+(-0.2,0.3)$)  rectangle
+	($(Defuz.south east)+(0.2,-0.3)$);
+	\node[above = 2.55 cm of Defuz] (escrita) {Controlador \textit{Fuzzy}};
+	
+\end{tikzpicture}%    
+}
+	%\textbf{Fonte: baseado em \citeonline{fuzzy_ross}, p. 442 e
+	%\citeonline{fuzzylilly}, p.	29.} \label{fig:ContFuzzy}%
+\end{figure}

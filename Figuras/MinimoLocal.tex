@@ -1,0 +1,61 @@
+\begin{figure}[h]%
+    \caption{Mínimos Locais ao combinar comportamentos}%
+    %\label{fig:subfig2}%
+    \centering    
+    %\resizebox{0.1\linewidth}{!}{
+\begin{tikzpicture}[auto, node distance=2cm, on grid, >=latex']%
+\begin{axis}[view={0}{90}, axis equal image]
+	\addplot3[darkgray, domain=-2:2, y domain=-2:2, 
+		quiver={
+			u={-x}, v={-y},
+			scale arrows=0.2}, ->,samples=21,
+			y filter/.append
+			code={\pgfmathparse{(sqrt(x^2+y^2)>1.8)||(sqrt(x^2+y^2)<0.1||(sqrt(x^2+y^2)>1))
+			? nan : y}}] {0};
+			
+	\addplot3[darkgray, domain=-2:2, y domain=-2:2, 
+		quiver={
+			u={-x/(sqrt(x^2+y^2))}, v={-y/(sqrt(x^2+y^2)},
+			scale arrows=0.2}, ->,samples=21,
+			y filter/.append
+			code={\pgfmathparse{(sqrt(x^2+y^2)>1.8)||(sqrt(x^2+y^2)<0.1||(sqrt(x^2+y^2)<=1))
+			? nan : y}}] {0};
+			
+	\addplot3[gray, domain=-1.905:1.905, y domain=-1.905:1.905, 
+		quiver={
+			u={-x}, v={-y},
+			scale arrows=0.2}, ->,samples=20,
+			y filter/.append
+			code={\pgfmathparse{(sqrt(x^2+y^2)>1.8)||(sqrt(x^2+y^2)<0.1)||(sqrt(x^2+y^2)>1)
+			? nan : y}}] {0};
+			
+	\addplot3[gray, domain=-1.905:1.905, y domain=-1.905:1.905, 
+		quiver={
+			u={-x/(sqrt(x^2+y^2))}, v={-y/(sqrt(x^2+y^2))},
+			scale arrows=0.2}, ->,samples=20,
+			y filter/.append
+			code={\pgfmathparse{(sqrt(x^2+y^2)>1.8)||(sqrt(x^2+y^2)<0.1)||(sqrt(x^2+y^2)<=1)
+			? nan : y}}] {0};
+			
+			
+\addplot3[darkgray, domain=-2:2, y domain=-2:2, 
+		quiver={
+			u={-x/2 + x/(sqrt(x^2+y^2))}, v={-y/2 + y/(sqrt(x^2+y^2))}, scale
+			arrows=0.25}, ->,samples=21, 
+			y filter/.append
+			code={\pgfmathparse{(sqrt(x^2+y^2)>1.8)||(sqrt(x^2+y^2)<0.1) ? nan : y}}] {0};
+
+\addplot3[gray, domain=-1.905:1.905, y domain=-1.905:1.905, 
+		quiver={
+			u={-x/2 + x/(sqrt(x^2+y^2))}, v={-y/2 + y/(sqrt(x^2+y^2))},
+			scale arrows=0.25}, ->,samples=20,
+			y filter/.append
+			code={\pgfmathparse{(sqrt(x^2+y^2)>1.8)||(sqrt(x^2+y^2)<0.1) ? nan : y}}]
+			{0};
+\end{axis}
+\end{tikzpicture}%    
+%}	
+
+	\textbf{Fonte: baseado em \citeonline{book:arkin}, p. 146 e 148}
+    \label{fig:MinimoLocal}%
+\end{figure}
