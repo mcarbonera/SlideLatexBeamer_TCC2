@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.11.1)  15 SEP 2021 19:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.11.1)  15 SEP 2021 19:46
 entering extended mode
 **./document.tex
 (document.tex
@@ -1189,7 +1189,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 \verbatim@out=\write5
-runsystem(echo 'write18-test-20219151151'>"document.w18")...disabled (restricte
+runsystem(echo 'write18-test-20219151186'>"document.w18")...disabled (restricte
 d).
 
 
@@ -5342,7 +5342,7 @@ Package pdftex.def Info: Figuras/Curva_Do_Motor_rps.png  used on input line 7.
 
 ]
 LaTeX Font Info:    Font shape `T1/aess/b/n' in size <8> not available
-(Font)              Font shape `T1/aess/bx/n' tried instead on input line 152.
+(Font)              Font shape `T1/aess/bx/n' tried instead on input line 155.
  [70
 
 ] [71
@@ -5351,7 +5351,7 @@ LaTeX Font Info:    Font shape `T1/aess/b/n' in size <8> not available
 
 ]
 LaTeX Font Info:    Font shape `T1/aess/b/n' in size <6> not available
-(Font)              Font shape `T1/aess/bx/n' tried instead on input line 179.
+(Font)              Font shape `T1/aess/bx/n' tried instead on input line 182.
  [73
 
 ] [74
@@ -5383,7 +5383,7 @@ Overfull \hbox (4.86171pt too wide) in paragraph at lines 94--115
 ] [84
 
 ]
-Overfull \hbox (24.15988pt too wide) detected at line 277
+Overfull \hbox (24.15988pt too wide) detected at line 280
 [] \OT1/cmss/m/n/10.95 = []
  []
 
@@ -5469,7 +5469,7 @@ LaTeX Font Info:    Font shape `T1/aess/b/n' in size <5> not available
 
 ]
 (Figuras/automatoHibrido.tex)
-Overfull \vbox (8.38332pt too high) detected at line 511
+Overfull \vbox (8.38332pt too high) detected at line 514
  []
 
 [114
@@ -5852,7 +5852,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figuras/EsquemaCircuito-eps-converted-to.p
 df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figuras/EsquemaCircuito-eps-converted-to.pdf, id=3132, 557.08125pt x 505.89pt>
+<Figuras/EsquemaCircuito-eps-converted-to.pdf, id=3153, 557.08125pt x 505.89pt>
 
 File: Figuras/EsquemaCircuito-eps-converted-to.pdf Graphic file (type pdf)
 <use Figuras/EsquemaCircuito-eps-converted-to.pdf>
@@ -5860,7 +5860,7 @@ Package pdftex.def Info: Figuras/EsquemaCircuito-eps-converted-to.pdf  used on
 input line 8.
 (pdftex.def)             Requested size: 445.6656pt x 404.71254pt.
 )
-Overfull \vbox (7.89732pt too high) detected at line 831
+Overfull \vbox (7.89732pt too high) detected at line 834
  []
 
 [144
@@ -5882,7 +5882,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figuras/JubileuBoard-eps-converted-to.pdf)
 : PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figuras/JubileuBoard-eps-converted-to.pdf, id=3179, 171.64125pt x 342.27875pt>
+<Figuras/JubileuBoard-eps-converted-to.pdf, id=3200, 171.64125pt x 342.27875pt>
 
 File: Figuras/JubileuBoard-eps-converted-to.pdf Graphic file (type pdf)
 <use Figuras/JubileuBoard-eps-converted-to.pdf>
@@ -5895,7 +5895,7 @@ ut line 8.
 (Tabelas/ComunicacaoComandos.tex) [146
 
 ] (Figuras/SimulacaoHibrido.tex
-<Figuras/simulacao_hibridoCompactado.png, id=3216, 1540.75626pt x 757.83125pt>
+<Figuras/simulacao_hibridoCompactado.png, id=3237, 1540.75626pt x 757.83125pt>
 File: Figuras/simulacao_hibridoCompactado.png Graphic file (type png)
 <use Figuras/simulacao_hibridoCompactado.png>
 Package pdftex.def Info: Figuras/simulacao_hibridoCompactado.png  used on input
@@ -5905,7 +5905,7 @@ Package pdftex.def Info: Figuras/simulacao_hibridoCompactado.png  used on input
 
  <./Figuras/simulacao_hibridoCompactado.png (PNG copy)>]
 (Figuras/SimulacaoFuzzy.tex
-<Figuras/simulacao_fuzzyCompactado.png, id=3228, 1540.75626pt x 757.83125pt>
+<Figuras/simulacao_fuzzyCompactado.png, id=3249, 1540.75626pt x 757.83125pt>
 File: Figuras/simulacao_fuzzyCompactado.png Graphic file (type png)
 <use Figuras/simulacao_fuzzyCompactado.png>
 Package pdftex.def Info: Figuras/simulacao_fuzzyCompactado.png  used on input l
@@ -5915,7 +5915,7 @@ ine 9.
 
  <./Figuras/simulacao_fuzzyCompactado.png (PNG copy)>] (Figuras/ResultadoIPO.te
 x
-<Figuras/ComportamentoIPOCompactado.png, id=3240, 1544.77126pt x 870.25125pt>
+<Figuras/ComportamentoIPOCompactado.png, id=3261, 1544.77126pt x 870.25125pt>
 File: Figuras/ComportamentoIPOCompactado.png Graphic file (type png)
 <use Figuras/ComportamentoIPOCompactado.png>
 Package pdftex.def Info: Figuras/ComportamentoIPOCompactado.png  used on input 
@@ -5925,7 +5925,7 @@ line 10.
 
  <./Figuras/ComportamentoIPOCompactado.png (PNG copy)>] (Figuras/ResultadoEO.te
 x
-<Figuras/ComportamentoEOCompactado.png, id=3252, 1544.77126pt x 870.25125pt>
+<Figuras/ComportamentoEOCompactado.png, id=3273, 1544.77126pt x 870.25125pt>
 File: Figuras/ComportamentoEOCompactado.png Graphic file (type png)
 <use Figuras/ComportamentoEOCompactado.png>
 Package pdftex.def Info: Figuras/ComportamentoEOCompactado.png  used on input l
@@ -5935,7 +5935,7 @@ ine 9.
 
  <./Figuras/ComportamentoEOCompactado.png (PNG copy)>] (Figuras/ResultadoMescla
 do.tex
-<Figuras/ComportamentoIPO_E_EOCompactado.png, id=3264, 1544.77126pt x 870.25125
+<Figuras/ComportamentoIPO_E_EOCompactado.png, id=3285, 1544.77126pt x 870.25125
 pt>
 File: Figuras/ComportamentoIPO_E_EOCompactado.png Graphic file (type png)
 <use Figuras/ComportamentoIPO_E_EOCompactado.png>
@@ -5946,7 +5946,7 @@ nput line 9.
 
  <./Figuras/ComportamentoIPO_E_EOCompactado.png (PNG copy)>] (Figuras/Resultado
 SP.tex
-<Figuras/ComportamentoSPCompactado.png, id=3277, 1544.77126pt x 870.25125pt>
+<Figuras/ComportamentoSPCompactado.png, id=3298, 1544.77126pt x 870.25125pt>
 File: Figuras/ComportamentoSPCompactado.png Graphic file (type png)
 <use Figuras/ComportamentoSPCompactado.png>
 Package pdftex.def Info: Figuras/ComportamentoSPCompactado.png  used on input l
@@ -5956,7 +5956,7 @@ ine 9.
 
  <./Figuras/ComportamentoSPCompactado.png (PNG copy)>] (Figuras/ResultadoHibrid
 o.tex
-<Figuras/hibridoCompactado.png, id=3289, 1544.77126pt x 870.25125pt>
+<Figuras/hibridoCompactado.png, id=3310, 1544.77126pt x 870.25125pt>
 File: Figuras/hibridoCompactado.png Graphic file (type png)
 <use Figuras/hibridoCompactado.png>
 Package pdftex.def Info: Figuras/hibridoCompactado.png  used on input line 9.
@@ -5965,7 +5965,7 @@ Package pdftex.def Info: Figuras/hibridoCompactado.png  used on input line 9.
 [153
 
  <./Figuras/hibridoCompactado.png (PNG copy)>] (Figuras/ResultadoFuzzy.tex
-<Figuras/fuzzyCompactado.png, id=3301, 1544.77126pt x 870.25125pt>
+<Figuras/fuzzyCompactado.png, id=3322, 1544.77126pt x 870.25125pt>
 File: Figuras/fuzzyCompactado.png Graphic file (type png)
 <use Figuras/fuzzyCompactado.png>
 Package pdftex.def Info: Figuras/fuzzyCompactado.png  used on input line 9.
@@ -5993,10 +5993,10 @@ Package rerunfilecheck Info: File `document.out' has not changed.
 (rerunfilecheck)             Checksum: 16CD9D13BE274A5567762CB068A79165;639.
  ) 
 Here is how much of TeX's memory you used:
- 45062 strings out of 480224
- 1069686 string characters out of 2889982
+ 45068 strings out of 480224
+ 1069954 string characters out of 2889982
  2041937 words of memory out of 3000000
- 60101 multiletter control sequences out of 15000+200000
+ 60107 multiletter control sequences out of 15000+200000
  588434 words of font info for 125 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,30n,114p,707b,3086s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -6018,9 +6018,9 @@ s/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C
 :/Program Files/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on document.pdf (157 pages, 41155758 bytes).
+Output written on document.pdf (157 pages, 41161659 bytes).
 PDF statistics:
- 3513 PDF objects out of 3580 (max. 8388607)
+ 3534 PDF objects out of 3580 (max. 8388607)
  346 named destinations out of 1000 (max. 500000)
- 5794 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 5860 words of extra memory for PDF output out of 10000 (max. 10000000)
 
