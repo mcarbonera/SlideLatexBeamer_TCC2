@@ -1,0 +1,42 @@
+\tikzset{%
+    block/.style={scale = 1.2, draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {scale = 1.2, draw, fill=white, circle, minimum size=2mm, node
+    distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {scale = 1.2, pin edge={to-,thin,black}}
+}
+
+\begin{figure}[ht]%
+    \centering
+    \resizebox{0.9\columnwidth}{!}{
+\begin{tikzpicture}[scale = 1.0, auto, node distance=2cm, on grid,
+>=latex']%
+	\node[block] (SE) {SE};
+	\node[block, below = 1.4cm of SE] (SD) {SD};
+	\node[block, below = 1.4cm of SD] (SDE) {SDE};
+	\node[block, below = 1.4cm of SDE] (SDD) {SDD};
+	\node[block, below = 1.4cm of SDD] (SF) {SF};
+	
+	\node[block, right = 6cm of SDE] (SP) {Seguir Parede};
+	
+	\node[block, right = 6cm of SP, yshift = 0.7cm] (SPRecY) {SPRecY};
+	\node[block, above = 1.4cm of SPRecY] (SPRecX) {SPRecX};
+	\node[block, below = 1.4cm of SPRecY] (RegDistYSL) {RegDistYSL};
+	\node[block, below = 1.4cm of RegDistYSL] (RegDistYSD) {RegDistYSD};
+
+	\draw [->] (SE) -- (SP);
+	\draw [->] (SD) -- (SP);
+	\draw [->] (SDE) -- (SP);
+	\draw [->] (SDD) -- (SP);
+	\draw [->] (SF) -- (SP);
+
+	\draw [->] (SP) -- (SPRecX);
+	\draw [->] (SP) -- (SPRecY);
+	\draw [->] (SP) -- (RegDistYSL);
+	\draw [->] (SP) -- (RegDistYSD);
+\end{tikzpicture}%
+}    
+\end{figure}
+

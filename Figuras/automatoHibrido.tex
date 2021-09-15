@@ -1,0 +1,77 @@
+\tikzset{%
+    block/.style={draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {draw, fill=white, circle, minimum size=2mm, node distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+\newcommand{\automatoHibrido}[1]{
+\begin{tikzpicture}[scale = 1.1,->,auto ,node distance =4 cm and 5cm , on grid,
+>=latex , 
+state/.style ={scale = 1.1, circle, draw, minimum width =0.7cm},
+finalstate/.style ={scale = 1.1, circle, draw, minimum width =0.7cm}]
+    
+	\node[state] (No3) {3};
+	\begin{scope}[rotate=90]
+		\begin{scope}[shift={(#1,0)}]
+			\node[state] (No0) {0};
+		\end{scope}
+	\end{scope}
+	\begin{scope}[rotate=90-72]
+		\begin{scope}[shift={(#1,0)}]
+			\node[state] (No5) {5};
+		\end{scope}
+	\end{scope}
+	\begin{scope}[rotate=90-72*2]
+		\begin{scope}[shift={(#1,0)}]
+			\node[state] (No2) {2};
+		\end{scope}
+	\end{scope}
+	\begin{scope}[rotate=90-72*3]
+		\begin{scope}[shift={(#1,0)}]
+			\node[state] (No1) {1};
+		\end{scope}
+	\end{scope}
+	\begin{scope}[rotate=90-72*4]
+		\begin{scope}[shift={(#1,0)}]
+			\node[state] (No4) {4};
+		\end{scope}
+	\end{scope}
+	
+	\path[->] (No4) edge[bend left=20] node[xshift=-1cm, yshift=0.2cm] {$\neg a \land b \land \neg f$} (No3);
+	\path[->] (No3) edge[bend left=20] node[xshift=1cm, yshift=-0.2cm] {$\neg a \land \neg b \land f$} (No4);
+	\path[->] (No3) edge[bend left=20] node[xshift=1cm, yshift=0.2cm] {$\neg a \land \neg b \land g$} (No5);
+	\path[->] (No5) edge[bend left=20] node[xshift=-0.1cm] {$\neg a \land b \land \neg g$} (No3);
+	\path[->] (No3) edge[bend left=20] node[xshift=-0.9cm, yshift=1cm, rotate=-45] {$\neg a \land b \land \neg e \land d$} (No2);
+	\path[->] (No2) edge[bend left=20] node[xshift=0.5cm, yshift=-0.6cm, rotate=-45] {$\neg a \land \neg d$} (No3);
+	\path[->] (No3) edge[bend left=20] node {$a$} (No0);
+	\path[->] (No0) edge[bend left=20] node {$\neg a$} (No3);
+	\path[->] (No3) edge[bend left=20] node[xshift=-0.5cm, yshift=-0.6cm, rotate=45] {$\neg a \land b \land e$} (No1);
+	\path[->] (No1) edge[bend left=20] node[xshift=0.2cm, yshift=0.3cm, rotate=45] {$\neg a \land b \land c$} (No3);
+	
+	\path[->] (No1) edge node {$\neg a \land b \land \neg c \land d$} (No2);
+	\path[->] (No1) edge node[xshift=2.4cm, yshift=0.8cm] {$\neg a \land \neg b \land f$} (No4);
+	\path[->] (No4) edge node {$a$} (No0);
+	\path[->] (No5) edge node {$a$} (No0);
+	
+	\path[->,draw] (No1) .. controls ($(No2)+(1.5,-2)$) .. node[yshift=-0.2cm] {$\neg a \land \neg b \land g$} (No5);
+	\path[->,draw] (No1) .. controls ($(No4)+(-2,1)$) .. node {$a$} (No0);
+	\path[->,draw] (No2) .. controls ($(No5)+(2.1,1)$) .. node {$a$} (No0);
+	
+	% Input
+	\coordinate[above = 1cm of No0, inner sep = 0pt] (input) {};
+	\path[->] (input) edge (No0);
+	
+\end{tikzpicture}%
+}
+
+% Figura
+\begin{figure}[ht]
+	\centering
+\resizebox{0.85\columnwidth}{!}
+{
+	\automatoHibrido{5}
+}
+\end{figure}

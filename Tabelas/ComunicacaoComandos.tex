@@ -1,0 +1,15 @@
+\begin{table}[ht]
+\centering
+\caption{Comandos disponíveis na interface por linha de comando via \textit{bluetooth}}
+\vspace{0.2 cm}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Comando}       & \textbf{Descrição}                                                                                                                     \\ \hline
+SUPERVISOR\_HIBRIDO    & \begin{tabular}[c]{@{}l@{}}Adota o controlador híbrido como a estratégia de \\ navegação utilizada\end{tabular}                        \\ \hline
+SUPERVISOR\_FUZZY      & \begin{tabular}[c]{@{}l@{}}Adota o controlador \textit{fuzzy} como a estratégia de\\ navegação utilizada\end{tabular}                  \\ \hline
+SETCOORDOBJ(X.XX,Y.YY) & Redefine a coordenada objetivo                                                                                                         \\ \hline
+GETSTATE               & \begin{tabular}[c]{@{}l@{}}Utilizado para obter a resposta do estado do robô\\ ($x$, $y$ e $\theta$) a cada iteração, bem como o valor de seus\\ sensores \end{tabular}      \\ \hline
+EXIT                   & \begin{tabular}[c]{@{}l@{}}Necessário para solicitar ao robô para que deixe \\ de informar seu estado a cada iteração\end{tabular}     \\ \hline
+\end{tabular}
+\label{tab:comunicacaoComandos}
+\end{table}

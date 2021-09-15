@@ -1,0 +1,200 @@
+% Figura
+\begin{figure}[ht]
+\centering 
+	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering
+		%\raisebox{15mm}
+		
+		\begin{tikzpicture}[scale = 0.7,->,auto ,node distance =4 cm and 5cm ,on grid ,
+		>=latex' ,
+		state/.style ={scale = 1.1,circle, draw, minimum width =0.7cm},
+		finalstate/.style ={scale = 1.1,circle, draw, minimum width =0.7cm}]
+			\draw[draw] (0,0) circle (10pt);
+			\draw[-, dashed]  (150:3) arc(150:30:3) node[midway,left]{};		
+
+			\node (labelA) at (0,1) {Evitar Obstáculo};
+			\node (labelB) at (0,4.5) {Ir para Objetivo};
+			\begin{scope}[rotate=60]
+				\begin{scope}[shift={(2.1,0)}]
+					\draw[->] (0, 0) -- (0.8535, 0);
+				\end{scope}
+			\end{scope}
+			\begin{scope}[rotate=75]
+				\begin{scope}[shift={(2.1,0)}]
+					\draw[->] (0, 0) -- (0.8535, 0);
+				\end{scope}
+			\end{scope}
+			\begin{scope}[rotate=90]
+				\begin{scope}[shift={(2.1,0)}]
+					\draw[->] (0, 0) -- (0.8535, 0);
+				\end{scope}
+			\end{scope}
+			\begin{scope}[rotate=105]
+				\begin{scope}[shift={(2.1,0)}]
+					\draw[->] (0, 0) -- (0.8535, 0);
+				\end{scope}
+			\end{scope}
+			
+			\begin{scope}[rotate=112]
+				\begin{scope}[shift={(3.8035,0)}]
+					\begin{scope}[rotate=-112]
+						\begin{scope}[rotate=-45]
+							\draw[->] (0, 0) -- (0.8535, 0);
+						\end{scope}
+					\end{scope}
+				\end{scope}
+			\end{scope}
+			\begin{scope}[rotate=100]
+				\begin{scope}[shift={(3.7035,0)}]
+					\begin{scope}[rotate=-100]
+						\begin{scope}[rotate=-45]
+							\draw[->] (0, 0) -- (0.8535, 0);
+						\end{scope}
+					\end{scope}
+				\end{scope}
+			\end{scope}
+			\begin{scope}[rotate=86]
+				\begin{scope}[shift={(3.5535,0)}]
+					\begin{scope}[rotate=-86]
+						\begin{scope}[rotate=-45]
+							\draw[->] (0, 0) -- (0.8535, 0);
+						\end{scope}
+					\end{scope}
+				\end{scope}
+			\end{scope}
+			\begin{scope}[rotate=74]
+				\begin{scope}[shift={(3.4035,0)}]
+					\begin{scope}[rotate=-74]
+						\begin{scope}[rotate=-45]
+							\draw[->] (0, 0) -- (0.8535, 0);
+						\end{scope}
+					\end{scope}
+				\end{scope}
+			\end{scope}
+		\end{tikzpicture}%
+		
+		\label{fig:exemplosliding2}%
+		\end{subfigure}%
+    	~
+    	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering
+		
+		\begin{tikzpicture}[scale = 0.7,->,auto ,node distance =4 cm and 5cm ,on grid ,
+		>=latex' ,
+		state/.style ={scale = 1.1,circle, draw, minimum width =0.7cm},
+		finalstate/.style ={scale = 1.1,circle, draw, minimum width =0.7cm}]
+			\draw[draw] (0,0) circle (10pt);
+
+			\node (labelA) at (0,1) {Evitar Obstáculo};
+			\node (labelB) at (0,4.5) {Ir para Objetivo};
+			\begin{scope}[shift={(0,-0.15)}]
+				\draw[-, dashed]  (150:3) arc(150:30:3) node[midway,left]{};
+				\begin{scope}[rotate=60]
+					\begin{scope}[shift={(2.1,0)}]
+						\draw[->] (0, 0) -- (0.8535, 0);
+					\end{scope}
+				\end{scope}
+				\begin{scope}[rotate=75]
+					\begin{scope}[shift={(2.1,0)}]
+						\draw[->] (0, 0) -- (0.8535, 0);
+					\end{scope}
+				\end{scope}
+				\begin{scope}[rotate=90]
+					\begin{scope}[shift={(2.1,0)}]
+						\draw[->] (0, 0) -- (0.8535, 0);
+					\end{scope}
+				\end{scope}
+				\begin{scope}[rotate=105]
+					\begin{scope}[shift={(2.1,0)}]
+						\draw[->] (0, 0) -- (0.8535, 0);
+					\end{scope}
+				\end{scope}
+				%\begin{scope}[rotate=120]
+				%	\begin{scope}[shift={(2.1,0)}]
+				%		\draw[->] (0, 0) -- (0.8535, 0);
+				%	\end{scope}
+				%\end{scope}
+			\end{scope}
+			
+			\begin{scope}[shift={(0,0.15)}]
+				\draw[-, dashed]  (150:3) arc(150:30:3) node[midway,left]{};
+				
+				\begin{scope}[rotate=112]
+					\begin{scope}[shift={(3.8035,0)}]
+						\begin{scope}[rotate=-112]
+							\begin{scope}[rotate=-45]
+								\draw[->] (0, 0) -- (0.8535, 0);
+							\end{scope}
+						\end{scope}
+					\end{scope}
+				\end{scope}
+				\begin{scope}[rotate=100]
+					\begin{scope}[shift={(3.7035,0)}]
+						\begin{scope}[rotate=-100]
+							\begin{scope}[rotate=-45]
+								\draw[->] (0, 0) -- (0.8535, 0);
+							\end{scope}
+						\end{scope}
+					\end{scope}
+				\end{scope}
+				\begin{scope}[rotate=86]
+					\begin{scope}[shift={(3.5535,0)}]
+						\begin{scope}[rotate=-86]
+							\begin{scope}[rotate=-45]
+								\draw[->] (0, 0) -- (0.8535, 0);
+							\end{scope}
+						\end{scope}
+					\end{scope}
+				\end{scope}
+				\begin{scope}[rotate=74]
+					\begin{scope}[shift={(3.4035,0)}]
+						\begin{scope}[rotate=-74]
+							\begin{scope}[rotate=-45]
+								\draw[->] (0, 0) -- (0.8535, 0);
+							\end{scope}
+						\end{scope}
+					\end{scope}
+				\end{scope}
+			\end{scope}
+			
+			\begin{scope}[rotate=60]
+				\begin{scope}[shift={(2.9535,0)}]
+					\begin{scope}[rotate=-90]
+						\draw[->] (0, 0) -- (0.5535, 0);
+					\end{scope}
+				\end{scope}
+			\end{scope}
+			\begin{scope}[rotate=75]
+				\begin{scope}[shift={(2.9535,0)}]
+					\begin{scope}[rotate=-90]
+						\draw[->] (0, 0) -- (0.5535, 0);
+					\end{scope}
+				\end{scope}
+			\end{scope}
+			\begin{scope}[rotate=90]
+				\begin{scope}[shift={(2.9535,0)}]
+					\begin{scope}[rotate=-90]
+						\draw[->] (0, 0) -- (0.5535, 0);
+					\end{scope}
+				\end{scope}
+			\end{scope}
+			\begin{scope}[rotate=105]
+				\begin{scope}[shift={(2.9535,0)}]
+					\begin{scope}[rotate=-90]
+						\draw[->] (0, 0) -- (0.5535, 0);
+					\end{scope}
+				\end{scope}
+			\end{scope}
+			
+			\begin{scope}[shift={(2.025,2.025)}]
+				%\node[fill,circle,inner sep=1pt] at (0,0) {};
+				\node (0,0) {}
+   				edge[->, thick, shorten <=2pt, shorten >=2pt,bend right=45] (1,1);
+			\end{scope}
+   			\node (labelc) at (3.3,3.3) {Seguir Parede};
+   			%edge node[above left] {Seguir Parede};
+		\end{tikzpicture}%
+		
+		\label{fig:diagreg}%
+		\end{subfigure}%
+\end{figure}

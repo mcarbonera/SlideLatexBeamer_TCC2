@@ -1,0 +1,32 @@
+\begin{table}[ht]
+\caption{Regras \textit{Fuzzy} para sistema ``Seguir Parede''}
+\vspace{0.2 cm}
+\resizebox{\linewidth}{!}{
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Relação das\\ Entradas\end{tabular}} & \multirow{2}{*}{} & \multicolumn{5}{c|}{Entradas}                                                      & \multicolumn{4}{c|}{Saídas}               \\ \cline{3-11} 
+                                                                                &                   & SE             & SD             & SDE            & SDD            & SF             & SPRecX & SPRecY & RegDistYSL & RegDistYSD \\ \hline
+AND                                                                             & 1                 & DistSat        & DistSat        & DistSat        & DistSat        & -              & Z      & Z      & -          & -          \\ \hline
+OR                                                                              & 2                 & $\neg DistSat$ & $\neg DistSat$ & $\neg DistSat$ & $\neg DistSat$ & -              & PP     & -      & -          & -          \\ \hline
+AND                                                                             & 3                 & $\neg DistSat$ & -              & DistSat        & -              & -              & -      & PP     & Z          & -          \\ \hline
+AND                                                                             & 4                 & -              & $\neg DistSat$ & -              & DistSat        & -              & -      & NP     & Z          & -          \\ \hline
+AND                                                                             & 5                 & $\neg DistSat$ & -              & -              & -              & $\neg DistSat$ & -      & NP     & Z          & -          \\ \hline
+AND                                                                             & 6                 & -              & $\neg DistSat$ & -              & -              & $\neg DistSat$ & -      & PP     & Z          & -          \\ \hline
+-                                                                               & 7                 & DistP          & -              & -              & -              & -              & -      & -      & Z          & -          \\ \hline
+-                                                                               & 8                 & DistM          & -              & -              & -              & -              & -      & -      & PP         & -          \\ \hline
+-                                                                               & 9                 & DistG          & -              & -              & -              & -              & -      & -      & PP         & -          \\ \hline
+-                                                                               & 10                & -              & DistP          & -              & -              & -              & -      & -      & Z          & -          \\ \hline
+-                                                                               & 11                & -              & DistM          & -              & -              & -              & -      & -      & NP         & -          \\ \hline
+-                                                                               & 12                & -              & DistG          & -              & -              & -              & -      & -      & NP         & -          \\ \hline
+-                                                                               & 13                & -              & -              & DistP          & -              & -              & -      & -      & -          & Z          \\ \hline
+-                                                                               & 14                & -              & -              & DistM          & -              & -              & -      & -      & -          & PP         \\ \hline
+-                                                                               & 15                & -              & -              & DistG          & -              & -              & -      & -      & -          & PP         \\ \hline
+-                                                                               & 16                & -              & -              & -              & DistP          & -              & -      & -      & -          & Z          \\ \hline
+-                                                                               & 17                & -              & -              & -              & DistM          & -              & -      & -      & -          & NP         \\ \hline
+-                                                                               & 18                & -              & -              & -              & DistG          & -              & -      & -      & -          & NP         \\ \hline
+AND                                                                             & 19                & $\neg DistSat$ & -              & $\neg DistSat$ & -              & $\neg DistSat$ & -      & NP     & Z          & -          \\ \hline
+AND                                                                             & 20                & -              & $\neg DistSat$ & -              & $\neg DistSat$ & $\neg DistSat$ & -      & PP     & Z          & -          \\ \hline
+\end{tabular}
+}
+\label{tab:regrasSeguirParede}
+\end{table}

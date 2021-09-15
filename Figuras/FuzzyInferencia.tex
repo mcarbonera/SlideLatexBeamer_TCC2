@@ -10,13 +10,11 @@
 % Figura
 \begin{figure}[h]
 \centering
-\caption{Inferência em Lógica \textit{Fuzzy}}
-	\label{fig:FuzzyInferencia}
 	\begin{subfigure}[b]{0.33\textwidth}%
 		\centering
 %		\resizebox{\linewidth}{!}{
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\begin{tikzpicture}[scale = 0.65, auto, node distance=2cm, on grid, >=latex']%
+		\begin{tikzpicture}[scale = 0.35, auto, node distance=2cm, on grid, >=latex']%
 		\begin{axis}[xmax=38,ymax=1.1, samples=50]
 	
 		\addplot [thick, color=gray] table {
@@ -39,8 +37,6 @@
 		%\draw[smooth, samples=100,domain=0:2] plot(\x,{(\x)});
 		\end{tikzpicture}%
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		
-		\label{fig:exemploAnd}%
 		\caption{Funções de pertinência para C e D}%
 		\end{subfigure}%
     	~
@@ -48,7 +44,7 @@
 		\centering
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %		\resizebox{\linewidth}{!}{
-		\begin{tikzpicture}[scale = 0.65, auto, node distance=2cm, on grid, >=latex']%
+		\begin{tikzpicture}[scale = 0.35, auto, node distance=2cm, on grid, >=latex']%
 	\begin{axis}[xmax=38,ymax=1.1, samples=50]
 	
 		\addplot [color=gray] table {
@@ -68,7 +64,6 @@
 \end{tikzpicture}%
 %}
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\label{fig:exemploOr}%
 		\caption{Função de pertinência para regra $A \rightarrow C$, com $\mu_A =
 		0,75$}%
 		\end{subfigure}%
@@ -77,7 +72,7 @@
 		\centering
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %		\resizebox{\linewidth}{!}{
-		\begin{tikzpicture}[scale = 0.65, auto, node distance=2cm, on grid, >=latex']%
+		\begin{tikzpicture}[scale = 0.35, auto, node distance=2cm, on grid, >=latex']%
 	\begin{axis}[xmin = 2, xmax=38,ymax=1.1, samples=50]
 		
 		\addplot [color=gray] table {
@@ -96,11 +91,8 @@
 	\end{axis}	
 \end{tikzpicture}%
 %}
-		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		
-		\label{fig:fig3}%
+		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		\caption{Função de pertinência para regra $B \rightarrow D$, com $\mu_B =
-		0,25$}%
+		0,25$}%		
 		\end{subfigure}%
-		
-		\textbf{Fonte: baseado em \citeonline{fuzzy_passino}, p. 43 e 44.}
 \end{figure}

@@ -1,0 +1,115 @@
+\newcommand{\meuRoboLindaoCompEO}{
+
+	\begin{scope}[shift={(0,0.3)}]
+		% Pr 
+		\begin{scope}[shift={(0,-0.3)}, scale = 0.5]
+			\node[color = gray] at (0.1,-0.35) {$P_r$};
+		\end{scope}
+		\begin{scope}[rotate=90,scale=0.5]
+			\filldraw (0,0) circle (0.5pt);
+			\begin{scope}[shift={(0.25,0)},rotate = -90]
+				\RoboDiffClean
+			\end{scope}
+		\end{scope}
+	\end{scope}
+		
+	% Obstáculo
+	\begin{scope}[shift={(2,0)}]
+		\obstaculo{3}
+	\end{scope}
+}%
+
+\newcommand{\obstaculo}[1]{
+	\node[inner sep = 0pt] (P1) at (0,0) {};
+	\node[inner sep = 0pt] (P2) at (0.5,0) {};
+	\node[inner sep = 0pt] (P3) at (0.5,#1) {};
+	\node[inner sep = 0pt] (P4) at (0,#1) {};
+	\draw (P1) -- (P2);
+	\draw (P2) -- (P3);
+	\draw (P3) -- (P4);
+	\draw (P4) -- (P1);
+}
+
+\newcommand{\sensorVisaoTriangular}[1]{
+	\draw (0,0) -- (-0.1,#1);
+	\draw (0,0) -- (0.1,#1);
+	\draw (-0.1,#1) -- (0.1,#1);
+}
+
+\newcommand{\sensorVisaoVetor}[1]{
+	\draw[->] (0,0) -- (0,#1);
+}
+
+\newcommand{\desenharSensoresTriangulo}{
+	\node[color = gray] at (-2.58,0.6) {$d_1$};
+	\node[color = gray] at (-1.82,2.41) {$d_2$};
+	\node[color = gray] at (0,3.07) {$d_3$};
+	\node[color = gray] at (1.82,2.41) {$d_4$};
+	\node[color = gray] at (2.24,0.6) {$d_5$};
+	
+	\begin{scope}[shift={(0.38,0.6)},rotate=-90]
+		\sensorVisaoTriangular{2-0.38}
+	\end{scope}
+	\begin{scope}[shift={(-0.38,0.6)},rotate=90]
+		\sensorVisaoTriangular{2}
+	\end{scope}
+	\begin{scope}[shift={(0.28,0.77)},rotate=-45]
+		\sensorVisaoTriangular{2}
+	\end{scope}
+	\begin{scope}[shift={(-0.28,0.77)},rotate=45]
+		\sensorVisaoTriangular{2}
+	\end{scope}	
+	\begin{scope}[shift={(0,0.87)},rotate=0]
+		\sensorVisaoTriangular{2}
+	\end{scope}
+}
+
+\newcommand{\desenharSensoresVetores}{
+	\node[color = gray] at (-2.58,0.6) {$v_1$};
+	\node[color = gray] at (-1.82,2.41) {$v_2$};
+	\node[color = gray] at (0,3.07) {$v_3$};
+	\node[color = gray] at (1.82,2.41) {$v_4$};
+	\node[color = gray] at (2.24,0.6) {$v_5$};
+	
+	\begin{scope}[shift={(0.38,0.6)},rotate=-90]
+		\sensorVisaoVetor{2-0.38}
+	\end{scope}
+	\begin{scope}[shift={(-0.38,0.6)},rotate=90]
+		\sensorVisaoVetor{2}
+	\end{scope}
+	\begin{scope}[shift={(0.28,0.77)},rotate=-45]
+		\sensorVisaoVetor{2}
+	\end{scope}
+	\begin{scope}[shift={(-0.28,0.77)},rotate=45]
+		\sensorVisaoVetor{2}
+	\end{scope}	
+	\begin{scope}[shift={(0,0.87)},rotate=0]
+		\sensorVisaoVetor{2}
+	\end{scope}
+}
+
+
+\begin{figure}[ht]
+	\centering%
+	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering%
+			
+		\begin{tikzpicture}[scale = 1.1]%
+			\meuRoboLindaoCompEO
+			\desenharSensoresTriangulo
+		\end{tikzpicture}%
+		
+		\caption{Sensores infravermelho}%
+	\end{subfigure}%
+	~
+	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering%
+		
+		\begin{tikzpicture}[scale = 1.1]%
+			\meuRoboLindaoCompEO
+			\desenharSensoresVetores
+		\end{tikzpicture}%
+			
+		\caption{Vetores utilizados}%
+	\end{subfigure}%
+\end{figure}

@@ -1,0 +1,91 @@
+\newcommand{\desenharLinhasParedeC}[2]{
+	\begin{scope}[shift={(-0.38,0.6)},rotate=90]
+		\begin{scope}[shift={(0,2-1.3)}]
+			\node[inner sep = 0pt] (P1) at (0,0) {};
+		\end{scope}
+	\end{scope}
+	\begin{scope}[shift={(-0.28,0.77)},rotate=45]
+		\begin{scope}[shift={(0,2)}]
+			\node[inner sep = 0pt] (P2) at (0,0) {};
+		\end{scope}
+	\end{scope}
+	
+	\draw (P1) -- (P2);
+	
+	% linhas continuacao:
+	\def\UserVetAX{-1.08}
+	\def\UserVetAY{0.6}
+	
+	\def\UserVetXNum{\fpeval{-0.28-sqrt(2)+1.08}}
+	\def\UserVetYNum{\fpeval{0.77+sqrt(2)-0.6}}
+	\def\UserVetMod{\fpeval{sqrt(\UserVetXNum*\UserVetXNum + \UserVetYNum*\UserVetYNum)}}
+	
+	\def\UserVetX{\fpeval{\UserVetXNum/\UserVetMod}}
+	\def\UserVetY{\fpeval{\UserVetYNum/\UserVetMod}}
+	
+	\def\UserLinhaTrasX{\fpeval{-1.08 -\UserVetX*#1}}
+	\def\UserLinhaTrasY{\fpeval{0.6 -\UserVetY*#1}}
+	\def\UserLinhaFrenteX{\fpeval{-0.28-sqrt(2) +\UserVetX*#2}}
+	\def\UserLinhaFrenteY{\fpeval{0.77+sqrt(2) +\UserVetY*#2}}
+			
+	\draw [dashed] (P1) -- (\UserLinhaTrasX,\UserLinhaTrasY);
+	\draw [dashed] (P2) -- (\UserLinhaFrenteX,\UserLinhaFrenteY);
+	
+	\def\distance{\fpeval{\UserVetX * \UserVetAX + \UserVetY * (\UserVetAY - 0.3)}}
+	\begin{scope}[shift={(0,0.3)}]
+		\def\UserVetPerpX{\fpeval{\UserVetAX-\distance*\UserVetX}}
+		\def\UserVetPerpY{\fpeval{(\UserVetAY - 0.3)-\distance*\UserVetY}}
+		\def\UserVetPerpNormX{\UserVetPerpX/(sqrt(\UserVetPerpX*\UserVetPerpX + \UserVetPerpY*\UserVetPerpY))}
+		\def\UserVetPerpNormY{\UserVetPerpY/(sqrt(\UserVetPerpX*\UserVetPerpX + \UserVetPerpY*\UserVetPerpY))}
+	
+		\draw[-{Latex[length=2mm]}] (0,0) -- (P1) node [black,midway,yshift=-0.21cm,xshift=0.1cm] {$u_a$};
+		\begin{scope}[shift={(P1)}]
+			\draw[-{Latex[length=2mm]}] (0,0) -- (\UserVetX, \UserVetY) node [black,midway,xshift=-0.3cm,yshift=0.1cm] {$u_t$};
+		\end{scope}
+		\draw[-{Latex[length=2mm]}] (0,0) -- (\UserVetPerpX, \UserVetPerpY)
+		node [black,midway,yshift=0.3cm,xshift=0.2] {$u_p$};
+
+		\def\UserChavesX{\fpeval{\UserVetAX-\distance*\UserVetX}}
+		\def\UserChavesY{\fpeval{(\UserVetAY - 0.3)-\distance*\UserVetY}}	
+		\draw [decorate,decoration={brace,amplitude=10pt},xshift=-2pt,yshift=-2pt]
+			(\UserChavesX, \UserChavesY) -- (\fpeval{-1.08},\fpeval{0.3}) 
+			node [black,midway,xshift=0.6cm, yshift=0.1cm] {$d$};
+			
+		% angulo reto:
+		\def\UserTamanhoQuad{0.15}
+		\def\UserPontoEsqX{\fpeval{\UserVetPerpX - \UserTamanhoQuad*\UserVetPerpNormX}}
+		\def\UserPontoEsqY{\fpeval{\UserVetPerpY - \UserTamanhoQuad*\UserVetPerpNormY}}
+		\def\UserPontoDirX{\fpeval{\UserVetPerpX + \UserTamanhoQuad*\UserVetX}}
+		\def\UserPontoDirY{\fpeval{\UserVetPerpY + \UserTamanhoQuad*\UserVetY}}
+		\def\UserPontoBaixoX{\fpeval{\UserVetPerpX - \UserTamanhoQuad*\UserVetPerpNormX + \UserTamanhoQuad*\UserVetX}}
+		\def\UserPontoBaixoY{\fpeval{\UserVetPerpY - \UserTamanhoQuad*\UserVetPerpNormY + \UserTamanhoQuad*\UserVetY}}
+		
+		\draw (\UserVetPerpX, \UserVetPerpY) -- (\UserPontoEsqX, \UserPontoEsqY);
+		\draw (\UserVetPerpX, \UserVetPerpY) -- (\UserPontoDirX, \UserPontoDirY);
+		\draw (\UserPontoEsqX, \UserPontoEsqY) -- (\UserPontoBaixoX, \UserPontoBaixoY);
+		\draw (\UserPontoDirX, \UserPontoDirY) -- (\UserPontoBaixoX, \UserPontoBaixoY);
+		
+		\filldraw (\fpeval{\UserVetPerpX - \UserTamanhoQuad*\UserVetPerpNormX/2 + \UserTamanhoQuad*\UserVetX/2}, 
+		\fpeval{\UserVetPerpY - \UserTamanhoQuad*\UserVetPerpNormY/2 + \UserTamanhoQuad*\UserVetY/2}) circle (0.5pt);
+		
+		% Ângulo vetor
+		\begin{scope}[shift={(P1)}, rotate=180]
+			\draw (0.3*\UserVetX,0.3*\UserVetY) arc (110:160:0.3);
+			\node at (-0.35,0.25) {\footnotesize $\theta$};
+		\end{scope}
+	\end{scope}
+}
+
+\begin{figure}[ht]
+	\centering%	
+	\begin{tikzpicture}[scale = 1.1]%
+		% Obstáculo
+		%\parede{3}{2}
+		% Robô
+		\begin{scope}[shift={(-1.1,1.4)},rotate=180]
+			\meuRoboLindaoCompSP
+			\desenharSensoresTrianguloSPa
+			\desenharLinhasParedeC{3}{2}
+		\end{scope}
+	\end{tikzpicture}%
+\end{figure}

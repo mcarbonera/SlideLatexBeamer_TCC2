@@ -1,0 +1,528 @@
+\subsection{Fundamentos Teóricos}
+\begin{frame}
+	\frametitle{Arquitetura comportamental}
+	\input{Figuras/acoes}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comportamentos como campos potenciais}
+	\input{Figuras/CampoVet}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Mínimos locais}
+		\begin{itemize}
+		  \item Existência de mínimos locais depende da disposição e formato de
+		  obstáculos.
+		  \item Um comportamento ``Seguidor de parede'' pode ser criado a fim de
+		  contornar obstáculos.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+% Mínimos locais (obstáculos côncavos e convexos).
+% Comportamento Seguir parede.
+
+\begin{frame}
+	\frametitle{Modelo Cinemático}
+	\input{Figuras/Modelos}
+\end{frame}
+
+\begin{frame}
+	\begin{tabular}{cl}  
+    	\begin{tabular}{c}
+			\robounicicloinercial
+		\end{tabular}
+		& \begin{tabular}{l}
+			\parbox{0.5\linewidth}{
+				$
+					\left \{ \begin{matrix} \dot{x} &= v\cos{\phi} \\ \dot{y} &= v\sin{\phi} \\
+					\dot{\phi} &= \omega \end{matrix} \right.
+				$
+				
+				$
+					\mleft[ 
+					\begin{array}{c c}
+					\dot{x} \\ \dot{y} \\ \dot{\phi}
+					\end{array}
+					\mright] = \mleft[
+					\begin{matrix}
+		  				\cos{\phi} & 0 \\
+		  				\sin{\phi} & 0 \\
+		  				0 & 1 \\
+					\end{matrix}
+					\mright] \mleft[ 
+					\begin{array}{c c}
+					v \\ \omega
+					\end{array}
+					\mright]
+				$
+			}
+		\end{tabular}\\
+	\end{tabular}
+\end{frame}
+
+\begin{frame}
+	\begin{tabular}{cl}
+    	\begin{tabular}{c}
+    		\parbox{0.5\linewidth}{
+			$
+				\left \{ \begin{matrix} \dot{x} = \frac{R}{2}(\omega_l +
+				\omega_r)\cos{\phi}
+				\\
+				\dot{y} = \frac{R}{2}(\omega_l +
+				\omega_r)\sin{\phi}
+				\\
+				\dot{\phi} = \frac{R}{L}(\omega_r -
+				\omega_l) \end{matrix} \right.
+			$
+			}
+		\end{tabular}
+		\begin{tabular}{l}
+			\robodiffinercial
+		\end{tabular}
+	\end{tabular}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Estabelecendo vínculo entre os modelos}
+	\vfill
+	\begin{tabular}{cl}  
+		\begin{tabular}{c}
+			\parbox{0.5\linewidth}{
+			$
+				\left \{ \begin{matrix} \dot{x} = \frac{R}{2}(\omega_l +
+				\omega_r)\cos{\phi}
+				\\
+				\dot{y} = \frac{R}{2}(\omega_l +
+				\omega_r)\sin{\phi}
+				\\
+				\dot{\phi} = \frac{R}{L}(\omega_r -
+				\omega_l) \end{matrix} \right.
+			$
+			}
+		\end{tabular}
+		& \begin{tabular}{l}
+			\parbox{0.5\linewidth}{
+			$
+				\left \{ \begin{matrix} \dot{x} &= v\cos{\phi} \\ \dot{y} &= v\sin{\phi} \\
+				\dot{\phi} &= \omega \end{matrix} \right.
+			$
+			}
+		\end{tabular}
+	\end{tabular}
+	\vfill
+	\begin{exampleblock}{\centerline{Equivalência entre modelos}}
+	\centerline{
+	$
+	\begin{matrix}
+		\omega_l = \frac{2v - L\omega}{2R} 
+		\\
+		\\	
+		\omega_r = \frac{2v + L\omega}{2R}
+	\end{matrix}
+	$
+	}
+	\end{exampleblock}
+	\vfill
+\end{frame}
+
+\setbeamercovered{invisible}
+\begin{frame}
+	\frametitle{O modelo de integrador único}
+	\begin{tabular}{cl}
+    	\begin{tabular}{c}
+    		\hspace{-1cm}
+    		\parbox{0.5\linewidth}{
+    		\vspace{1.3cm}
+    		\begin{itemize}
+    		\item<1->[]
+			$
+				\left \{ \begin{matrix} x' = x_o + l\cos{\phi}
+				\\
+				y' = y_o + l\sin{\phi}
+				\end{matrix} \right.
+			$
+			\item<2->[]
+			$
+				\left \{ \begin{matrix} \dot{x'} = \dot{x_o} - \dot{\phi}l\sin{\phi} =
+				v\cos{\phi} - l\omega\sin{\phi}
+				\\
+				\dot{y'} = \dot{y_o} + \dot{\phi}l\cos{\phi} = v\sin{\phi} +
+				l\omega\cos{\phi} \end{matrix} \right.
+			$
+			\item<3->[]
+			\mbox{\small
+			$
+				\mleft[ 
+				\begin{array}{c c}
+				\dot{x'} \\ \dot{y'}
+				\end{array}
+				\mright] = \mleft[
+				\begin{matrix}
+		  			\cos{\phi} & -\sin{\phi} \\
+		  			\sin{\phi} & \cos{\phi} \\
+				\end{matrix}
+				\mright] \mleft[
+				\begin{matrix}
+		  			1 & 0 \\
+		  			0 & l \\
+				\end{matrix}
+				\mright] \mleft[ 
+				\begin{array}{c c}
+				v \\ \omega
+				\end{array}
+				\mright]
+			$
+			}
+			\item<4->[]
+			\mbox{\small
+			$
+				\mleft[ 
+				\begin{array}{c c}
+				v \\ \omega
+				\end{array}
+				\mright] = \mleft[
+				\begin{matrix}
+					1 & 0 \\
+		  			0 & \frac{1}{l} \\
+				\end{matrix}
+				\mright] \mleft[
+				\begin{matrix}
+		  			\cos{\phi} & \sin{\phi} \\
+		  			-\sin{\phi} & \cos{\phi} \\
+				\end{matrix}
+				\mright] \mleft[ 
+				\begin{array}{c c}
+					\dot{x'} \\ \dot{y'}
+				\end{array}
+				\mright]
+			$
+			}
+			\item<5>[]
+			\mbox{\small
+			$
+				\mleft[ 
+				\begin{array}{c c}
+					\omega_l \\ \omega_r
+				\end{array}
+				\mright] = \mleft[
+				\begin{matrix}
+		  			\frac{1}{R} & \frac{-L}{2R} \\
+		  			\frac{1}{R} & \frac{L}{2R} \\
+				\end{matrix}
+				\mright] \mleft[
+				\begin{matrix}
+		  			1 & 0 \\
+		  			0 & \frac{1}{l} \\
+				\end{matrix}
+				\mright] \mleft[
+				\begin{matrix}
+		  			\cos{\phi} & \sin{\phi} \\
+		  			-\sin{\phi} & \cos{\phi} \\
+				\end{matrix}
+				\mright] \mleft[ 
+				\begin{array}{c c}
+					\dot{x'} \\ \dot{y'}
+				\end{array}
+				\mright]
+			$
+			}
+			\end{itemize}
+			}
+		\end{tabular}
+		\begin{tabular}{l}
+			\hspace{1cm}
+			\robodiffinercial
+		\end{tabular}
+	\end{tabular}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sistemas a Eventos Discretos}
+	\begin{block}{Definição}
+		\begin{itemize}
+		  \item Sistema Dinâmico.
+		  \item Estados discretos.
+		  \item Eventos assíncronos provocam transições instantâneas de estado.
+		  \item Arbitragem!
+		\end{itemize}
+	\end{block}
+	
+	\vspace{-0.15cm}
+	\input{Figuras/DiagramaTransicao}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Controle Supervisório}
+	\begin{block}{Definição}
+		\begin{itemize}
+		  \item Captura eventos observáveis.
+		  \item Permite ou suprime eventos passíveis de ocorrência.
+		\end{itemize}
+	\end{block}
+	
+	\vspace{0.3cm}
+	\input{Figuras/SupMalhaFechada}
+\end{frame}
+
+\begin{frame}	
+	\frametitle{Automatos Temporizados com guarda}
+	
+	\begin{exampleblock}{\textit{clocks}}
+		\begin{itemize}
+		  \item ``Contador'': associado a tempo.
+		  \item Definido por uma função linear ($\dot{x} = 1$).
+		\end{itemize}
+	\end{exampleblock}
+	
+	\begin{block}{Função de transição}
+		\begin{itemize}
+		  \item Transições: (Estado, Evento) $\rightarrow$ (Estado)
+		  \item Transições Temporizadas: (Guardas, Evento, \textit{Reset})
+		  $\rightarrow$ (Estado)
+		  \subitem{Guardas: condições nas variáveis contínuas.}
+		  \subitem{\textit{Reset}: conjunto de variáveis \textit{clock} às quais
+		  deve-se atribuir valor zero.}
+		\end{itemize}
+	\end{block}
+	
+\end{frame}
+
+\begin{frame}
+	\vspace{-0.6cm}
+	\input{Figuras/AutTempGuarda}
+	\pause
+	\begin{exampleblock}{Invariante}
+		Evita \textit{deadlock} por tempo ao forçar transição!
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Sistemas Híbridos}
+	\begin{block}{Definição}
+		\begin{itemize}
+		  \item Estados formados por tuplas (q,\textbf{x}).
+		  \subitem{q: Estados discretos}.
+		  \subitem{\textbf{x}: Estados contínuos}.
+		  \item Autômato híbrido extende o autômato temporizado com guardas.
+		  \item Estados são chamados ``\textbf{modos de operação}'', pois alteram a
+		  dinâmica do sistema.
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{exampleblock}{Arbitragem}
+		Chaveamento de dinâmicas (controladores).
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/Supervisorio}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}{Campos vetoriais descontínuos}
+		\begin{itemize}
+		  \item Regiões de costura.
+		  \item Deslizamento.
+		  \item Comportamento de Zenão.
+		  \item Regularização.
+		\end{itemize}
+	\end{exampleblock}
+	\pause
+	\begin{overprint}
+	
+	\onslide<2>
+	\vspace{1cm}
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}[scale = 1,->,auto ,node distance =4 cm and 5cm ,on grid ,
+		>=latex',
+		state/.style ={scale = 1,circle, draw, minimum width =0.7cm},
+		finalstate/.style ={scale = 1,circle, draw, minimum width =0.7cm}]
+			\coordinate (supa) {};
+			\coordinate[right = 4cm of supa] (supb) {};
+			\draw[-,dashed] (supa) to [out=45,in=135] (supb);
+	
+			\coordinate[above right = 2cm of supa, inner sep = 0pt] (in1) {};
+			\coordinate[below = 1.25cm of in1, inner sep = 0pt] (in2) {};
+			\coordinate[below right = 0.835cm of in1] (dest) {};
+			\path[->] (in1) edge node[above right] {$f_1$} (dest);
+			\path[->] (in2) edge node[below right] {$f_2$}(dest);
+	
+			\coordinate[right = 0.7cm of dest, inner sep = 0pt] (dest2) {};
+			\path[->] (dest) edge node[above right] {$f_S$}(dest2);
+	
+			\node[above = 0.5cm of supb] (b) {$\sigma = 0$};
+		\end{tikzpicture}%
+	\end{figure}
+	
+	\onslide<3>
+	\vspace{-0.4cm}
+	\begin{figure}[h]
+		\centering
+		\begin{tikzpicture}[scale = 1,->,auto ,node distance =4 cm and 5cm ,on grid ,
+		>=latex' ,
+		state/.style ={scale = 1,circle, draw, minimum width =0.7cm},
+		finalstate/.style ={scale = 1,circle, draw, minimum width =0.7cm}]
+			\node[ellipse, draw] (f1) {$\dot{x} = f_1$};
+			\node[ellipse, draw, right = 3.5cm of f1] (f2) {$\dot{x} = f_2$};
+	
+			\draw (f1) to [out=30,in=150] node[above] {$\sigma \leq 0$} (f2);
+			\draw (f2) to [out=210,in=330] node[below] {$\sigma \geq 0$} (f1);
+	
+			\node[ellipse, draw, below = 2.8cm of f1] (f1l) {$\dot{x} = f_1$};
+			\node[ellipse, draw, right = 2.5cm of f1l] (fsl) {$\dot{x} = f_S$};
+			\node[ellipse, draw, right = 2.5cm of fsl] (f2l) {$\dot{x} = f_2$};
+	
+			\draw (f1l) to [out=30,in=150] node[above] {$\sigma \leq 0$} (fsl);
+			\draw (fsl) to [out=210,in=330] node[below] {$\sigma > 0$} (f1l);
+			\draw (fsl) to [out=30,in=150] node[above] {$\sigma < 0$} (f2l);
+			\draw (f2l) to [out=210,in=330] node[below] {$\sigma \geq 0$} (fsl);
+		\end{tikzpicture}%
+	\end{figure}
+	%\input{Figuras/Sliding}
+	\end{overprint}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/ExemploSliding}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Controlador PID}
+	\input{Figuras/PIDPassadoPresenteFuturo}
+	\onslide<2>
+	\vspace{-0.5cm}
+	\begin{exampleblock}{PID tempo contínuo}
+		\begin{equation}
+			u(t) = k_p e(t) + k_i \int_0^t e(\tau) d\tau + k_d \frac{de(t)}{dt}
+		\end{equation}
+	\end{exampleblock}
+	\onslide<3>
+	\vspace{-2.5cm}
+	\begin{exampleblock}{PID tempo discreto}
+		\begin{equation}
+			u(k) = k_p e(k) + k_i T_d \sum_0^k e(k) + k_d \frac{e(k) - e(k-1)}{T_d}
+		\end{equation}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Lógica \textit{Fuzzy} em controle}
+	\vspace{-0.1cm}
+	\begin{block}{Conjuntos \textit{fuzzy}}
+		\begin{itemize}
+		  \item Variável linguística.
+		  \item Valor linguístico.
+		  \item Grau de pertinência.
+		\end{itemize}
+	\end{block}	
+	\pause
+	\begin{exampleblock}{Motivação para uso}
+		\begin{itemize}
+		  \item Mescla aspectos exatos e elementos qualitativos.
+		\end{itemize}
+	\end{exampleblock}
+	\pause
+	\begin{block}{Indicação e contraindicação}
+		\begin{itemize}
+		  \item Indicada em sistemas \textbf{complexos}, compreendidos parcialmente.
+		  \item Deseja-se solução rápida.
+		  \item Não apropriada para sistemas simples (LIT).
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/ControladorFuzzy}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{\textit{Fuzzyficação}}
+		\begin{itemize}
+		  \item Associa variáveis numéricas a conjuntos \textit{fuzzy}.
+		  \item Saída: conjunto de graus de pertinência vinculados a valores
+		  linguísticos.
+		\end{itemize}
+	\end{block}
+	\pause
+	\begin{exampleblock}{Mecanismo de Inferência}
+		\begin{itemize}
+		  \item Base de regras ($P \rightarrow Q$).
+		  \item Pertinência das premissas determinam pertinências das saídas.
+		  \item Conjunto de ``recomendações''.
+		\end{itemize}
+	\end{exampleblock}
+	\pause
+	\begin{block}{\textit{Defuzzificação}}
+		\begin{itemize}
+		  \item A partir de recomendações distintas, determinam-se as saídas.
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/ConjuntosFuzzy}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/ANDOR}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/FuzzyInferencia}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/FuzzyDefuzzificacao}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Defuzzificação COG}
+		\begin{equation}
+			u_{crisp} = \frac{\sum_i b_i \int \mu_i}{\sum_i \int \mu_i}
+		\end{equation}
+		\begin{itemize}
+		  \item $b_i$ é o centro da função de pertinência.
+		  \item $\int \mu_i$ para funções triangulares vale $b(h-\frac{h^2}{2})$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Defuzzificação COG}
+		\begin{equation}
+			u_{crisp} = \frac{\int \mu^* (x) x dx}{\int \mu^* (x) dx}
+		\end{equation}
+		\begin{itemize}
+		  \item $\mu^*$ é calculada pela função max() sobre funções de pertinência
+		  parciais.
+		\end{itemize}
+	\end{block}
+\end{frame}
+	
+\begin{frame}
+	\frametitle{Odometria}
+	\vspace{1.0cm}
+	\input{Figuras/motorOdometria}
+	
+	\onslide<2>
+	\begin{block}{Estimativa de velocidade}
+		\begin{equation}
+			V_{pneu} = \frac{N_{ticks}}{N_{PPR}} \frac{2\pi R}{T}
+		\end{equation}
+	\end{block}
+	
+	\onslide<3>
+	\vspace{-2.0cm}
+	\begin{exampleblock}{Estimativa de velocidade}
+		\begin{equation}
+			\left \{ \begin{matrix} x' = x + \frac{d_{esq} + d_{dir}}{2} \cos{\phi}
+			\\
+			y' = y + \frac{d_{esq} + d_{dir}}{2} \sin{\phi}
+			\\
+			\phi' = \phi + \frac{d_{dir} - d_{esq}}{L} \end{matrix} \right.
+		\end{equation}
+	\end{exampleblock}
+\end{frame}

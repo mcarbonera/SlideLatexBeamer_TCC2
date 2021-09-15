@@ -10,13 +10,11 @@
 % Figura
 \begin{figure}[h]
 \centering
-\caption{Operações união e intersecção em conjuntos \textit{Fuzzy}} 
-	\label{fig:ANDOR}
 	\begin{subfigure}[t]{0.5\textwidth}%
 		\centering
 		
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\begin{tikzpicture}[scale = 1, auto, node distance=2cm, on grid, >=latex']%
+		\begin{tikzpicture}[scale = 0.7, auto, node distance=2cm, on grid, >=latex']%
 	\begin{axis}[xmax=38,ymax=1.1, samples=50]
 	
 		\addplot[color=gray] table {
@@ -43,15 +41,13 @@
 	%\draw[smooth, samples=100,domain=0:2] plot(\x,{(\x)});
 \end{tikzpicture}%
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-		\label{fig:exemploAnd}%
 		\caption{Intersecção usando função ``min''}%
 		\end{subfigure}%
     	~
     	\begin{subfigure}[t]{0.5\textwidth}%
 		\centering
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\begin{tikzpicture}[scale = 1, auto, node distance=2cm, on grid, >=latex']%
+		\begin{tikzpicture}[scale = 0.7, auto, node distance=2cm, on grid, >=latex']%
 	\begin{axis}[xmax=38,ymax=1.1, samples=50]
 	
 		\addplot [color=gray] table {
@@ -77,12 +73,8 @@
   		%\addplot[blue, ultra thick] (x,x/10);
   		%\addplot[red,  ultra thick] (x,x/10 + 1);
 	\end{axis}	
-	%\draw[smooth, samples=100,domain=0:2] plot(\x,{(\x)});
 \end{tikzpicture}%
 		%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-		\label{fig:exemploOr}%
 		\caption{União usando função ``max''}%
 		\end{subfigure}%
-		
-		\textbf{Fonte: baseado em \citeonline{fuzzylilly}, p. 20 e 21.}
 \end{figure}

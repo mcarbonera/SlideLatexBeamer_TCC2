@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.11.1)  31 AUG 2021 22:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.11.1)  15 SEP 2021 16:57
 entering extended mode
 **./document.tex
 (document.tex
@@ -1144,7 +1144,24 @@ File: tikzlibraryplotmarks.code.tex 2020/10/01 v3.1.6a (3.1.6a)
 ("C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.te
 x"
 File: pgflibraryplotmarks.code.tex 2020/10/01 v3.1.6a (3.1.6a)
-))) ("C:\Program Files\MiKTeX\tex/latex/dot2texi\dot2texi.sty"
+)))
+("C:\Program Files\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.fillbet
+ween.code.tex"
+("C:\Program Files\MiKTeX\tex/generic/pgfplots/pgfcontrib\tikzlibraryfillbetwee
+n.code.tex"
+("C:\Program Files\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibr
+aryintersections.code.tex"
+("C:\Program Files\MiKTeX\tex/generic/pgf/libraries\pgflibraryintersections.cod
+e.tex"
+\pgf@intersect@solutions=\count349
+))
+("C:\Program Files\MiKTeX\tex/generic/pgfplots/pgfcontrib\tikzlibrarydecoration
+s.softclip.code.tex"
+("C:\Program Files\MiKTeX\tex/generic/pgfplots/pgfcontrib\pgflibraryfillbetween
+.code.tex")))
+("C:\Program Files\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.decorat
+ions.softclip.code.tex"))
+("C:\Program Files\MiKTeX\tex/latex/dot2texi\dot2texi.sty"
 Package: dot2texi 2008/05/07 v3.0p1 Run dot2tex from LaTeX
 
 ("C:\Program Files\MiKTeX\tex/latex/moreverb\moreverb.sty"
@@ -1156,9 +1173,9 @@ Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks56
 \verbatim@in@stream=\read4
 )
-\tab@position=\count349
-\tab@size=\count350
-\listing@line=\count351
+\tab@position=\count350
+\tab@size=\count351
+\listing@line=\count352
 )
 ("C:\Program Files\MiKTeX\tex/latex/xkeyval\xkeyval.sty"
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
@@ -1168,11 +1185,11 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 \XKV@toks=\toks57
 \XKV@tempa@toks=\toks58
 )
-\XKV@depth=\count352
+\XKV@depth=\count353
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 \verbatim@out=\write5
-runsystem(echo 'write18-test-20218311369'>"document.w18")...disabled (restricte
+runsystem(echo 'write18-test-20219151017'>"document.w18")...disabled (restricte
 d).
 
 
@@ -1180,14 +1197,14 @@ d).
 Package dot2texi Warning: Shell escape not enabled.
 (dot2texi)                You'll need to convert the graphs yourself..
 
-\c@dtt@fignum=\count353
+\c@dtt@fignum=\count354
 ) ("C:\Program Files\MiKTeX\tex/latex/l3packages/xfp\xfp.sty"
 ("C:\Program Files\MiKTeX\tex/latex/l3kernel\expl3.sty"
 Package: expl3 2020-10-05 L3 programming layer (loader) 
 
 ("C:\Program Files\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def"
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
-\l__kernel_color_stack_int=\count354
+\l__kernel_color_stack_int=\count355
 \l__pdf_internal_box=\box102
 ))
 ("C:\Program Files\MiKTeX\tex/latex/l3packages/xparse\xparse.sty"
@@ -1199,30 +1216,163 @@ Package: xfp 2020-10-05 L3 Floating point unit
 ("C:\Program Files\MiKTeX\tex/generic/mleftright\mleftright.sty"
 Package: mleftright 2019/12/03 v1.2 Math left/right delim. as open/close (HO)
 )
-LaTeX Font Info:    Trying to load font information for T1+aess on input line 2
-34.
+("C:\Program Files\MiKTeX\tex/latex/base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Program Files\MiKTeX\tex/latex/multirow\multirow.sty"
+Package: multirow 2019/05/31 v2.5 Span multiple rows of a table
+\multirow@colwidth=\skip67
+\multirow@cntb=\count356
+\multirow@dima=\skip68
+\bigstrutjot=\dimen330
+)
+("C:\Program Files\MiKTeX\tex/latex/slashbox\slashbox.sty"
+slashbox style by K.Yasuoka, May 1993.
+\@slashboxa=\box103
+\@slashboxb=\box104
+\@slashboxc=\box105
+\@slashboxwd=\count357
+\@slashboxht=\count358
+\@slashsepl=\dimen331
+\@slashsepr=\dimen332
+) ("C:\Program Files\MiKTeX\tex/latex/mathtools\mathtools.sty"
+Package: mathtools 2020/03/24 v1.24 mathematical typesetting tools
 
-("C:\Program Files\MiKTeX\tex/latex/ae\t1aess.fd"
+("C:\Program Files\MiKTeX\tex/latex/tools\calc.sty"
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count359
+\calc@Bcount=\count360
+\calc@Adimen=\dimen333
+\calc@Bdimen=\dimen334
+\calc@Askip=\skip69
+\calc@Bskip=\skip70
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count361
+\calc@Cskip=\skip71
+)
+("C:\Program Files\MiKTeX\tex/latex/mathtools\mhsetup.sty"
+Package: mhsetup 2017/03/31 v1.3 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
+\g_MT_multlinerow_int=\count362
+\l_MT_multwidth_dim=\dimen335
+\origjot=\skip72
+\l_MT_shortvdotswithinadjustabove_dim=\dimen336
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen337
+\l_MT_above_intertext_sep=\dimen338
+\l_MT_below_intertext_sep=\dimen339
+\l_MT_above_shortintertext_sep=\dimen340
+\l_MT_below_shortintertext_sep=\dimen341
+\xmathstrut@box=\box106
+\xmathstrut@dim=\dimen342
+)
+("C:\Program Files\MiKTeX\tex/latex/algorithm2e\algorithm2e.sty"
+Package: algorithm2e 2017/07/18 v5.2 algorithms environments
+\c@AlgoLine=\count363
+\algocf@hangindent=\skip73
+
+("C:\Program Files\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty"
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count364
+)
+("C:\Program Files\MiKTeX\tex/latex/tools\xspace.sty"
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+)
+("C:\Program Files\MiKTeX\tex/latex/relsize\relsize.sty"
+Package: relsize 2013/03/29 ver 4.1
+)
+\skiptotal=\skip74
+\skiplinenumber=\skip75
+\skiprule=\skip76
+\skiphlne=\skip77
+\skiptext=\skip78
+\skiplength=\skip79
+\algomargin=\skip80
+\skipalgocfslide=\skip81
+\algowidth=\dimen343
+\inoutsize=\dimen344
+\inoutindent=\dimen345
+\interspacetitleruled=\dimen346
+\interspacealgoruled=\dimen347
+\interspacetitleboxruled=\dimen348
+\algocf@ruledwidth=\skip82
+\algocf@inoutbox=\box107
+\algocf@inputbox=\box108
+\AlCapSkip=\skip83
+\AlCapHSkip=\skip84
+\algoskipindent=\skip85
+\algocf@nlbox=\box109
+\algocf@hangingbox=\box110
+\algocf@untilbox=\box111
+\algocf@skipuntil=\skip86
+\algocf@capbox=\box112
+\algocf@lcaptionbox=\skip87
+\algoheightruledefault=\skip88
+\algoheightrule=\skip89
+\algotitleheightruledefault=\skip90
+\algotitleheightrule=\skip91
+\c@algocfline=\count365
+\c@algocfproc=\count366
+\c@algocf=\count367
+\algocf@algoframe=\box113
+\algocf@algobox=\box114
+) (algorithm_PT.sty
+
+LaTeX Warning: You have requested package `algorithm_PT',
+               but the package provides `algorithm'.
+
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+("C:\Program Files\MiKTeX\tex/latex/float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count368
+\float@exts=\toks59
+\float@box=\box115
+\@float@everytoks=\toks60
+\@floatcapt=\box116
+)
+\@float@every@algorithm=\toks61
+\c@algorithm=\count369
+) (algorithmic_PT.sty
+
+LaTeX Warning: You have requested package `algorithmic_PT',
+               but the package provides `algorithmic'.
+
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count370
+\c@ALC@line=\count371
+\c@ALC@rem=\count372
+\c@ALC@depth=\count373
+\ALC@tlm=\skip92
+\algorithmicindent=\skip93
+)
+LaTeX Font Info:    Trying to load font information for T1+aess on input line 3
+37.
+ ("C:\Program Files\MiKTeX\tex/latex/ae\t1aess.fd"
 File: t1aess.fd 1997/11/16 Font definitions for T1/aess.
 ) (document.aux)
 \openout1 = `document.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 234.
-LaTeX Font Info:    ... okay on input line 234.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 337.
+LaTeX Font Info:    ... okay on input line 337.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1260,23 +1410,23 @@ LaTeX Font Info:    ... okay on input line 234.
 
 ("C:\Program Files\MiKTeX\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count355
-\scratchdimen=\dimen330
-\scratchbox=\box103
-\nofMPsegments=\count356
-\nofMParguments=\count357
-\everyMPshowfont=\toks59
-\MPscratchCnt=\count358
-\MPscratchDim=\dimen331
-\MPnumerator=\count359
-\makeMPintoPDFobject=\count360
-\everyMPtoPDFconversion=\toks60
+\scratchcounter=\count374
+\scratchdimen=\dimen349
+\scratchbox=\box117
+\nofMPsegments=\count375
+\nofMParguments=\count376
+\everyMPshowfont=\toks62
+\MPscratchCnt=\count377
+\MPscratchDim=\dimen350
+\MPnumerator=\count378
+\makeMPintoPDFobject=\count379
+\everyMPtoPDFconversion=\toks63
 ) ("C:\Program Files\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty"
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Package hyperref Info: Link coloring OFF on input line 234.
+Package hyperref Info: Link coloring OFF on input line 337.
 
 ("C:\Program Files\MiKTeX\tex/latex/hyperref\nameref.sty"
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1287,58 +1437,58 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ("C:\Program Files\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty"
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count361
+\c@section@level=\count380
 )
-LaTeX Info: Redefining \ref on input line 234.
-LaTeX Info: Redefining \pageref on input line 234.
-LaTeX Info: Redefining \nameref on input line 234.
+LaTeX Info: Redefining \ref on input line 337.
+LaTeX Info: Redefining \pageref on input line 337.
+LaTeX Info: Redefining \nameref on input line 337.
 
 (document.out) (document.out)
 \@outlinefile=\write6
 \openout6 = `document.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 234.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 337.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 234.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/b/n on input line 337.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/aer/m/n on input line 234.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 234.
+(Font)                  OT1/cmss/m/n --> T1/aer/m/n on input line 337.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> T1/aess/b/n on input line 234.
+(Font)                  OT1/cmr/bx/n --> T1/aess/b/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> T1/aess/b/n on input line 234.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 234.
+(Font)                  OT1/cmr/bx/n --> T1/aess/b/n on input line 337.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> T1/aess/m/n on input line 234.
+(Font)                  OT1/cmss/m/n --> T1/aess/m/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> T1/aess/m/n on input line 234.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 234.
+(Font)                  OT1/cmss/bx/n --> T1/aess/m/n on input line 337.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> T1/aess/m/it on input line 234.
+(Font)                  OT1/cmr/m/it --> T1/aess/m/it on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> T1/aess/m/it on input line 234.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 234.
+(Font)                  OT1/cmr/bx/it --> T1/aess/m/it on input line 337.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> T1/aett/m/n on input line 234.
+(Font)                  OT1/cmtt/m/n --> T1/aett/m/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> T1/aett/m/n on input line 234.
+(Font)                  OT1/cmtt/m/n --> T1/aett/m/n on input line 337.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/aess/m/n --> T1/aess/b/n on input line 234.
+(Font)                  T1/aess/m/n --> T1/aess/b/n on input line 337.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/aess/m/it --> T1/aess/b/it on input line 234.
+(Font)                  T1/aess/m/it --> T1/aess/b/it on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/b/n --> T1/aer/b/n on input line 234.
+(Font)                  OT1/cmss/b/n --> T1/aer/b/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/aess/b/n --> T1/aess/b/n on input line 234.
+(Font)                  T1/aess/b/n --> T1/aess/b/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/aess/m/n --> T1/aess/b/n on input line 234.
+(Font)                  T1/aess/m/n --> T1/aess/b/n on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/aess/m/it --> T1/aess/b/it on input line 234.
+(Font)                  T1/aess/m/it --> T1/aess/b/it on input line 337.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/aett/m/n --> T1/aett/b/n on input line 234.
+(Font)                  T1/aett/m/n --> T1/aett/b/n on input line 337.
 
 ("C:\Program Files\MiKTeX\tex/latex/translator\translator-basic-dictionary-Engl
 ish.dict"
@@ -1364,114 +1514,67 @@ Dictionary: translator-numbers-dictionary, Language: English
 glish.dict"
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-\c@lstlisting=\count362
+\c@lstlisting=\count381
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
 ick labels; missing features). Consider writing \pgfplotsset{compat=1.17} into 
 your preamble.
- on input line 234.
+ on input line 337.
 
 (document.nav)
 LaTeX Font Info:    Font shape `T1/aess/b/n' in size <10> not available
-(Font)              Font shape `T1/aess/bx/n' tried instead on input line 238.
+(Font)              Font shape `T1/aess/bx/n' tried instead on input line 344.
 LaTeX Font Info:    Font shape `T1/aess/m/it' in size <10> not available
-(Font)              Font shape `T1/aess/m/sl' tried instead on input line 238.
-LaTeX Font Info:    Font shape `T1/aess/m/it' in size <10.95> not available
-(Font)              Font shape `T1/aess/m/sl' tried instead on input line 238.
-
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[1
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 344.
+ [1
 
 {C:/Users/Luiz/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./Estilo/Logo/ut
-fpr.pdf>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 261
-.
- ("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd"
+fpr.pdf>] (src/Indice.tex
+LaTeX Font Info:    Trying to load font information for U+msa on input line 17.
+
+
+("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 261
-.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 17.
+
 
 ("C:\Program Files\MiKTeX\tex/latex/amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Font shape `T1/aess/m/it' in size <10.95> not available
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 17.
 LaTeX Font Info:    Font shape `T1/aess/m/it' in size <8> not available
-(Font)              Font shape `T1/aess/m/sl' tried instead on input line 261.
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 17.
 LaTeX Font Info:    Font shape `T1/aess/m/it' in size <6> not available
-(Font)              Font shape `T1/aess/m/sl' tried instead on input line 261.
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 17.
+ [2
 
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+]) (src/Introducao.tex [3
 
-[2
+] [4
 
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+] [5
 
-[3
+] [6
 
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+] [7
 
-[4
+]) (src/Objetivos.tex [8
 
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+] [9
 
-[5
-
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[6
-
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[7
-
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[8
-
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[9
-
-] (Figuras/acoes.tex
+]) (src/FundamentosTeoricos.tex
+(Figuras/acoes.tex
 Overfull \hbox (4.86171pt too wide) in paragraph at lines 16--95
  []  [] 
  []
 
-)
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[10
+) [10
 
 ] (Figuras/CampoVet.tex
 NOTE: coordinate (2Y2.0e0],2Y2.0e0],0Y0.0e0]) has been dropped because it is un
@@ -4525,252 +4628,183 @@ Overfull \hbox (4.86171pt too wide) in paragraph at lines 6--78
  []  [] 
  []
 
-)
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+) [11
 
-[11
-
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[12
+] [12
 
 ] (Figuras/Modelos.tex
 Overfull \hbox (4.86171pt too wide) in paragraph at lines 8--22
  []  [] 
  []
 
-)
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[13
+) [13
 
 ]
-Overfull \hbox (9.2603pt too wide) in paragraph at lines 387--387
+Overfull \hbox (9.2603pt too wide) in paragraph at lines 63--63
 [][]  
- []
-
-
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
  []
 
 [14
 
 ]
-Overfull \hbox (5.68767pt too wide) in paragraph at lines 409--409
+Overfull \hbox (5.68767pt too wide) in paragraph at lines 85--85
 [][]  
- []
-
-
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
  []
 
 [15
 
 ]
-Overfull \hbox (47.99998pt too wide) in paragraph at lines 452--452
+Overfull \hbox (47.99998pt too wide) in paragraph at lines 128--128
 [][]  
- []
-
-
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
  []
 
 [16
 
 ]
-Overfull \hbox (34.79721pt too wide) in paragraph at lines 563--563
+Overfull \hbox (34.79721pt too wide) in paragraph at lines 239--239
 []$  
  []
 
 LaTeX Font Info:    Font shape `T1/aess/m/it' in size <7> not available
-(Font)              Font shape `T1/aess/m/sl' tried instead on input line 563.
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 239.
 LaTeX Font Info:    Font shape `T1/aess/m/it' in size <5> not available
-(Font)              Font shape `T1/aess/m/sl' tried instead on input line 563.
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 239.
 
-Overfull \hbox (24.07785pt too wide) in paragraph at lines 563--563
+Overfull \hbox (24.07785pt too wide) in paragraph at lines 239--239
 []  
  []
 
 
-Overfull \hbox (25.19476pt too wide) in paragraph at lines 563--563
+Overfull \hbox (25.19476pt too wide) in paragraph at lines 239--239
 []  
  []
 
 
-Overfull \hbox (69.66039pt too wide) in paragraph at lines 563--563
+Overfull \hbox (69.66039pt too wide) in paragraph at lines 239--239
 [][][][][][]  
  []
 
 
-Overfull \hbox (16.62657pt too wide) in paragraph at lines 563--563
+Overfull \hbox (16.62657pt too wide) in paragraph at lines 239--239
 [][]  
- []
-
-
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
  []
 
 [17
 
 ]
-Overfull \hbox (34.79721pt too wide) in paragraph at lines 563--563
+Overfull \hbox (34.79721pt too wide) in paragraph at lines 239--239
 []$  
  []
 
 
-Overfull \hbox (24.07785pt too wide) in paragraph at lines 563--563
+Overfull \hbox (24.07785pt too wide) in paragraph at lines 239--239
 []  
  []
 
 
-Overfull \hbox (25.19476pt too wide) in paragraph at lines 563--563
+Overfull \hbox (25.19476pt too wide) in paragraph at lines 239--239
 []  
  []
 
 
-Overfull \hbox (69.66039pt too wide) in paragraph at lines 563--563
+Overfull \hbox (69.66039pt too wide) in paragraph at lines 239--239
 [][][][][][]  
  []
 
 
-Overfull \hbox (16.62657pt too wide) in paragraph at lines 563--563
+Overfull \hbox (16.62657pt too wide) in paragraph at lines 239--239
 [][]  
- []
-
-
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
  []
 
 [18
 
 ]
-Overfull \hbox (34.79721pt too wide) in paragraph at lines 563--563
+Overfull \hbox (34.79721pt too wide) in paragraph at lines 239--239
 []$  
  []
 
 
-Overfull \hbox (24.07785pt too wide) in paragraph at lines 563--563
+Overfull \hbox (24.07785pt too wide) in paragraph at lines 239--239
 []  
  []
 
 
-Overfull \hbox (25.19476pt too wide) in paragraph at lines 563--563
+Overfull \hbox (25.19476pt too wide) in paragraph at lines 239--239
 []  
  []
 
 
-Overfull \hbox (69.66039pt too wide) in paragraph at lines 563--563
+Overfull \hbox (69.66039pt too wide) in paragraph at lines 239--239
 [][][][][][]  
  []
 
 
-Overfull \hbox (16.62657pt too wide) in paragraph at lines 563--563
+Overfull \hbox (16.62657pt too wide) in paragraph at lines 239--239
 [][]  
- []
-
-
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
  []
 
 [19
 
 ]
-Overfull \hbox (34.79721pt too wide) in paragraph at lines 563--563
+Overfull \hbox (34.79721pt too wide) in paragraph at lines 239--239
 []$  
  []
 
 
-Overfull \hbox (24.07785pt too wide) in paragraph at lines 563--563
+Overfull \hbox (24.07785pt too wide) in paragraph at lines 239--239
 []  
  []
 
 
-Overfull \hbox (25.19476pt too wide) in paragraph at lines 563--563
+Overfull \hbox (25.19476pt too wide) in paragraph at lines 239--239
 []  
  []
 
 
-Overfull \hbox (69.66039pt too wide) in paragraph at lines 563--563
+Overfull \hbox (69.66039pt too wide) in paragraph at lines 239--239
 [][][][][][]  
  []
 
 
-Overfull \hbox (16.62657pt too wide) in paragraph at lines 563--563
+Overfull \hbox (16.62657pt too wide) in paragraph at lines 239--239
 [][]  
- []
-
-
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
  []
 
 [20
 
 ]
-Overfull \hbox (34.79721pt too wide) in paragraph at lines 563--563
+Overfull \hbox (34.79721pt too wide) in paragraph at lines 239--239
 []$  
  []
 
 
-Overfull \hbox (24.07785pt too wide) in paragraph at lines 563--563
+Overfull \hbox (24.07785pt too wide) in paragraph at lines 239--239
 []  
  []
 
 
-Overfull \hbox (25.19476pt too wide) in paragraph at lines 563--563
+Overfull \hbox (25.19476pt too wide) in paragraph at lines 239--239
 []  
  []
 
 
-Overfull \hbox (69.66039pt too wide) in paragraph at lines 563--563
+Overfull \hbox (69.66039pt too wide) in paragraph at lines 239--239
 [][][][][][][]  
  []
 
 
-Overfull \hbox (16.62657pt too wide) in paragraph at lines 563--563
+Overfull \hbox (16.62657pt too wide) in paragraph at lines 239--239
 [][]  
- []
-
-
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
  []
 
 [21
 
-] (Figuras/DiagramaTransicao.tex)
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[22
+] (Figuras/DiagramaTransicao.tex) [22
 
 ] (Figuras/SupMalhaFechada.tex)
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
 [23
 
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[24
+] [24
 
 ] (Figuras/AutTempGuarda.tex
 Overfull \hbox (7.57675pt too wide) in paragraph at lines 66--69
@@ -4787,12 +4821,7 @@ Overfull \hbox (4.86171pt too wide) in paragraph at lines 64--77
  []  [] 
  []
 
-)
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[25
+) [25
 
 ] (Figuras/AutTempGuarda.tex
 Overfull \hbox (7.57675pt too wide) in paragraph at lines 66--69
@@ -4809,171 +4838,1732 @@ Overfull \hbox (4.86171pt too wide) in paragraph at lines 64--77
  []  [] 
  []
 
-)
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[26
+) [26
 
 ]
 LaTeX Font Info:    Font shape `T1/aess/b/n' in size <10.95> not available
-(Font)              Font shape `T1/aess/bx/n' tried instead on input line 641.
+(Font)              Font shape `T1/aess/bx/n' tried instead on input line 317.
+ [27
 
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+] [28
 
-[27
+] (Figuras/Supervisorio.tex) [29
 
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+] [30
 
-[28
+] [31
 
-] (Figuras/Supervisorio.tex)
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[29
+] [32
 
 ]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
+(Figuras/ExemploSliding.tex
+Overfull \hbox (4.86171pt too wide) in paragraph at lines 4--200
+ []  [] 
  []
 
-[30
+) [33
+
+] (Figuras/PIDPassadoPresenteFuturo.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Package pgfplots info on input line 57: fill between: activating layered graphi
+cs
+\pgf@layerbox@axis background=\box118
+\pgf@layerboxsaved@axis background=\box119
+\pgf@layerbox@axis grid=\box120
+\pgf@layerboxsaved@axis grid=\box121
+\pgf@layerbox@axis ticks=\box122
+\pgf@layerboxsaved@axis ticks=\box123
+\pgf@layerbox@axis lines=\box124
+\pgf@layerboxsaved@axis lines=\box125
+\pgf@layerbox@axis tick labels=\box126
+\pgf@layerboxsaved@axis tick labels=\box127
+\pgf@layerbox@pre main=\box128
+\pgf@layerboxsaved@pre main=\box129
+\pgf@layerbox@axis descriptions=\box130
+\pgf@layerboxsaved@axis descriptions=\box131
+\pgf@layerbox@axis foreground=\box132
+\pgf@layerboxsaved@axis foreground=\box133
+Package pgfplots info on input line 57: Setting layers 'axis background,axis gr
+id,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis 
+foreground'...
+) [34
 
 ]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[31
+(Figuras/PIDPassadoPresenteFuturo.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Package pgfplots info on input line 57: fill between: activating layered graphi
+cs
+Package pgfplots info on input line 57: Setting layers 'axis background,axis gr
+id,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis 
+foreground'...
+) [35
 
 ]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[32
+(Figuras/PIDPassadoPresenteFuturo.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Package pgfplots info on input line 57: fill between: activating layered graphi
+cs
+Package pgfplots info on input line 57: Setting layers 'axis background,axis gr
+id,axis ticks,axis lines,axis tick labels,pre main,main,axis descriptions,axis 
+foreground'...
+) [36
 
 ]
 LaTeX Font Info:    Font shape `T1/aess/m/it' in size <14.4> not available
-(Font)              Font shape `T1/aess/m/sl' tried instead on input line 736.
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 435.
+ [37
 
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+] [38
 
-[33
-
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[34
+] [39
 
 ]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
+(Figuras/ControladorFuzzy.tex) [40
+
+] [41
+
+] [42
+
+] [43
+
+] (Figuras/ConjuntosFuzzy.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+) [44
+
+] (Figuras/ANDOR.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+Overfull \hbox (4.86171pt too wide) in paragraph at lines 13--80
+ []  [] 
  []
 
-[35
+) [45
 
-] (Figuras/ControladorFuzzy.tex)
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
+] (Figuras/FuzzyInferencia.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+LaTeX Font Info:    Font shape `T1/aess/m/it' in size <9> not available
+(Font)              Font shape `T1/aess/m/sl' tried instead on input line 68.
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+Overfull \hbox (6.30235pt too wide) in paragraph at lines 13--98
+ []  []  [] 
  []
 
-[36
+) [46
+
+] (Figuras/FuzzyDefuzzificacao.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+) [47
+
+] [48
+
+] [49
 
 ]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+(Figuras/motorOdometria.tex
+Package epstopdf Info: Source file: <Figuras/encoderMotor.eps>
+(epstopdf)                    date: 2020-11-15 22:29:21
+(epstopdf)                    size: 43726 bytes
+(epstopdf)             Output file: <Figuras/encoderMotor-eps-converted-to.pdf>
 
-[37
+(epstopdf)                    date: 2020-11-15 22:50:16
+(epstopdf)                    size: 13213 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras/encoderMotor-eps-co
+nverted-to.pdf Figuras/encoderMotor.eps>
+(epstopdf)             \includegraphics on input line 5.
+Package epstopdf Info: Output file is already uptodate.
 
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
 
-[38
+pdfTeX warning: pdflatex.exe (file ./Figuras/encoderMotor-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figuras/encoderMotor-eps-converted-to.pdf, id=1273, 483.8075pt x 123.46124pt>
+File: Figuras/encoderMotor-eps-converted-to.pdf Graphic file (type pdf)
+<use Figuras/encoderMotor-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras/encoderMotor-eps-converted-to.pdf  used on inp
+ut line 5.
+(pdftex.def)             Requested size: 338.66293pt x 86.42226pt.
+) [50
 
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+ <./Figuras/encoderMotor-eps-converted-to.pdf>]
+(Figuras/motorOdometria.tex
+Package epstopdf Info: Source file: <Figuras/encoderMotor.eps>
+(epstopdf)                    date: 2020-11-15 22:29:21
+(epstopdf)                    size: 43726 bytes
+(epstopdf)             Output file: <Figuras/encoderMotor-eps-converted-to.pdf>
 
-[39
+(epstopdf)                    date: 2020-11-15 22:50:16
+(epstopdf)                    size: 13213 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras/encoderMotor-eps-co
+nverted-to.pdf Figuras/encoderMotor.eps>
+(epstopdf)             \includegraphics on input line 5.
+Package epstopdf Info: Output file is already uptodate.
+File: Figuras/encoderMotor-eps-converted-to.pdf Graphic file (type pdf)
+<use Figuras/encoderMotor-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras/encoderMotor-eps-converted-to.pdf  used on inp
+ut line 5.
+(pdftex.def)             Requested size: 338.66293pt x 86.42226pt.
+) [51
 
-] (Tabelas/TabelaCustos.tex)
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+] (Figuras/motorOdometria.tex
+Package epstopdf Info: Source file: <Figuras/encoderMotor.eps>
+(epstopdf)                    date: 2020-11-15 22:29:21
+(epstopdf)                    size: 43726 bytes
+(epstopdf)             Output file: <Figuras/encoderMotor-eps-converted-to.pdf>
 
-[40
+(epstopdf)                    date: 2020-11-15 22:50:16
+(epstopdf)                    size: 13213 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras/encoderMotor-eps-co
+nverted-to.pdf Figuras/encoderMotor.eps>
+(epstopdf)             \includegraphics on input line 5.
+Package epstopdf Info: Output file is already uptodate.
+File: Figuras/encoderMotor-eps-converted-to.pdf Graphic file (type pdf)
+<use Figuras/encoderMotor-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras/encoderMotor-eps-converted-to.pdf  used on inp
+ut line 5.
+(pdftex.def)             Requested size: 338.66293pt x 86.42226pt.
+) [52
 
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+])
+(src/MateriaisEMetodo.tex (Tabelas/TabelaCustos.tex) [53
 
-[41
+] [54
 
-] (Figuras/FigRobosEmSim.tex
-<Figuras/simiam-screenshot.png, id=1105, 1606.0pt x 903.375pt>
+])
+(src/Desenvolvimento.tex (Figuras/FigRobos.tex
+<Figuras/Khepera_III_robot.jpg, id=1428, 1310.496pt x 982.872pt>
+File: Figuras/Khepera_III_robot.jpg Graphic file (type jpg)
+<use Figuras/Khepera_III_robot.jpg>
+Package pdftex.def Info: Figuras/Khepera_III_robot.jpg  used on input line 8.
+(pdftex.def)             Requested size: 75.80891pt x 68.80806pt.
+<Figuras/quickbot-blue.png, id=1430, 2055.68pt x 1541.76pt>
+File: Figuras/quickbot-blue.png Graphic file (type png)
+<use Figuras/quickbot-blue.png>
+Package pdftex.def Info: Figuras/quickbot-blue.png  used on input line 16.
+(pdftex.def)             Requested size: 80.97873pt x 69.3762pt.
+) (Figuras/FigRobosEmSim.tex
+<Figuras/simiam-screenshot.png, id=1433, 1606.0pt x 903.375pt>
 File: Figuras/simiam-screenshot.png Graphic file (type png)
 <use Figuras/simiam-screenshot.png>
 Package pdftex.def Info: Figuras/simiam-screenshot.png  used on input line 8.
 (pdftex.def)             Requested size: 256.96526pt x 144.54295pt.
 )
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+[55
 
-[42
-
- <./Figuras/simiam-screenshot.png>] (Figuras/FigRobosEmSim.tex
+ <./Figuras/Khepera_III_robot.jpg> <./Figuras/quickbot-blue.png> <./Figuras/sim
+iam-screenshot.png>] (Figuras/FigRobos.tex
+File: Figuras/Khepera_III_robot.jpg Graphic file (type jpg)
+<use Figuras/Khepera_III_robot.jpg>
+Package pdftex.def Info: Figuras/Khepera_III_robot.jpg  used on input line 8.
+(pdftex.def)             Requested size: 75.80891pt x 68.80806pt.
+File: Figuras/quickbot-blue.png Graphic file (type png)
+<use Figuras/quickbot-blue.png>
+Package pdftex.def Info: Figuras/quickbot-blue.png  used on input line 16.
+(pdftex.def)             Requested size: 80.97873pt x 69.3762pt.
+) (Figuras/FigRobosEmSim.tex
 File: Figuras/simiam-screenshot.png Graphic file (type png)
 <use Figuras/simiam-screenshot.png>
 Package pdftex.def Info: Figuras/simiam-screenshot.png  used on input line 8.
 (pdftex.def)             Requested size: 256.96526pt x 144.54295pt.
 )
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
+[56
 
-[43
+] (Figuras/FigRobos.tex
+File: Figuras/Khepera_III_robot.jpg Graphic file (type jpg)
+<use Figuras/Khepera_III_robot.jpg>
+Package pdftex.def Info: Figuras/Khepera_III_robot.jpg  used on input line 8.
+(pdftex.def)             Requested size: 75.80891pt x 68.80806pt.
+File: Figuras/quickbot-blue.png Graphic file (type png)
+<use Figuras/quickbot-blue.png>
+Package pdftex.def Info: Figuras/quickbot-blue.png  used on input line 16.
+(pdftex.def)             Requested size: 80.97873pt x 69.3762pt.
+) (Figuras/FigRobosEmSim.tex
+File: Figuras/simiam-screenshot.png Graphic file (type png)
+<use Figuras/simiam-screenshot.png>
+Package pdftex.def Info: Figuras/simiam-screenshot.png  used on input line 8.
+(pdftex.def)             Requested size: 256.96526pt x 144.54295pt.
+) [57
 
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[44
-
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[45
-
-]
-Overfull \hbox (364.19536pt too wide) has occurred while \output is active
-[]
- []
-
-[46
+] [58
 
 ]
+(Figuras/FigRespostaIR.tex
+
+pdfTeX warning: pdflatex.exe (file ./Figuras/IR_Datasheet_Figure.pdf): PDF incl
+usion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figuras/IR_Datasheet_Figure.pdf, id=1517, 597.50786pt x 845.04686pt>
+File: Figuras/IR_Datasheet_Figure.pdf Graphic file (type pdf)
+<use Figuras/IR_Datasheet_Figure.pdf>
+Package pdftex.def Info: Figuras/IR_Datasheet_Figure.pdf  used on input line 5.
+
+(pdftex.def)             Requested size: 163.60295pt x 129.45966pt.
+) [59
+
+ <./Figuras/IR_Datasheet_Figure.pdf>] (Figuras/FigRespostaIR.tex
+File: Figuras/IR_Datasheet_Figure.pdf Graphic file (type pdf)
+<use Figuras/IR_Datasheet_Figure.pdf>
+Package pdftex.def Info: Figuras/IR_Datasheet_Figure.pdf  used on input line 5.
+
+(pdftex.def)             Requested size: 163.60295pt x 129.45966pt.
+) [60
+
+]
+(Figuras/FigRespostaIR.tex
+File: Figuras/IR_Datasheet_Figure.pdf Graphic file (type pdf)
+<use Figuras/IR_Datasheet_Figure.pdf>
+Package pdftex.def Info: Figuras/IR_Datasheet_Figure.pdf  used on input line 5.
+
+(pdftex.def)             Requested size: 163.60295pt x 129.45966pt.
+) [61
+
+] (Figuras/RoboJubileu.tex
+<Figuras/RoboMontagem1.jpg, id=1616, 4175.6pt x 3131.7pt>
+File: Figuras/RoboMontagem1.jpg Graphic file (type jpg)
+<use Figuras/RoboMontagem1.jpg>
+Package pdftex.def Info: Figuras/RoboMontagem1.jpg  used on input line 7.
+(pdftex.def)             Requested size: 125.26259pt x 93.94695pt.
+<Figuras/RoboMontagem2.jpg, id=1618, 4175.6pt x 3131.7pt>
+File: Figuras/RoboMontagem2.jpg Graphic file (type jpg)
+<use Figuras/RoboMontagem2.jpg>
+Package pdftex.def Info: Figuras/RoboMontagem2.jpg  used on input line 14.
+(pdftex.def)             Requested size: 125.26259pt x 93.94695pt.
+<Figuras/RoboMontagem3.jpg, id=1620, 4175.6pt x 3131.7pt>
+File: Figuras/RoboMontagem3.jpg Graphic file (type jpg)
+<use Figuras/RoboMontagem3.jpg>
+Package pdftex.def Info: Figuras/RoboMontagem3.jpg  used on input line 21.
+(pdftex.def)             Requested size: 125.26259pt x 93.94695pt.
+<Figuras/RoboMontagem4.jpg, id=1622, 3131.7pt x 4175.6pt>
+File: Figuras/RoboMontagem4.jpg Graphic file (type jpg)
+<use Figuras/RoboMontagem4.jpg>
+Package pdftex.def Info: Figuras/RoboMontagem4.jpg  used on input line 28.
+(pdftex.def)             Requested size: 93.94695pt x 125.26259pt.
+
+Overfull \hbox (343.19618pt too wide) in paragraph at lines 3--30
+ []  []  []  [] 
+ []
+
+) [62
+
+ <./Figuras/RoboMontagem1.jpg> <./Figuras/RoboMontagem2.jpg> <./Figuras/RoboMon
+tagem3.jpg> <./Figuras/RoboMontagem4.jpg>] (Figuras/RoboJubileuMontado.tex
+<Figuras/RoboMontagem5.jpg, id=1637, 3131.7pt x 4175.6pt>
+File: Figuras/RoboMontagem5.jpg Graphic file (type jpg)
+<use Figuras/RoboMontagem5.jpg>
+Package pdftex.def Info: Figuras/RoboMontagem5.jpg  used on input line 7.
+(pdftex.def)             Requested size: 172.22014pt x 174.86273pt.
+
+Overfull \hbox (4.49356pt too wide) in paragraph at lines 7--7
+ [][] 
+ []
+
+<Figuras/RoboMontagem6.jpg, id=1639, 3131.7pt x 4175.6pt>
+File: Figuras/RoboMontagem6.jpg Graphic file (type jpg)
+<use Figuras/RoboMontagem6.jpg>
+Package pdftex.def Info: Figuras/RoboMontagem6.jpg  used on input line 14.
+(pdftex.def)             Requested size: 172.22014pt x 174.86273pt.
+
+Overfull \hbox (4.49356pt too wide) in paragraph at lines 14--14
+ [][] 
+ []
+
+) [63
+
+ <./Figuras/RoboMontagem5.jpg> <./Figuras/RoboMontagem6.jpg>]
+(Figuras/AcionamentoMotor1.tex
+<Figuras/Acionamento_Sem_Carga_rps.png, id=1652, 1387.584pt x 672.111pt>
+File: Figuras/Acionamento_Sem_Carga_rps.png Graphic file (type png)
+<use Figuras/Acionamento_Sem_Carga_rps.png>
+Package pdftex.def Info: Figuras/Acionamento_Sem_Carga_rps.png  used on input l
+ine 6.
+(pdftex.def)             Requested size: 275.76343pt x 146.68782pt.
+) [64
+
+ <./Figuras/Acionamento_Sem_Carga_rps.png>]
+(Figuras/AcionamentoMotor2.tex
+<Figuras/Acionamento_Com_Carga_rps.png, id=1665, 1387.584pt x 672.111pt>
+File: Figuras/Acionamento_Com_Carga_rps.png Graphic file (type png)
+<use Figuras/Acionamento_Com_Carga_rps.png>
+Package pdftex.def Info: Figuras/Acionamento_Com_Carga_rps.png  used on input l
+ine 6.
+(pdftex.def)             Requested size: 275.76343pt x 146.68782pt.
+) [65
+
+ <./Figuras/Acionamento_Com_Carga_rps.png>]
+(Figuras/AcionamentoMotor3.tex
+<Figuras/Curva_Do_Motor_rps.png, id=1678, 1387.584pt x 672.111pt>
+File: Figuras/Curva_Do_Motor_rps.png Graphic file (type png)
+<use Figuras/Curva_Do_Motor_rps.png>
+Package pdftex.def Info: Figuras/Curva_Do_Motor_rps.png  used on input line 7.
+(pdftex.def)             Requested size: 275.76343pt x 146.68782pt.
+) [66
+
+ <./Figuras/Curva_Do_Motor_rps.png>]
+[67
+
+] [68
+
+] [69
+
+]
+LaTeX Font Info:    Font shape `T1/aess/b/n' in size <8> not available
+(Font)              Font shape `T1/aess/bx/n' tried instead on input line 162.
+ [70
+
+] [71
+
+] (Figuras/CompIPO.tex) [72
+
+]
+LaTeX Font Info:    Font shape `T1/aess/b/n' in size <6> not available
+(Font)              Font shape `T1/aess/bx/n' tried instead on input line 189.
+ [73
+
+] [74
+
+] [75
+
+] [76
+
+]
+[77
+
+] (Figuras/CompEO.tex
+Overfull \hbox (4.86171pt too wide) in paragraph at lines 94--115
+ []  [] 
+ []
+
+) [78
+
+] [79
+
+] [80
+
+] [81
+
+] [82
+
+] [83
+
+] [84
+
+]
+Overfull \hbox (24.15988pt too wide) detected at line 287
+[] \OT1/cmss/m/n/10.95 = []
+ []
+
+[85
+
+] [86
+
+] [87
+
+] [88
+
+] [89
+
+] (Figuras/minimosLocais.tex
+Overfull \hbox (8.37271pt too wide) in paragraph at lines 87--88
+ [] 
+ []
+
+) [90
+
+] (Figuras/CompSP.tex
+Overfull \hbox (1.06676pt too wide) in paragraph at lines 81--82
+ [][] 
+ []
+
+
+Overfull \hbox (4.86171pt too wide) in paragraph at lines 70--103
+ []  [] 
+ []
+
+) [91
+
+] (Figuras/CompSPVetor.tex
+LaTeX Font Info:    Font shape `T1/aess/b/n' in size <9> not available
+(Font)              Font shape `T1/aess/bx/n' tried instead on input line 88.
+LaTeX Font Info:    Font shape `T1/aess/b/n' in size <5> not available
+(Font)              Font shape `T1/aess/bx/n' tried instead on input line 88.
+) [92
+
+] [93
+
+] [94
+
+] [95
+
+] [96
+
+] [97
+
+] [98
+
+] [99
+
+]
+(Tabelas/AutomatoEstados.tex) [100
+
+] (Tabelas/AutomatoTransicoes.tex) [101
+
+]
+[102
+
+] [103
+
+] [104
+
+] [105
+
+] [106
+
+] [107
+
+] [108
+
+] [109
+
+] [110
+
+] [111
+
+] [112
+
+] [113
+
+]
+(Figuras/automatoHibrido.tex)
+Overfull \vbox (8.38332pt too high) detected at line 521
+ []
+
+[114
+
+] [115
+
+] [116
+
+] [117
+
+] [118
+
+] [119
+
+] (Figuras/FuzzyEvitarObstaculoDiagrama.tex)
+[120
+
+] (Figuras/FuzzyEvitarObstaculoInput.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+) [121
+
+]
+(Figuras/FuzzyEvitarObstaculoOutputXY.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+) [122
+
+]
+(Figuras/FuzzyEvitarObstaculoOutputV.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+) [123
+
+] [124
+
+] [125
+
+]
+(Tabelas/FuzzyEvitarObstaculoTabelaRegras.tex) [126
+
+]
+(Figuras/FuzzySeguirParedeCurvaAtivacao.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+) [127
+
+]
+(Figuras/FuzzySeguirParedeDiagrama.tex) [128
+
+]
+(Figuras/FuzzySeguirParedeSaidas.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+) [129
+
+] [130
+
+] [131
+
+] [132
+
+] [133
+
+] [134
+
+]
+(Tabelas/FuzzySeguirParedeTabelaRegras.tex) [135
+
+] [136
+
+]
+(Figuras/FuzzySeguirVetorDiagrama.tex) [137
+
+]
+(Figuras/FuzzySeguirVetorEntradasXY.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+Overfull \hbox (3.45633pt too wide) in paragraph at lines 63--64
+ [] 
+ []
+
+) [138
+
+] (Figuras/FuzzySeguirVetorEntradaV.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+
+! Package pgfplots Error: Could not read table file '" 0 0 1 0 "' in 'search pa
+th=.'. In case you intended to provide inline data: maybe TeX screwed up your e
+nd-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (refer to th
+e pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 }
+      
+This error message was generated by an \errmessage
+command, so I can't give any explicit help.
+Pretend that you're Hercule Poirot: Examine all clues,
+and deduce the truth by order and method.
+
+PGFPlots: reading {" 0 0 1 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 39.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" 0 1 0.5 0 "' in 'search 
+path=.'. In case you intended to provide inline data: maybe TeX screwed up your
+ end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (refer to 
+the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" 0 1 0.5 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 39.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" 0 0 0.5 1 1 0 "' in 'sea
+rch path=.'. In case you intended to provide inline data: maybe TeX screwed up 
+your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (refer
+ to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" 0 0 0.5 1 1 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 39.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" 0.5 0 1 1 "' in 'search 
+path=.'. In case you intended to provide inline data: maybe TeX screwed up your
+ end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (refer to 
+the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.39 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" 0.5 0 1 1 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 39.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: You have an axis with empty range (in direction y). R
+eplacing it with a default range and clearing all plots. on input line 39.
+
+ [warning /pgfplots/warning/empty range cleared axis]
+) [139
+
+] (Figuras/FuzzySeguirVetorSaidasW.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+
+! Package pgfplots Error: Could not read table file '" -1 0 1 0 "' in 'search p
+ath=.'. In case you intended to provide inline data: maybe TeX screwed up your 
+end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (refer to t
+he pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -1 0 1 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" -1 1 -0.75 0 "' in 'sear
+ch path=.'. In case you intended to provide inline data: maybe TeX screwed up y
+our end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (refer 
+to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -1 1 -0.75 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" -1 0 -0.75 1 -0.5 0 "' i
+n 'search path=.'. In case you intended to provide inline data: maybe TeX screw
+ed up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' 
+(refer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -1 0 -0.75 1 -0.5 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" -0.75 0 -0.5 1 -0.25 0 "
+' in 'search path=.'. In case you intended to provide inline data: maybe TeX sc
+rewed up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\
+\' (refer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -0.75 0 -0.5 1 -0.25 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" -0.5 0 -0.25 1 0 0 "' in
+ 'search path=.'. In case you intended to provide inline data: maybe TeX screwe
+d up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (
+refer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -0.5 0 -0.25 1 0 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" -0.25 0 0 1 0.25 0 "' in
+ 'search path=.'. In case you intended to provide inline data: maybe TeX screwe
+d up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (
+refer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -0.25 0 0 1 0.25 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" 0 0 0.25 1 0.5 0 "' in '
+search path=.'. In case you intended to provide inline data: maybe TeX screwed 
+up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (re
+fer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" 0 0 0.25 1 0.5 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" 0.25 0 0.5 1 0.75 0 "' i
+n 'search path=.'. In case you intended to provide inline data: maybe TeX screw
+ed up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' 
+(refer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" 0.25 0 0.5 1 0.75 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" 0.5 0 0.75 1 1 0 "' in '
+search path=.'. In case you intended to provide inline data: maybe TeX screwed 
+up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (re
+fer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" 0.5 0 0.75 1 1 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" 0.75 0 1 1 "' in 'search
+ path=.'. In case you intended to provide inline data: maybe TeX screwed up you
+r end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (refer to
+ the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" 0.75 0 1 1 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: You have an axis with empty range (in direction y). R
+eplacing it with a default range and clearing all plots. on input line 65.
+
+ [warning /pgfplots/warning/empty range cleared axis]
+) [140
+
+] (Figuras/FuzzySeguirVetorSaidasW.tex
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+
+! Package pgfplots Error: Could not read table file '" -1 0 1 0 "' in 'search p
+ath=.'. In case you intended to provide inline data: maybe TeX screwed up your 
+end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (refer to t
+he pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -1 0 1 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" -1 1 -0.75 0 "' in 'sear
+ch path=.'. In case you intended to provide inline data: maybe TeX screwed up y
+our end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (refer 
+to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -1 1 -0.75 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" -1 0 -0.75 1 -0.5 0 "' i
+n 'search path=.'. In case you intended to provide inline data: maybe TeX screw
+ed up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' 
+(refer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -1 0 -0.75 1 -0.5 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" -0.75 0 -0.5 1 -0.25 0 "
+' in 'search path=.'. In case you intended to provide inline data: maybe TeX sc
+rewed up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\
+\' (refer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -0.75 0 -0.5 1 -0.25 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" -0.5 0 -0.25 1 0 0 "' in
+ 'search path=.'. In case you intended to provide inline data: maybe TeX screwe
+d up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (
+refer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -0.5 0 -0.25 1 0 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" -0.25 0 0 1 0.25 0 "' in
+ 'search path=.'. In case you intended to provide inline data: maybe TeX screwe
+d up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (
+refer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" -0.25 0 0 1 0.25 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" 0 0 0.25 1 0.5 0 "' in '
+search path=.'. In case you intended to provide inline data: maybe TeX screwed 
+up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (re
+fer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" 0 0 0.25 1 0.5 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" 0.25 0 0.5 1 0.75 0 "' i
+n 'search path=.'. In case you intended to provide inline data: maybe TeX screw
+ed up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' 
+(refer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" 0.25 0 0.5 1 0.75 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" 0.5 0 0.75 1 1 0 "' in '
+search path=.'. In case you intended to provide inline data: maybe TeX screwed 
+up your end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (re
+fer to the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" 0.5 0 0.75 1 1 0 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+Missing character: There is no . in font nullfont!
+Missing character: There is no 0 in font nullfont!
+Missing character: There is no 1 in font nullfont!
+Missing character: There is no p in font nullfont!
+Missing character: There is no t in font nullfont!
+
+! Package pgfplots Error: Could not read table file '" 0.75 0 1 1 "' in 'search
+ path=.'. In case you intended to provide inline data: maybe TeX screwed up you
+r end-of-lines? Try `row sep=crcr' and terminate your lines with `\\' (refer to
+ the pgfplotstable manual for details).
+
+See the pgfplots package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.65 }
+      
+(That was another \errmessage.)
+
+PGFPlots: reading {" 0.75 0 1 1 "}
+
+Package pgfplots Warning: the current plot has no coordinates (or all have been
+ filtered away) on input line 65.
+
+ [warning /pgfplots/warning/plot without coordinates]
+
+Package pgfplots Warning: You have an axis with empty range (in direction y). R
+eplacing it with a default range and clearing all plots. on input line 65.
+
+ [warning /pgfplots/warning/empty range cleared axis]
+) [141
+
+] (Tabelas/FuzzySeguirVetorVelocidades.tex)
+Overfull \vbox (19.82645pt too high) detected at line 818
+ []
+
+[142
+
+] [143
+
+] (Figuras/EsquemaCircuito.tex
+Package epstopdf Info: Source file: <Figuras/EsquemaCircuito.eps>
+(epstopdf)                    date: 2021-04-14 06:42:57
+(epstopdf)                    size: 893913 bytes
+(epstopdf)             Output file: <Figuras/EsquemaCircuito-eps-converted-to.p
+df>
+(epstopdf)                    date: 2021-04-14 06:48:03
+(epstopdf)                    size: 352852 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras/EsquemaCircuito-eps
+-converted-to.pdf Figuras/EsquemaCircuito.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./Figuras/EsquemaCircuito-eps-converted-to.p
+df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figuras/EsquemaCircuito-eps-converted-to.pdf, id=3271, 557.08125pt x 505.89pt>
+
+File: Figuras/EsquemaCircuito-eps-converted-to.pdf Graphic file (type pdf)
+<use Figuras/EsquemaCircuito-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras/EsquemaCircuito-eps-converted-to.pdf  used on 
+input line 8.
+(pdftex.def)             Requested size: 445.6656pt x 404.71254pt.
+) [144
+
+ <./Figuras/EsquemaCircuito-eps-converted-to.pdf>]
+(Figuras/JubileuBoard.tex
+Package epstopdf Info: Source file: <Figuras/JubileuBoard.eps>
+(epstopdf)                    date: 2021-04-07 18:31:36
+(epstopdf)                    size: 54430 bytes
+(epstopdf)             Output file: <Figuras/JubileuBoard-eps-converted-to.pdf>
+
+(epstopdf)                    date: 2021-04-07 18:39:14
+(epstopdf)                    size: 47740 bytes
+(epstopdf)             Command: <epstopdf --outfile=Figuras/JubileuBoard-eps-co
+nverted-to.pdf Figuras/JubileuBoard.eps>
+(epstopdf)             \includegraphics on input line 8.
+Package epstopdf Info: Output file is already uptodate.
+
+
+pdfTeX warning: pdflatex.exe (file ./Figuras/JubileuBoard-eps-converted-to.pdf)
+: PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<Figuras/JubileuBoard-eps-converted-to.pdf, id=3318, 171.64125pt x 342.27875pt>
+
+File: Figuras/JubileuBoard-eps-converted-to.pdf Graphic file (type pdf)
+<use Figuras/JubileuBoard-eps-converted-to.pdf>
+Package pdftex.def Info: Figuras/JubileuBoard-eps-converted-to.pdf  used on inp
+ut line 8.
+(pdftex.def)             Requested size: 171.64081pt x 342.2779pt.
+)
+Overfull \vbox (86.57228pt too high) detected at line 845
+ []
+
+[145
+
+ <./Figuras/JubileuBoard-eps-converted-to.pdf>]
+(Tabelas/ComunicacaoComandos.tex
+Overfull \hbox (66.80847pt too wide) in paragraph at lines 5--15
+ [] 
+ []
+
+) [146
+
+] (Figuras/SimulacaoHibrido.tex
+<Figuras/simulacao_hibridoCompactado.png, id=3356, 1540.75626pt x 757.83125pt>
+File: Figuras/simulacao_hibridoCompactado.png Graphic file (type png)
+<use Figuras/simulacao_hibridoCompactado.png>
+Package pdftex.def Info: Figuras/simulacao_hibridoCompactado.png  used on input
+ line 10.
+(pdftex.def)             Requested size: 446.80788pt x 219.76543pt.
+
+Overfull \hbox (104.51257pt too wide) in paragraph at lines 10--11
+ [] 
+ []
+
+)
+Overfull \vbox (53.60092pt too high) detected at line 858
+ []
+
+[147
+
+ <./Figuras/simulacao_hibridoCompactado.png (PNG copy)>]
+(Figuras/SimulacaoFuzzy.tex
+<Figuras/simulacao_fuzzyCompactado.png, id=3369, 1540.75626pt x 757.83125pt>
+File: Figuras/simulacao_fuzzyCompactado.png Graphic file (type png)
+<use Figuras/simulacao_fuzzyCompactado.png>
+Package pdftex.def Info: Figuras/simulacao_fuzzyCompactado.png  used on input l
+ine 10.
+(pdftex.def)             Requested size: 446.80788pt x 219.76543pt.
+
+Overfull \hbox (104.51257pt too wide) in paragraph at lines 10--11
+ [] 
+ []
+
+)
+Overfull \vbox (53.60092pt too high) detected at line 863
+ []
+
+[148
+
+ <./Figuras/simulacao_fuzzyCompactado.png (PNG copy)>]
+(Figuras/ResultadoIPO.tex
+<Figuras/ComportamentoIPOCompactado.png, id=3382, 1544.77126pt x 870.25125pt>
+File: Figuras/ComportamentoIPOCompactado.png Graphic file (type png)
+<use Figuras/ComportamentoIPOCompactado.png>
+Package pdftex.def Info: Figuras/ComportamentoIPOCompactado.png  used on input 
+line 11.
+(pdftex.def)             Requested size: 447.9722pt x 252.3664pt.
+
+Overfull \hbox (105.6769pt too wide) in paragraph at lines 11--11
+ [] 
+ []
+
+)
+Overfull \vbox (86.20189pt too high) detected at line 869
+ []
+
+[149
+
+ <./Figuras/ComportamentoIPOCompactado.png (PNG copy)>]
+(Figuras/ResultadoEO.tex
+<Figuras/ComportamentoEOCompactado.png, id=3395, 1544.77126pt x 870.25125pt>
+File: Figuras/ComportamentoEOCompactado.png Graphic file (type png)
+<use Figuras/ComportamentoEOCompactado.png>
+Package pdftex.def Info: Figuras/ComportamentoEOCompactado.png  used on input l
+ine 11.
+(pdftex.def)             Requested size: 447.9722pt x 252.3664pt.
+
+Overfull \hbox (105.6769pt too wide) in paragraph at lines 11--11
+ [] 
+ []
+
+)
+Overfull \vbox (86.20189pt too high) detected at line 874
+ []
+
+[150
+
+ <./Figuras/ComportamentoEOCompactado.png (PNG copy)>]
+(Figuras/ResultadoMesclado.tex
+<Figuras/ComportamentoIPO_E_EOCompactado.png, id=3408, 1544.77126pt x 870.25125
+pt>
+File: Figuras/ComportamentoIPO_E_EOCompactado.png Graphic file (type png)
+<use Figuras/ComportamentoIPO_E_EOCompactado.png>
+Package pdftex.def Info: Figuras/ComportamentoIPO_E_EOCompactado.png  used on i
+nput line 11.
+(pdftex.def)             Requested size: 447.9722pt x 252.3664pt.
+
+Overfull \hbox (105.6769pt too wide) in paragraph at lines 11--11
+ [] 
+ []
+
+)
+Overfull \vbox (86.20189pt too high) detected at line 879
+ []
+
+[151
+
+ <./Figuras/ComportamentoIPO_E_EOCompactado.png (PNG copy)>]
+(Figuras/ResultadoSP.tex
+<Figuras/ComportamentoSPCompactado.png, id=3422, 1544.77126pt x 870.25125pt>
+File: Figuras/ComportamentoSPCompactado.png Graphic file (type png)
+<use Figuras/ComportamentoSPCompactado.png>
+Package pdftex.def Info: Figuras/ComportamentoSPCompactado.png  used on input l
+ine 11.
+(pdftex.def)             Requested size: 447.9722pt x 252.3664pt.
+
+Overfull \hbox (105.6769pt too wide) in paragraph at lines 11--11
+ [] 
+ []
+
+)
+Overfull \vbox (86.20189pt too high) detected at line 884
+ []
+
+[152
+
+ <./Figuras/ComportamentoSPCompactado.png (PNG copy)>]
+(Figuras/ResultadoHibrido.tex
+<Figuras/hibridoCompactado.png, id=3435, 1544.77126pt x 870.25125pt>
+File: Figuras/hibridoCompactado.png Graphic file (type png)
+<use Figuras/hibridoCompactado.png>
+Package pdftex.def Info: Figuras/hibridoCompactado.png  used on input line 11.
+(pdftex.def)             Requested size: 447.9722pt x 252.3664pt.
+
+Overfull \hbox (105.6769pt too wide) in paragraph at lines 11--11
+ [] 
+ []
+
+)
+Overfull \vbox (86.20189pt too high) detected at line 889
+ []
+
+[153
+
+ <./Figuras/hibridoCompactado.png (PNG copy)>] (Figuras/ResultadoFuzzy.tex
+<Figuras/fuzzyCompactado.png, id=3448, 1544.77126pt x 870.25125pt>
+File: Figuras/fuzzyCompactado.png Graphic file (type png)
+<use Figuras/fuzzyCompactado.png>
+Package pdftex.def Info: Figuras/fuzzyCompactado.png  used on input line 10.
+(pdftex.def)             Requested size: 447.9722pt x 252.3664pt.
+
+Overfull \hbox (105.6769pt too wide) in paragraph at lines 10--11
+ [] 
+ []
+
+)
+Overfull \vbox (86.20189pt too high) detected at line 894
+ []
+
+[154
+
+ <./Figuras/fuzzyCompactado.png (PNG copy)>]) (src/ConsideracoesFinais.tex
+[155
+
+]) (src/Agradecimentos.tex [156
+
+])
 \tf@nav=\write7
 \openout7 = `document.nav'.
 
@@ -4985,31 +6575,37 @@ Overfull \hbox (364.19536pt too wide) has occurred while \output is active
 
  (document.aux)
 Package rerunfilecheck Info: File `document.out' has not changed.
-(rerunfilecheck)             Checksum: BB25EC7330DE784B1A981FDF167984F0;651.
+(rerunfilecheck)             Checksum: 54E940945B8AE37C6D069AEBF8185CB7;684.
  ) 
 Here is how much of TeX's memory you used:
- 40587 strings out of 480224
- 972127 string characters out of 2889982
- 1886522 words of memory out of 3000000
- 56144 multiletter control sequences out of 15000+200000
- 578429 words of font info for 109 fonts, out of 3000000 for 9000
+ 45156 strings out of 480224
+ 1072174 string characters out of 2889982
+ 2051122 words of memory out of 3000000
+ 60152 multiletter control sequences out of 15000+200000
+ 588434 words of font info for 125 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 111i,30n,112p,707b,3043s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 111i,30n,114p,707b,3086s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Progra
-m Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmss10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmss12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cms
-s8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss9.pfb><C:/Pr
-ogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program File
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi10.pfb><C:/Program Files/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmssi12.pfb><C:/Program Files/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmssi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.
-pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on document.pdf (46 pages, 635189 bytes).
+m Files/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Program Files/
+MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX/fonts/type1/public
+/amsfonts/cm/cmmi8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmmi9.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss10.pfb><C
+:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Fi
+les/MiKTeX/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmss9.pfb><C:/Program Files/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmssbx10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfon
+ts/cm/cmssi10.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi
+12.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi8.pfb><C:/P
+rogram Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmssi9.pfb><C:/Program Files
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX/font
+s/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
+/cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C
+:/Program Files/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb>
+Output written on document.pdf (156 pages, 41181810 bytes).
 PDF statistics:
- 1264 PDF objects out of 1440 (max. 8388607)
- 114 named destinations out of 1000 (max. 500000)
- 2459 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 3644 PDF objects out of 4296 (max. 8388607)
+ 356 named destinations out of 1000 (max. 500000)
+ 6198 words of extra memory for PDF output out of 10000 (max. 10000000)
 

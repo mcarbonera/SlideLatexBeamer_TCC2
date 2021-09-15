@@ -1,0 +1,40 @@
+\tikzset{%
+    block/.style={draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {draw, fill=white, circle, minimum size=2mm, node distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+\begin{figure}[!ht]%
+    \centering
+\resizebox{0.9\columnwidth}{!}{
+\begin{tikzpicture}[scale = 1, auto, node distance=2cm, on grid, >=latex']%
+	\begin{axis}[xmin=0, xmax=1,ymax=1.1, samples=50, xlabel={Velocidade (normalizada)},
+	ylabel={$\mu$}, width=\textwidth, height=\axisdefaultheight, xtick distance={0.1}]
+	
+		\addplot [thick, color=black] table {
+			0 0
+			1 0
+		};
+		
+		\addplot [thick, color=black] table {
+			0 1
+			0.5 0
+		} node[color=gray, xshift=0.1cm, yshift=0.1cm, above, pos = .1] {VP};
+		
+		\addplot [thick, color=black] table {
+			0 0
+			0.5 1
+			1 0
+		} node[color=gray, xshift=-0.1cm, yshift=0.1cm, above, pos = .45] {VM};
+		
+		\addplot [thick, color=black] table {
+			0.5 0
+			1 1
+		} node[color=gray, xshift=-0.1cm, yshift=0.1cm, above, pos = .9] {VG};
+	\end{axis}
+\end{tikzpicture}%
+}
+\end{figure}

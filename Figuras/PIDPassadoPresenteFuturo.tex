@@ -1,0 +1,59 @@
+\pgfplotsset{
+    % only effects the plot
+        /tikz/fill between/every segment/.append style={
+            black,    % <-- color is only applied when an empty `\addplot' argument is given
+            fill opacity=0.2,
+        },
+        samples=100,
+    }
+
+
+\begin{figure}[ht]
+	\centering%
+	\begin{tikzpicture}[scale = 1.0, auto, node distance=2cm, on grid, >={Latex[length=2mm]}]%
+		\begin{axis}[
+			width=\textwidth,
+			height=\axisdefaultheight,
+ 			xmin=-0.5,   xmax=8.5,
+ 			ymin=-2,   ymax=4,
+ 			xlabel=Tempo,
+ 			ylabel=Erro,
+ 			xtick=\empty,
+ 			ytick=\empty,
+ 			axis y line=middle,
+ 			axis x line=middle,
+ 			axis line style={{Latex[length=2mm]}-{Latex[length=2mm]}}]
+ 			
+ 			\addplot[name path = func, smooth, solid, black]
+ 			coordinates{ (0,1) (2,-1)(4,1)};
+ 			\addplot[smooth, solid, black]
+ 			coordinates{ (4,1) (5.3,1.5)(8,-1)};
+ 			
+ 			%\path[name path=axis] (axis cs:0,0) -- (axis cs:4,0);
+ 			\addplot[draw = none, name path = axis] coordinates{ (0,0) (4,0)};
+ 			
+ 			\addplot[restrict x to domain=0:4] fill between[ 
+    			of = func and axis, 
+  			];
+ 			
+ 			% Linhas Verticais
+ 			\draw[-,dashed] (axis cs:4,0)--(axis cs:4,2);
+ 			\draw[-,dashed] (axis cs:5,0)--(axis cs:5,2);
+ 			\node at (axis cs:4,-0.4) {t};
+ 			\node at (axis cs:5,-0.4) {$t + T_d$};
+ 			
+ 			% Setas explicativas
+ 			\node at (axis cs:3.0,3) {Passado};
+ 			\node at (axis cs:4,3.5) {Presente};
+ 			\node at (axis cs:5.0,3) {Futuro};
+ 			\draw[->] (axis cs:4,3.1)--(axis cs:4,2.2);
+ 			\draw[->] (axis cs:4.2,2.65)--(axis cs:5,2.65);
+ 			\draw[->] (axis cs:3.8,2.65)--(axis cs:3,2.65);
+ 			
+ 			% taxa de variação do meu pau na tua mão
+ 			\node[inner sep = 0] (inicio) at (axis cs:4,1){};
+ 			\node[inner sep = 0] (fim) at (axis cs:5,2.2){};
+ 			\draw[->] (inicio)--(fim);
+		\end{axis}
+	\end{tikzpicture}%
+\end{figure}

@@ -1,0 +1,26 @@
+\tikzset{%
+    block/.style={draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {draw, fill=white, circle, minimum size=2mm, node distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+\begin{figure}[ht]%
+    \centering
+    
+\begin{tikzpicture}[scale = 0.9, auto, node distance=2cm, on grid, >=latex']%
+	\begin{axis}[xmin=0, xmax=40,ymax=1.1, samples=50, xlabel={Contador para Ativação},
+	ylabel={Coeficiente}, width=\textwidth, height=\axisdefaultheight, 
+	xtick distance={5}]
+	
+		\addplot [thick, color=black] table {
+			0 0
+			5 0
+			35 1
+			40 1
+		};
+	\end{axis}
+\end{tikzpicture}%
+\end{figure}

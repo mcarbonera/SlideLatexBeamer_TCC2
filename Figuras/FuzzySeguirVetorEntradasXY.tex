@@ -1,0 +1,64 @@
+\tikzset{%
+    block/.style={draw, fill=white, rectangle, 
+            minimum height=2em, minimum width=3em},
+    input/.style={inner sep=0pt},       
+    output/.style={inner sep=0pt},      
+    sum/.style = {draw, fill=white, circle, minimum size=2mm, node distance=1.5cm, inner sep=0pt},
+    pinstyle/.style = {pin edge={to-,thin,black}}
+}
+
+\begin{figure}[!ht]%
+    \centering
+%\resizebox{0.9\columnwidth}{!}{}
+\begin{tikzpicture}[scale = 1, auto, node distance=2cm, on grid, >=latex']%
+	\begin{axis}[xmin=-1, xmax=1,ymax=1.1, samples=50, xlabel={valores vetoriais normalizados}, ylabel={$\mu$}, width=\textwidth, height=\axisdefaultheight, xtick distance={0.25}]
+		\addplot [thick, color=black] table {
+			-1 0 
+			1 0
+		};
+		\addplot [thick, color=black] table {
+			-1 1 
+			-0.75 0
+		} node[color=gray, yshift=0.5cm, xshift=0.4cm, above, pos = .2] {NGSat};
+		\addplot [thick, color=black] table {
+			-1 0 
+			-0.75 1 
+			-0.5 0
+		} node[color=gray, yshift=0.5cm, xshift=0.1cm, above, pos = .6] {NG};
+		\addplot [thick, color=black] table {
+			-0.75 0
+			-0.5 1
+			-0.25 0
+		} node[color=gray, yshift=0.5cm, xshift=-0.1cm, above, pos = .4] {NM};
+		\addplot [thick, color=black] table {
+			-0.5 0
+			-0.25 1
+			0 0
+		} node[color=gray, yshift=0.5cm, xshift=-0.1cm, above, pos = .4] {NP};
+		\addplot [thick, color=black] table {
+			-0.5 0 
+			0 1
+			0.5 0
+		} node[color=gray, yshift=0.5cm, xshift=0.1cm, above, pos = .4] {Z};
+		\addplot [thick, color=black] table {
+			0 0 
+			0.25 1
+			0.5 0
+		} node[color=gray, yshift=0.5cm, xshift=-0.1cm, above, pos = .4] {PP};
+		\addplot [thick, color=black] table {
+			0.25 0
+			0.5 1
+			0.75 0
+		} node[color=gray, yshift=0.5cm, xshift=-0.1cm, above, pos = .4] {PM};
+		\addplot [thick, color=black] table {
+			0.5 0
+			0.75 1
+			1 0
+		} node[color=gray, yshift=0.5cm, xshift=-0.1cm, above, pos = .4] {PG};
+		\addplot [thick, color=black] table {
+			0.75 0
+			1 1
+		} node[color=gray, yshift=0.5cm, xshift=-0.4cm, above, pos = .8] {PGSat};
+	\end{axis}
+\end{tikzpicture}%
+\end{figure}

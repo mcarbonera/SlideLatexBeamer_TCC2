@@ -8,9 +8,9 @@
 % Nome da disciplina - informação que somente aparece nas propriedades do arquivo PDF
 \subject{Trabalho de Conclusão de Curso - UTFPR}
 
-\title[Trabalho de Conclusão de Curso - 2019/1]{Trabalho de Conclusão de Curso -
-2019/1}
-\subtitle{Navegação de robôs móveis utilizando Lógica \textit{Fuzzy}}
+\title[Trabalho de Conclusão de Curso - 2021/2]{Trabalho de Conclusão de Curso -
+2021/2}
+\subtitle{Navegação em robôs móveis por Arbitragem e Fusão em Arquiteturas Comportamentais}
 \author[Marcelo Gervazoni Carbonera]{Profa. Orientadora: Dra. Kathya Silvia Collazos
 Linares\\
 Acadêmico: Marcelo Gervazoni Carbonera}
@@ -19,7 +19,7 @@ Acadêmico: Marcelo Gervazoni Carbonera}
 do Paraná}}\\
 Engenharia de Computação\\
 \textit{Campus} Pato Branco}
-\date{2 de Julho de 2019}
+\date{20 de Setembro de 2021}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Para usar subfiguras %%
@@ -32,8 +32,13 @@ Engenharia de Computação\\
 \usetikzlibrary{positioning, patterns, quotes, angles, calc, arrows, shapes}
 \usetikzlibrary{arrows.meta}
 
+\usepackage{amsmath,amsfonts,amssymb} % pacote matematico
+
 % Para plotagem
 \usepackage{pgfplots}
+
+% para preencher interior de função (integrais)
+\usepgfplotslibrary{fillbetween}
 
 % para diagrama de transição de estados (SEDs)
 \usepackage{dot2texi}
@@ -46,6 +51,26 @@ Engenharia de Computação\\
 
 % Para matrizes.. (linhas internas)
 \usepackage{mleftright}
+
+% Para usar ifthenelse no lateX
+%(o q estou fazendo da minha vida, deus)
+\usepackage{ifthen}
+
+% Para matrizes.. (linhas internas)
+\usepackage{mleftright}
+
+% Para tabelas metidas a besta
+\usepackage{multirow}
+% Para tabelas ainda mais metidas a besta
+\usepackage{slashbox}
+
+% para alinhamento dentro de matrizes
+\usepackage{mathtools}
+
+% Para usar algoritmos:
+\usepackage[portuguese,ruled,lined]{algorithm2e}
+\usepackage{algorithm_PT}
+\usepackage{algorithmic_PT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definição de Figuras.
@@ -215,6 +240,83 @@ Engenharia de Computação\\
 	\end{tikzpicture}
 }
 
+\newcommand{\RoboDiffClean}{
+	% Linhas de baixo, lat esq e dir
+	\draw[-, inner sep = 0] (-0.65,-0.75) -- (0.65,-0.75);
+	\draw[-, inner sep = 0] (-0.75,-0.65) -- (-0.75,0.5);
+	\draw[-, inner sep = 0] (0.75,-0.65) -- (0.75,0.5);
+	
+	% bordas de baixo
+	\draw[-, inner sep = 0] (-0.65,-0.75) -- (-0.75,-0.65);
+	\draw[-, inner sep = 0] (0.65,-0.75) -- (0.75,-0.65);
+	
+	% Retas de cima
+	\def\UserL{\fpeval{1.3/(2*cosd(45)+1)}}
+	\draw[-, inner sep = 0] (-0.75,0.5) -- (\fpeval{-0.75+\UserL*cosd(45)},
+	\fpeval{0.5+\UserL*sind(45)});
+	
+	\draw[-, inner sep = 0] (0.75,0.5) -- (\fpeval{0.75-\UserL*cosd(45)},
+	\fpeval{0.5+\UserL*sind(45)});
+	
+	\draw[-, inner sep = 0]
+	(\fpeval{-0.75+\UserL*cosd(45)},\fpeval{0.5+\UserL*sind(45)}) -- (\fpeval{0.75-\UserL*cosd(45)},
+	\fpeval{0.5+\UserL*sind(45)});
+	
+	% Bola de rolamento
+	\filldraw (0,0.45) circle (1.5pt);
+	\draw (0,0.45) circle (3pt);
+	
+	% Desenhar rodas
+	\begin{scope}[shift={(-0.75,-0.65)},rotate = 90]
+		\draw[rounded corners=2pt] (0,0) rectangle ++(0.8,0.2);
+	\end{scope}
+	\begin{scope}[shift={(0.75,-0.65)},rotate = 90]
+		\draw[rounded corners=2pt] (0,0) rectangle ++(0.8,-0.2);
+	\end{scope}	
+}
+
+\newcommand{\meuRoboLindaoCompSP}{
+	\begin{scope}[shift={(0,0.3)}]
+		% Pr 
+		\begin{scope}[shift={(0,-0.3)}, scale = 0.5]
+			\node[color = gray] at (0.1,-0.35) {$P_r$};
+		\end{scope}
+		\begin{scope}[rotate=90,scale=0.5]
+			\filldraw (0,0) circle (0.5pt);
+			\begin{scope}[shift={(0.25,0)},rotate = -90]
+				\RoboDiffClean
+			\end{scope}
+		\end{scope}
+	\end{scope}
+}%
+
+\newcommand{\sensorVisaoTriangularSp}[1]{
+	\draw[color = gray] (0,0) -- (-0.1,#1);
+	\draw[color = gray] (0,0) -- (0.1,#1);
+	\draw[color = gray] (-0.1,#1) -- (0.1,#1);
+}
+
+\newcommand{\desenharSensoresTrianguloSPa}{
+	\begin{scope}[shift={(0.38,0.6)},rotate=-90]
+		\sensorVisaoTriangularSp{2}
+	\end{scope}
+	\begin{scope}[shift={(-0.38,0.6)},rotate=90]
+		\sensorVisaoTriangularSp{2-1.3}
+	\end{scope}
+	\begin{scope}[shift={(0.28,0.77)},rotate=-45]
+		\sensorVisaoTriangularSp{2}
+	\end{scope}
+	\begin{scope}[shift={(-0.28,0.77)},rotate=45]
+		\sensorVisaoTriangularSp{2}
+	\end{scope}	
+	\begin{scope}[shift={(0,0.87)},rotate=0]
+		\sensorVisaoTriangularSp{2}
+	\end{scope}
+}
+
+
+
+
 % Definição de bloco e paradinhas para diagramas de bloco
 \tikzset{%
     block/.style={scale = 1, draw, fill=white, rectangle, 
@@ -230,602 +332,41 @@ Engenharia de Computação\\
 \newcommand{\subitem}[1]{
     {\setlength\itemindent{30pt} \item[$\rightarrow$] #1}
 }
+
 %% ============== \begin ====================
 \begin{document}
 
-\begin{frame}
-	\titlepage
-\end{frame}
-
-\section{Navegação de robôs móveis utilizando Lógica \textit{Fuzzy}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%              Plano de Estágio              %%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Estrutura da Apresentação}
-\begin{frame}
-	\frametitle{Estrutura}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%              Inicio do Slide              %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	\begin{frame}
+		\titlepage
+	\end{frame}
 	
-	\begin{itemize}
-	  \item 1. Introdução
-	  \item 2. Objetivos
-	  \item 3. Fundamentos Teóricos
-	  	\subitem{3.1 Modelo do robô móvel}
-	  	\subitem{3.2 Sistemas a Eventos Discretos}
-	  	\subitem{3.3 Sistemas Híbridos}
-	  	\subitem{3.4 Lógica \textit{Fuzzy} em Controle}
-	  \item 4. Materiais e Método
-	  \item 5. Desenvolvimento
-	  \item 6. Considerações
-	\end{itemize}
-\end{frame}
-
-\setbeamercovered{transparent}
-\subsection{Introdução}
-\begin{frame}
-	\frametitle{Introdução}
-	\begin{block}{Aspectos Qualitativos}
-		Arquiteturas:
-		\begin{itemize}
-		  \item<1,2> Deliberativa.
-		  \item<1,3> Reativa.
-		  \item<1,4> Híbrida.
-		  \item<1,5> Comportamental.
-		\end{itemize}
-	\end{block}
+	\section{Navegação em robôs móveis por Arbitragem e Fusão em Arquiteturas Comportamentais}
 	
-	%\pause
-	\begin{overprint}
-	\onslide<2>
-	\begin{exampleblock}<2>{Deliberativa}
-		``Pensar antes de agir''.\\
-		Foco no longo prazo.
-	\end{exampleblock}
-	\onslide<3>
-	\begin{exampleblock}<3>{Reativa}
-		Reagir rapidamente a estímulos, sem planejar.\\
-		Foco no curto prazo.
-	\end{exampleblock}
-	\onslide<4>
-	\begin{exampleblock}<4>{Híbrida}
-		Camadas deliberativa e reativa em conjunto.\\
-		Desafio: extrair o melhor de cada abordagem.
-	\end{exampleblock}
-	\onslide<5>
-	\begin{exampleblock}<5>{Comportamental}
-		Semelhante à arquitetura reativa. \\
-		Difere pelo nível de abstração.
-	\end{exampleblock}
-	\end{overprint}
-\end{frame}
-
-\subsection{Objetivos}
-\begin{frame}
-	\frametitle{Objetivos}
-	\begin{exampleblock}{Objetivo Geral}
-		\begin{itemize}
-		  \item[$\rightarrow$] Construir robô autônomo, sem armazenamento de mapa,
-		  capaz de desviar de obstáculos.
-		  \item[$\rightarrow$] Comparar qualitativamente: controlador Híbrido e
-		  \textit{Fuzzy}.
-		\end{itemize}
-	\end{exampleblock}
-	\pause
-	\begin{block}{Objetivos Específicos}
-		\begin{itemize}
-		  \item[$\rightarrow$] Modelagem.
-		  \item[$\rightarrow$] Arquitetura de controle.
-		  \item[$\rightarrow$] Implementação física.
-		  \item[$\rightarrow$] Implementação do sistema embarcado.
-		  \item[$\rightarrow$] Teste e validação.
-		\end{itemize}
-	\end{block}
-\end{frame}
+	% Indice
+	\input{src/Indice}
 	
-\subsection{Fundamentos Teóricos}
-\begin{frame}
-	\frametitle{Arquitetura comportamental}
-	\input{Figuras/acoes}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Comportamentos como campos potenciais}
-	\input{Figuras/CampoVet}
-\end{frame}
-
-\begin{frame}
-	\begin{block}{Mínimos locais}
-		\begin{itemize}
-		  \item Existência de mínimos locais depende da disposição e formato de
-		  obstáculos.
-		  \item Um comportamento ``Seguidor de parede'' pode ser criado a fim de
-		  contornar obstáculos.
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-% Mínimos locais (obstáculos côncavos e convexos).
-% Comportamento Seguir parede.
-
-\begin{frame}
-	\frametitle{Modelo Cinemático}
-	\input{Figuras/Modelos}
-\end{frame}
-
-\begin{frame}
-	\begin{tabular}{cl}  
-    	\begin{tabular}{c}
-			\robounicicloinercial
-		\end{tabular}
-		& \begin{tabular}{l}
-			\parbox{0.5\linewidth}{
-				$
-					\left \{ \begin{matrix} \dot{x} &= v\cos{\phi} \\ \dot{y} &= v\sin{\phi} \\
-					\dot{\phi} &= \omega \end{matrix} \right.
-				$
-				
-				$
-					\mleft[ 
-					\begin{array}{c c}
-					\dot{x} \\ \dot{y} \\ \dot{\phi}
-					\end{array}
-					\mright] = \mleft[
-					\begin{matrix}
-		  				\cos{\phi} & 0 \\
-		  				\sin{\phi} & 0 \\
-		  				0 & 1 \\
-					\end{matrix}
-					\mright] \mleft[ 
-					\begin{array}{c c}
-					v \\ \omega
-					\end{array}
-					\mright]
-				$
-			}
-		\end{tabular}\\
-	\end{tabular}
-\end{frame}
-
-\begin{frame}
-	\begin{tabular}{cl}
-    	\begin{tabular}{c}
-    		\parbox{0.5\linewidth}{
-			$
-				\left \{ \begin{matrix} \dot{x} = \frac{R}{2}(\omega_l +
-				\omega_r)\cos{\phi}
-				\\
-				\dot{y} = \frac{R}{2}(\omega_l +
-				\omega_r)\sin{\phi}
-				\\
-				\dot{\phi} = \frac{R}{L}(\omega_r -
-				\omega_l) \end{matrix} \right.
-			$
-			}
-		\end{tabular}
-		\begin{tabular}{l}
-			\robodiffinercial
-		\end{tabular}
-	\end{tabular}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Estabelecendo vínculo entre os modelos}
-	\vfill
-	\begin{tabular}{cl}  
-		\begin{tabular}{c}
-			\parbox{0.5\linewidth}{
-			$
-				\left \{ \begin{matrix} \dot{x} = \frac{R}{2}(\omega_l +
-				\omega_r)\cos{\phi}
-				\\
-				\dot{y} = \frac{R}{2}(\omega_l +
-				\omega_r)\sin{\phi}
-				\\
-				\dot{\phi} = \frac{R}{L}(\omega_r -
-				\omega_l) \end{matrix} \right.
-			$
-			}
-		\end{tabular}
-		& \begin{tabular}{l}
-			\parbox{0.5\linewidth}{
-			$
-				\left \{ \begin{matrix} \dot{x} &= v\cos{\phi} \\ \dot{y} &= v\sin{\phi} \\
-				\dot{\phi} &= \omega \end{matrix} \right.
-			$
-			}
-		\end{tabular}
-	\end{tabular}
-	\vfill
-	\begin{exampleblock}{\centerline{Equivalência entre modelos}}
-	\centerline{
-	$
-	\begin{matrix}
-		\omega_l = \frac{2v - L\omega}{2R} 
-		\\
-		\\	
-		\omega_r = \frac{2v + L\omega}{2R}
-	\end{matrix}
-	$
-	}
-	\end{exampleblock}
-	\vfill
-\end{frame}
-
-\setbeamercovered{invisible}
-\begin{frame}
-	\frametitle{O modelo de integrador único}
-	\begin{tabular}{cl}
-    	\begin{tabular}{c}
-    		\hspace{-1cm}
-    		\parbox{0.5\linewidth}{
-    		\vspace{1.3cm}
-    		\begin{itemize}
-    		\item<1->[]
-			$
-				\left \{ \begin{matrix} x' = x_o + l\cos{\phi}
-				\\
-				y' = y_o + l\sin{\phi}
-				\end{matrix} \right.
-			$
-			\item<2->[]
-			$
-				\left \{ \begin{matrix} \dot{x'} = \dot{x_o} - \dot{\phi}l\sin{\phi} =
-				v\cos{\phi} - l\omega\sin{\phi}
-				\\
-				\dot{y'} = \dot{y_o} + \dot{\phi}l\cos{\phi} = v\sin{\phi} +
-				l\omega\cos{\phi} \end{matrix} \right.
-			$
-			\item<3->[]
-			\mbox{\small
-			$
-				\mleft[ 
-				\begin{array}{c c}
-				\dot{x'} \\ \dot{y'}
-				\end{array}
-				\mright] = \mleft[
-				\begin{matrix}
-		  			\cos{\phi} & -\sin{\phi} \\
-		  			\sin{\phi} & \cos{\phi} \\
-				\end{matrix}
-				\mright] \mleft[
-				\begin{matrix}
-		  			1 & 0 \\
-		  			0 & l \\
-				\end{matrix}
-				\mright] \mleft[ 
-				\begin{array}{c c}
-				v \\ \omega
-				\end{array}
-				\mright]
-			$
-			}
-			\item<4->[]
-			\mbox{\small
-			$
-				\mleft[ 
-				\begin{array}{c c}
-				v \\ \omega
-				\end{array}
-				\mright] = \mleft[
-				\begin{matrix}
-					1 & 0 \\
-		  			0 & \frac{1}{l} \\
-				\end{matrix}
-				\mright] \mleft[
-				\begin{matrix}
-		  			\cos{\phi} & \sin{\phi} \\
-		  			-\sin{\phi} & \cos{\phi} \\
-				\end{matrix}
-				\mright] \mleft[ 
-				\begin{array}{c c}
-					\dot{x'} \\ \dot{y'}
-				\end{array}
-				\mright]
-			$
-			}
-			\item<5>[]
-			\mbox{\small
-			$
-				\mleft[ 
-				\begin{array}{c c}
-					\omega_l \\ \omega_r
-				\end{array}
-				\mright] = \mleft[
-				\begin{matrix}
-		  			\frac{1}{R} & \frac{-L}{2R} \\
-		  			\frac{1}{R} & \frac{L}{2R} \\
-				\end{matrix}
-				\mright] \mleft[
-				\begin{matrix}
-		  			1 & 0 \\
-		  			0 & \frac{1}{l} \\
-				\end{matrix}
-				\mright] \mleft[
-				\begin{matrix}
-		  			\cos{\phi} & \sin{\phi} \\
-		  			-\sin{\phi} & \cos{\phi} \\
-				\end{matrix}
-				\mright] \mleft[ 
-				\begin{array}{c c}
-					\dot{x'} \\ \dot{y'}
-				\end{array}
-				\mright]
-			$
-			}
-			\end{itemize}
-			}
-		\end{tabular}
-		\begin{tabular}{l}
-			\hspace{1cm}
-			\robodiffinercial
-		\end{tabular}
-	\end{tabular}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Sistemas a Eventos Discretos}
-	\begin{block}{Definição}
-		\begin{itemize}
-		  \item Sistema Dinâmico.
-		  \item Estados discretos.
-		  \item Eventos assíncronos provocam transições instantâneas de estado.
-		  \item Arbitragem!
-		\end{itemize}
-	\end{block}
+	% Introducao
+	\input{src/Introducao}
 	
-	\vspace{-0.15cm}
-	\input{Figuras/DiagramaTransicao}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Controle Supervisório}
-	\begin{block}{Definição}
-		\begin{itemize}
-		  \item Captura eventos observáveis.
-		  \item Permite ou suprime eventos passíveis de ocorrência.
-		\end{itemize}
-	\end{block}
+	% Objetivos
+	\input{src/Objetivos}
+		
+	% Fundamentos Teoricos
+	\input{src/FundamentosTeoricos}
 	
-	\vspace{0.3cm}
-	\input{Figuras/SupMalhaFechada}
-\end{frame}
-
-\begin{frame}	
-	\frametitle{Automatos Temporizados com guarda}
+	% Materiais e Metodos
+	\input{src/MateriaisEMetodo}
 	
-	\begin{exampleblock}{\textit{clocks}}
-		\begin{itemize}
-		  \item ``Contador'': associado a tempo.
-		  \item Definido por uma função linear ($\dot{x} = 1$).
-		\end{itemize}
-	\end{exampleblock}
+	% Desenvolvimento
+	\input{src/Desenvolvimento}
 	
-	\begin{block}{Função de transição}
-		\begin{itemize}
-		  \item Transições: (Estado, Evento) $\rightarrow$ (Estado)
-		  \item Transições Temporizadas: (Guardas, Evento, \textit{Reset})
-		  $\rightarrow$ (Estado)
-		  \subitem{Guardas: condições nas variáveis contínuas.}
-		  \subitem{\textit{Reset}: conjunto de variáveis \textit{clock} às quais
-		  deve-se atribuir valor zero.}
-		\end{itemize}
-	\end{block}
+	% Consideracoes Finais
+	\input{src/ConsideracoesFinais}
 	
-\end{frame}
-
-\begin{frame}
-	\vspace{-0.6cm}
-	\input{Figuras/AutTempGuarda}
-	\pause
-	\begin{exampleblock}{Invariante}
-		Evita \textit{deadlock} por tempo ao forçar transição!
-	\end{exampleblock}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Sistemas Híbridos}
-	\begin{block}{Definição}
-		\begin{itemize}
-		  \item Estados formados por tuplas (q,\textbf{x}).
-		  \subitem{q: Estados discretos}.
-		  \subitem{\textbf{x}: Estados contínuos}.
-		  \item Autômato híbrido extende o autômato temporizado com guardas.
-		  \item Estados são chamados ``\textbf{modos de operação}'', pois alteram a
-		  dinâmica do sistema.
-		\end{itemize}
-	\end{block}
-	\pause
-	\begin{exampleblock}{Arbitragem}
-		Chaveamento de dinâmicas (controladores).
-	\end{exampleblock}
-\end{frame}
-
-\begin{frame}
-	\input{Figuras/Supervisorio}
-\end{frame}
-
-\begin{frame}
-	\begin{exampleblock}{Campos vetoriais descontínuos}
-		\begin{itemize}
-		  \item Regiões de costura.
-		  \item Deslizamento.
-		  \item Comportamento de Zenão.
-		  \item Regularização.
-		\end{itemize}
-	\end{exampleblock}
-	\pause
-	\begin{overprint}
-	
-	\onslide<2>
-	\vspace{1cm}
-	\begin{figure}[h]
-		\centering
-		\begin{tikzpicture}[scale = 1,->,auto ,node distance =4 cm and 5cm ,on grid ,
-		>=latex',
-		state/.style ={scale = 1,circle, draw, minimum width =0.7cm},
-		finalstate/.style ={scale = 1,circle, draw, minimum width =0.7cm}]
-			\coordinate (supa) {};
-			\coordinate[right = 4cm of supa] (supb) {};
-			\draw[-,dashed] (supa) to [out=45,in=135] (supb);
-	
-			\coordinate[above right = 2cm of supa, inner sep = 0pt] (in1) {};
-			\coordinate[below = 1.25cm of in1, inner sep = 0pt] (in2) {};
-			\coordinate[below right = 0.835cm of in1] (dest) {};
-			\path[->] (in1) edge node[above right] {$f_1$} (dest);
-			\path[->] (in2) edge node[below right] {$f_2$}(dest);
-	
-			\coordinate[right = 0.7cm of dest, inner sep = 0pt] (dest2) {};
-			\path[->] (dest) edge node[above right] {$f_S$}(dest2);
-	
-			\node[above = 0.5cm of supb] (b) {$\sigma = 0$};
-		\end{tikzpicture}%
-	\end{figure}
-	
-	\onslide<3>
-	\vspace{-0.4cm}
-	\begin{figure}[h]
-		\centering
-		\begin{tikzpicture}[scale = 1,->,auto ,node distance =4 cm and 5cm ,on grid ,
-		>=latex' ,
-		state/.style ={scale = 1,circle, draw, minimum width =0.7cm},
-		finalstate/.style ={scale = 1,circle, draw, minimum width =0.7cm}]
-			\node[ellipse, draw] (f1) {$\dot{x} = f_1$};
-			\node[ellipse, draw, right = 3.5cm of f1] (f2) {$\dot{x} = f_2$};
-	
-			\draw (f1) to [out=30,in=150] node[above] {$\sigma \leq 0$} (f2);
-			\draw (f2) to [out=210,in=330] node[below] {$\sigma \geq 0$} (f1);
-	
-			\node[ellipse, draw, below = 2.8cm of f1] (f1l) {$\dot{x} = f_1$};
-			\node[ellipse, draw, right = 2.5cm of f1l] (fsl) {$\dot{x} = f_S$};
-			\node[ellipse, draw, right = 2.5cm of fsl] (f2l) {$\dot{x} = f_2$};
-	
-			\draw (f1l) to [out=30,in=150] node[above] {$\sigma \leq 0$} (fsl);
-			\draw (fsl) to [out=210,in=330] node[below] {$\sigma > 0$} (f1l);
-			\draw (fsl) to [out=30,in=150] node[above] {$\sigma < 0$} (f2l);
-			\draw (f2l) to [out=210,in=330] node[below] {$\sigma \geq 0$} (fsl);
-		\end{tikzpicture}%
-	\end{figure}
-	%\input{Figuras/Sliding}
-	\end{overprint}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Lógica \textit{Fuzzy} em controle}
-	\vspace{-0.1cm}
-	\begin{block}{Conjuntos \textit{fuzzy}}
-		\begin{itemize}
-		  \item Variável linguística.
-		  \item Valor linguístico.
-		  \item Grau de pertinência.
-		\end{itemize}
-	\end{block}	
-	\pause
-	\begin{exampleblock}{Motivação para uso}
-		\begin{itemize}
-		  \item Mescla aspectos exatos e elementos qualitativos.
-		\end{itemize}
-	\end{exampleblock}
-	\pause
-	\begin{block}{Indicação e contraindicação}
-		\begin{itemize}
-		  \item Indicada em sistemas \textbf{complexos}, compreendidos parcialmente.
-		  \item Deseja-se solução rápida.
-		  \item Não apropriada para sistemas simples (LIT).
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-\begin{frame}
-	\input{Figuras/ControladorFuzzy}
-\end{frame}
-
-\begin{frame}
-	\begin{block}{\textit{Fuzzyficação}}
-		\begin{itemize}
-		  \item Associa variáveis numéricas a conjuntos \textit{fuzzy}.
-		  \item Saída: conjunto de graus de pertinência vinculados a valores
-		  linguísticos.
-		\end{itemize}
-	\end{block}
-	\pause
-	\begin{exampleblock}{Mecanismo de Inferência}
-		\begin{itemize}
-		  \item Base de regras ($P \rightarrow Q$).
-		  \item Pertinência das premissas determinam pertinências das saídas.
-		  \item Conjunto de ``recomendações''.
-		\end{itemize}
-	\end{exampleblock}
-	\pause
-	\begin{block}{\textit{Defuzzificação}}
-		\begin{itemize}
-		  \item A partir de recomendações distintas, determinam-se as saídas.
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-\subsection{Materiais e Método}
-\begin{frame}
-	\frametitle{Materiais}
-	\begin{block}{Tabela de Custos}
-		\input{Tabelas/TabelaCustos}
-	\end{block}
-\end{frame}
-
-\begin{frame}
-	\frametitle{Metodologia}
-	\begin{block}{}
-		\begin{itemize}
-		  \item Projetar controladores.
-		  \item Validar o funcionamento usando simulador Simiam.
-		  \item Montagem física.
-		  \item Sistema embarcado.
-		  \item Teste e validação.
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-\subsection{Desenvolvimento}
-\begin{frame}
-	\frametitle{Desenvolvimento}
-	
-	\begin{block}{Simiam}
-		\begin{itemize}
-		  \item Simulador implementado no Matlab.
-		  \item Implementado como sistema híbrido (Supervisor escalona controladores).
-		\end{itemize}
-	\end{block}
-	\pause
-	\vspace{-0.15cm}
-	\input{Figuras/FigRobosEmSim}
-\end{frame}
-
-\begin{frame}
-	\begin{exampleblock}{Alterações mais importantes}
-		\begin{itemize}
-		  \item Incluir uma classe para implementar aspectos físicos do robô deste
-		  trabalho.
-		  \item Incluir suporte para controladores \textit{fuzzy}.
-		\end{itemize}
-	\end{exampleblock}
-\end{frame}
-
-\subsection{Considerações Finais}
-\begin{frame}
-	\frametitle{Considerações Finais}
-	
-	\begin{block}{}
-		\begin{itemize}
-		  \item Autonomia em arquiteturas não deliberativas.
-		  \item Estimativa de estado.
-		  \item Comparação qualitativa.
-		\end{itemize}
-	\end{block}
-\end{frame}
-
-\subsection{Agradecimentos}
-\begin{frame}
-	%\frametitle{Obrigado pela presença!}
-	\titlepage
-\end{frame}
+	% Agradecimentos
+	\input{src/Agradecimentos}
 
 \end{document}

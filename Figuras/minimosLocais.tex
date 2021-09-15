@@ -1,0 +1,88 @@
+\newcommand{\meuRoboLindaoCompMinimos}{
+	\begin{scope}[shift={(0,0.3)}]
+		% Pr 
+		\begin{scope}[shift={(0,-0.3)}, scale = 0.5]
+			\node[color = gray] at (0.1,-0.35) {$P_r$};
+		\end{scope}
+		\begin{scope}[rotate=90,scale=0.5]
+			\filldraw (0,0) circle (0.5pt);
+			\begin{scope}[shift={(0.25,0)},rotate = -90]
+				\RoboDiffClean
+			\end{scope}
+		\end{scope}
+	\end{scope}
+}%
+
+\newcommand{\obstaculoA}[2]{
+	\node[inner sep = 0pt] (P1) at (#1,0) {};
+	\node[inner sep = 0pt] (P2) at (\fpeval{#1+(#2/2)},\fpeval{#2*sqrt{2}/2}) {};
+	\node[inner sep = 0pt] (P3) at (\fpeval{#1+((3*#2)/2)},\fpeval{#2*sqrt{2}/2}) {};
+	\node[inner sep = 0pt] (P4) at (\fpeval{#1+2*#2},0) {};
+	\node[inner sep = 0pt] (P5) at (\fpeval{#1+((3*#2)/2)},\fpeval{-(#2*sqrt{2}/2)}) {};
+	\node[inner sep = 0pt] (P6) at (\fpeval{#1+(#2/2)},\fpeval{-(#2*sqrt{2}/2)}) {};
+	
+	\draw[color = darkgray] (P1) -- (P2);
+	\draw[color = darkgray] (P2) -- (P3);
+	\draw[color = darkgray] (P3) -- (P4);
+	\draw[color = darkgray] (P4) -- (P5);
+	\draw[color = darkgray] (P5) -- (P6);
+	\draw[color = darkgray] (P6) -- (P1);
+	
+	\node[color = gray] at (#1+#2,-1.3) {Obstáculo 1};
+}
+
+\newcommand{\obstaculoB}[3]{
+	\node[inner sep = 0pt] (P1) at (#1,#2) {};
+	\node[inner sep = 0pt] (P2) at (#1,#2+0.5) {};
+	\node[inner sep = 0pt] (P3) at (#1+#3+0.5,#2+0.5) {};
+	\node[inner sep = 0pt] (P4) at (#1+#3+0.5,-#2-0.5) {};
+	
+	\node[inner sep = 0pt] (P5) at (#1,-#2-0.5) {};
+	\node[inner sep = 0pt] (P6) at (#1,-#2) {};
+	\node[inner sep = 0pt] (P7) at (#1+#3,-#2) {};
+	\node[inner sep = 0pt] (P8) at (#1+#3,#2) {};
+	
+	\draw[color = darkgray] (P1) -- (P2);
+	\draw[color = darkgray] (P2) -- (P3);
+	\draw[color = darkgray] (P3) -- (P4);
+	\draw[color = darkgray] (P4) -- (P5);
+	\draw[color = darkgray] (P5) -- (P6);
+	\draw[color = darkgray] (P6) -- (P7);
+	\draw[color = darkgray] (P7) -- (P8);
+	\draw[color = darkgray] (P8) -- (P1);
+	
+	\node[color = gray] at (#1+0.25+#3/2,-2.8) {Obstáculo 2};
+}
+
+\newcommand{\obstaculoC}[2]{
+	\node[inner sep = 0pt] (P1) at (#1,#2+0.5) {};
+	\node[inner sep = 0pt] (P2) at (#1+0.5,#2+0.5) {};
+	\node[inner sep = 0pt] (P3) at (#1+0.5,-#2-0.5) {};
+	\node[inner sep = 0pt] (P4) at (#1,-#2-0.5) {};
+	
+	\draw[color = darkgray] (P1) -- (P2);
+	\draw[color = darkgray] (P2) -- (P3);
+	\draw[color = darkgray] (P3) -- (P4);
+	\draw[color = darkgray] (P4) -- (P1);
+	
+	\node[color = gray] at (#1+0.25,-2.8) {Obstáculo 3};
+}
+
+\begin{figure}[ht]
+	\centering%
+	
+	\begin{tikzpicture}[scale = 1.1]%
+		% Robô
+		\begin{scope}[rotate=-90]
+			\meuRoboLindaoCompMinimos
+		\end{scope}
+		\obstaculoA{2}{1.5}
+		\obstaculoB{4}{2}{2}
+		\obstaculoC{8}{2}
+		
+		\begin{scope}[shift={(10,0)}]
+			\filldraw (0,0) circle (1.5pt);
+			\node[color = gray] at (0,-0.35) {Objetivo};
+		\end{scope}
+	\end{tikzpicture}%
+\end{figure}

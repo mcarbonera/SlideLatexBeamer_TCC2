@@ -2,7 +2,7 @@
 \headcommand {\beamer@framepages {1}{1}}
 \headcommand {\beamer@sectionpages {1}{1}}
 \headcommand {\beamer@subsectionpages {1}{1}}
-\headcommand {\sectionentry {1}{Navegação de robôs móveis utilizando Lógica \textit {Fuzzy}}{2}{Navegação de robôs móveis utilizando Lógica \textit {Fuzzy}}{0}}
+\headcommand {\sectionentry {1}{Navegação em robôs móveis por Arbitragem e Fusão em Arquiteturas Comportamentais}{2}{Navegação em robôs móveis por Arbitragem e Fusão em Arquiteturas Comportamentais}{0}}
 \headcommand {\beamer@subsectionpages {2}{1}}
 \headcommand {\beamer@subsectionentry {0}{1}{1}{2}{Estrutura da Apresentação}}
 \headcommand {\slideentry {1}{1}{1}{2/2}{Estrutura da Apresentação}{0}}
@@ -47,34 +47,188 @@
 \headcommand {\beamer@framepages {29}{29}}
 \headcommand {\slideentry {1}{4}{15}{30/32}{Fundamentos Teóricos}{0}}
 \headcommand {\beamer@framepages {30}{32}}
-\headcommand {\slideentry {1}{4}{16}{33/35}{Fundamentos Teóricos}{0}}
-\headcommand {\beamer@framepages {33}{35}}
-\headcommand {\slideentry {1}{4}{17}{36/36}{Fundamentos Teóricos}{0}}
-\headcommand {\beamer@framepages {36}{36}}
+\headcommand {\slideentry {1}{4}{16}{33/33}{Fundamentos Teóricos}{0}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\slideentry {1}{4}{17}{34/36}{Fundamentos Teóricos}{0}}
+\headcommand {\beamer@framepages {34}{36}}
 \headcommand {\slideentry {1}{4}{18}{37/39}{Fundamentos Teóricos}{0}}
 \headcommand {\beamer@framepages {37}{39}}
-\headcommand {\beamer@subsectionpages {10}{39}}
-\headcommand {\beamer@subsectionentry {0}{1}{5}{40}{Materiais e Método}}
-\headcommand {\slideentry {1}{5}{1}{40/40}{Materiais e Método}{0}}
+\headcommand {\slideentry {1}{4}{19}{40/40}{Fundamentos Teóricos}{0}}
 \headcommand {\beamer@framepages {40}{40}}
-\headcommand {\slideentry {1}{5}{2}{41/41}{Materiais e Método}{0}}
-\headcommand {\beamer@framepages {41}{41}}
-\headcommand {\beamer@subsectionpages {40}{41}}
-\headcommand {\beamer@subsectionentry {0}{1}{6}{42}{Desenvolvimento}}
-\headcommand {\slideentry {1}{6}{1}{42/43}{Desenvolvimento}{0}}
-\headcommand {\beamer@framepages {42}{43}}
-\headcommand {\slideentry {1}{6}{2}{44/44}{Desenvolvimento}{0}}
+\headcommand {\slideentry {1}{4}{20}{41/43}{Fundamentos Teóricos}{0}}
+\headcommand {\beamer@framepages {41}{43}}
+\headcommand {\slideentry {1}{4}{21}{44/44}{Fundamentos Teóricos}{0}}
 \headcommand {\beamer@framepages {44}{44}}
-\headcommand {\beamer@subsectionpages {42}{44}}
-\headcommand {\beamer@subsectionentry {0}{1}{7}{45}{Considerações Finais}}
-\headcommand {\slideentry {1}{7}{1}{45/45}{Considerações Finais}{0}}
+\headcommand {\slideentry {1}{4}{22}{45/45}{Fundamentos Teóricos}{0}}
 \headcommand {\beamer@framepages {45}{45}}
-\headcommand {\beamer@subsectionpages {45}{45}}
-\headcommand {\beamer@subsectionentry {0}{1}{8}{46}{Agradecimentos}}
-\headcommand {\slideentry {1}{8}{1}{46/46}{Agradecimentos}{0}}
+\headcommand {\slideentry {1}{4}{23}{46/46}{Fundamentos Teóricos}{0}}
 \headcommand {\beamer@framepages {46}{46}}
-\headcommand {\beamer@partpages {1}{46}}
-\headcommand {\beamer@subsectionpages {46}{46}}
-\headcommand {\beamer@sectionpages {2}{46}}
-\headcommand {\beamer@documentpages {46}}
-\headcommand {\gdef \inserttotalframenumber {28}}
+\headcommand {\slideentry {1}{4}{24}{47/47}{Fundamentos Teóricos}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\slideentry {1}{4}{25}{48/48}{Fundamentos Teóricos}{0}}
+\headcommand {\beamer@framepages {48}{48}}
+\headcommand {\slideentry {1}{4}{26}{49/49}{Fundamentos Teóricos}{0}}
+\headcommand {\beamer@framepages {49}{49}}
+\headcommand {\slideentry {1}{4}{27}{50/52}{Fundamentos Teóricos}{0}}
+\headcommand {\beamer@framepages {50}{52}}
+\headcommand {\beamer@subsectionpages {10}{52}}
+\headcommand {\beamer@subsectionentry {0}{1}{5}{53}{Materiais e Método}}
+\headcommand {\slideentry {1}{5}{1}{53/53}{Materiais e Método}{0}}
+\headcommand {\beamer@framepages {53}{53}}
+\headcommand {\slideentry {1}{5}{2}{54/54}{Materiais e Método}{0}}
+\headcommand {\beamer@framepages {54}{54}}
+\headcommand {\beamer@subsectionpages {53}{54}}
+\headcommand {\beamer@subsectionentry {0}{1}{6}{55}{Desenvolvimento}}
+\headcommand {\slideentry {1}{6}{1}{55/57}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {55}{57}}
+\headcommand {\slideentry {1}{6}{2}{58/58}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {58}{58}}
+\headcommand {\slideentry {1}{6}{3}{59/61}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {59}{61}}
+\headcommand {\slideentry {1}{6}{4}{62/62}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {62}{62}}
+\headcommand {\slideentry {1}{6}{5}{63/63}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {63}{63}}
+\headcommand {\slideentry {1}{6}{6}{64/64}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {64}{64}}
+\headcommand {\slideentry {1}{6}{7}{65/65}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {65}{65}}
+\headcommand {\slideentry {1}{6}{8}{66/66}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {66}{66}}
+\headcommand {\slideentry {1}{6}{9}{67/67}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {67}{67}}
+\headcommand {\slideentry {1}{6}{10}{68/69}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {68}{69}}
+\headcommand {\slideentry {1}{6}{11}{70/71}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {70}{71}}
+\headcommand {\slideentry {1}{6}{12}{72/72}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {72}{72}}
+\headcommand {\slideentry {1}{6}{13}{73/77}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {73}{77}}
+\headcommand {\slideentry {1}{6}{14}{78/78}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {78}{78}}
+\headcommand {\slideentry {1}{6}{15}{79/81}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {79}{81}}
+\headcommand {\slideentry {1}{6}{16}{82/84}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {82}{84}}
+\headcommand {\slideentry {1}{6}{17}{85/85}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {85}{85}}
+\headcommand {\slideentry {1}{6}{18}{86/89}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {86}{89}}
+\headcommand {\slideentry {1}{6}{19}{90/90}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {90}{90}}
+\headcommand {\slideentry {1}{6}{20}{91/91}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {91}{91}}
+\headcommand {\slideentry {1}{6}{21}{92/92}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {92}{92}}
+\headcommand {\slideentry {1}{6}{22}{93/96}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {93}{96}}
+\headcommand {\slideentry {1}{6}{23}{97/99}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {97}{99}}
+\headcommand {\slideentry {1}{6}{24}{100/100}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {100}{100}}
+\headcommand {\slideentry {1}{6}{25}{101/101}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {101}{101}}
+\headcommand {\slideentry {1}{6}{26}{102/103}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {102}{103}}
+\headcommand {\slideentry {1}{6}{27}{104/106}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {104}{106}}
+\headcommand {\slideentry {1}{6}{28}{107/108}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {107}{108}}
+\headcommand {\slideentry {1}{6}{29}{109/110}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {109}{110}}
+\headcommand {\slideentry {1}{6}{30}{111/111}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {111}{111}}
+\headcommand {\slideentry {1}{6}{31}{112/112}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {112}{112}}
+\headcommand {\slideentry {1}{6}{32}{113/113}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {113}{113}}
+\headcommand {\slideentry {1}{6}{33}{114/114}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {114}{114}}
+\headcommand {\slideentry {1}{6}{34}{115/116}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {115}{116}}
+\headcommand {\slideentry {1}{6}{35}{117/118}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {117}{118}}
+\headcommand {\slideentry {1}{6}{36}{119/119}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {119}{119}}
+\headcommand {\slideentry {1}{6}{37}{120/120}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {120}{120}}
+\headcommand {\slideentry {1}{6}{38}{121/121}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {121}{121}}
+\headcommand {\slideentry {1}{6}{39}{122/122}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {122}{122}}
+\headcommand {\slideentry {1}{6}{40}{123/123}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {123}{123}}
+\headcommand {\slideentry {1}{6}{41}{124/125}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {124}{125}}
+\headcommand {\slideentry {1}{6}{42}{126/126}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {126}{126}}
+\headcommand {\slideentry {1}{6}{43}{127/127}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {127}{127}}
+\headcommand {\slideentry {1}{6}{44}{128/128}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {128}{128}}
+\headcommand {\slideentry {1}{6}{45}{129/129}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {129}{129}}
+\headcommand {\slideentry {1}{6}{46}{130/130}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {130}{130}}
+\headcommand {\slideentry {1}{6}{47}{131/131}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {131}{131}}
+\headcommand {\slideentry {1}{6}{48}{132/132}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {132}{132}}
+\headcommand {\slideentry {1}{6}{49}{133/133}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {133}{133}}
+\headcommand {\slideentry {1}{6}{50}{134/134}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {134}{134}}
+\headcommand {\slideentry {1}{6}{51}{135/135}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {135}{135}}
+\headcommand {\slideentry {1}{6}{52}{136/136}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {136}{136}}
+\headcommand {\slideentry {1}{6}{53}{137/137}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {137}{137}}
+\headcommand {\slideentry {1}{6}{54}{138/138}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {138}{138}}
+\headcommand {\slideentry {1}{6}{55}{139/139}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {139}{139}}
+\headcommand {\slideentry {1}{6}{56}{140/140}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {140}{140}}
+\headcommand {\slideentry {1}{6}{57}{141/141}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {141}{141}}
+\headcommand {\slideentry {1}{6}{58}{142/142}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {142}{142}}
+\headcommand {\slideentry {1}{6}{59}{143/143}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {143}{143}}
+\headcommand {\slideentry {1}{6}{60}{144/144}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {144}{144}}
+\headcommand {\slideentry {1}{6}{61}{145/145}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {145}{145}}
+\headcommand {\slideentry {1}{6}{62}{146/146}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {146}{146}}
+\headcommand {\slideentry {1}{6}{63}{147/147}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {147}{147}}
+\headcommand {\slideentry {1}{6}{64}{148/148}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {148}{148}}
+\headcommand {\slideentry {1}{6}{65}{149/149}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {149}{149}}
+\headcommand {\slideentry {1}{6}{66}{150/150}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {150}{150}}
+\headcommand {\slideentry {1}{6}{67}{151/151}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {151}{151}}
+\headcommand {\slideentry {1}{6}{68}{152/152}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {152}{152}}
+\headcommand {\slideentry {1}{6}{69}{153/153}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {153}{153}}
+\headcommand {\slideentry {1}{6}{70}{154/154}{Desenvolvimento}{0}}
+\headcommand {\beamer@framepages {154}{154}}
+\headcommand {\beamer@subsectionpages {55}{154}}
+\headcommand {\beamer@subsectionentry {0}{1}{7}{155}{Considerações Finais}}
+\headcommand {\slideentry {1}{7}{1}{155/155}{Considerações Finais}{0}}
+\headcommand {\beamer@framepages {155}{155}}
+\headcommand {\beamer@subsectionpages {155}{155}}
+\headcommand {\beamer@subsectionentry {0}{1}{8}{156}{Agradecimentos}}
+\headcommand {\slideentry {1}{8}{1}{156/156}{Agradecimentos}{0}}
+\headcommand {\beamer@framepages {156}{156}}
+\headcommand {\beamer@partpages {1}{156}}
+\headcommand {\beamer@subsectionpages {156}{156}}
+\headcommand {\beamer@sectionpages {2}{156}}
+\headcommand {\beamer@documentpages {156}}
+\headcommand {\gdef \inserttotalframenumber {105}}

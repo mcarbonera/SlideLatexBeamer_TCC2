@@ -1,0 +1,51 @@
+\newcommand{\meuRoboLindaoCompIPO}{
+	\begin{tikzpicture}[scale = 1.5]%
+		\coordsystwo{I}
+		\begin{scope}[shift={(3, 0.9)}]
+			\draw[->] (0.3,0) arc (0:30:0.3);
+			\draw[-] (0,0) -- (0.4,0);
+			\node at (0.5,0.1) {$\phi$};
+			
+			% Pr 
+			\begin{scope}[scale = 0.5]
+				\node[color = gray] at (0.1,-0.35) {$P_r$};
+			\end{scope}
+			\begin{scope}[rotate=30,scale=0.5]
+				\begin{scope}[scale=0.9]
+					\coordsystwo{R}
+				\end{scope}
+				\begin{scope}[shift={(0.25,0)},rotate = -90]
+					\RoboDiffClean
+				\end{scope}
+			\end{scope}	
+		\end{scope}
+		
+		% Coord objetivo
+		\begin{scope}[shift={(4, 3)}]
+			\filldraw (0,0) circle (1pt);
+			% Po
+			\begin{scope}[scale = 0.5]
+				\node[color = gray] at (0.2,-0.45) {$P_o$};
+			\end{scope}
+		\end{scope}
+		
+		% retas
+		\node[inner sep = 3pt] (P1) at (4,3) {};
+		\node[inner sep = 3pt] (P2) at (3,0.9) {};
+		
+		\draw[->] (0,0) -- (P1);
+		\draw[->] (0,0) -- (P2);
+		\draw[->] (P2) -- (P1);
+		
+		% angulo do objetivo
+		\draw[->] (0.6,0) arc (0:37:0.6);
+		\draw[-] (0,0) -- (0.4,0);
+		\node at (0.8,0.4) {$\theta$};
+	\end{tikzpicture}%
+}%
+
+\begin{figure}[ht]
+	\centering%
+	\caption{Comportamento Ir para Objetivo}%
+	\meuRoboLindaoCompIPO
+\end{figure}

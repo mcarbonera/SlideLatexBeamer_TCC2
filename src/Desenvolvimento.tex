@@ -1,0 +1,894 @@
+\subsection{Desenvolvimento}
+
+\begin{frame}
+	\frametitle{Simulação}
+	\begin{block}{Simiam}
+		\begin{itemize}
+		  \item Simulador implementado no Matlab.
+		  \item Implementado como sistema híbrido (Supervisor escalona controladores).
+		\end{itemize}
+	\end{block}
+	\onslide<2>
+	\input{Figuras/FigRobos}
+	\onslide<3>
+	\vspace{-3.5cm}
+	\input{Figuras/FigRobosEmSim}
+\end{frame}
+	
+\begin{frame}
+	\begin{exampleblock}{Alterações mais importantes}
+		\begin{itemize}
+		  \item Incluir uma classe para implementar aspectos físicos do robô deste
+		  trabalho.
+		  \item Incluir suporte para controladores \textit{fuzzy}.
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Especificações}
+	\input{Figuras/FigRespostaIR}
+	\onslide<2>
+		\begin{exampleblock}{Parâmetros}
+			\begin{itemize}
+			  \item Sensor IR: intervalo entre 10 e 80cm.
+			  \item L = 18cm.
+			  \item R = 3.4cm.
+			\end{itemize}	
+		\end{exampleblock}	
+	\onslide<3>
+		\vspace{-3.2cm}
+		\begin{exampleblock}{Equação para distâncias do sensor IR}
+			\begin{equation}
+				\begin{split}
+					d(v) = 2.7802212625 v^6 -35.1150300110 v^5 + 179.6031433005 v^4 \\
+					-477.9449116299 v^3 + 706.3400747125 v^2 -569.7367375002 v \\
+					+ 221.2678651473
+				\end{split}
+			\end{equation}
+		\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Montagem Física}
+	\input{Figuras/RoboJubileu}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/RoboJubileuMontado}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Curva para motores}
+	\input{Figuras/AcionamentoMotor1}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/AcionamentoMotor2}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/AcionamentoMotor3}
+\end{frame}
+	
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Desenvolvimento}
+	\begin{block}{Controlador Híbrido}
+		Implementa arbitragem de comportamentos.
+	\end{block}
+	
+	\begin{exampleblock}{Controlador Fuzzy}
+		Implementa fusão de comportamentos.
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Controlador Híbrido}
+	\begin{exampleblock}{Controlador PID}
+		\begin{equation}
+			\omega = K_p \epsilon(k) + K_i \sum_0^k \epsilon(k) T + k_d \frac{\epsilon(k) - \epsilon(k-1)}{T}
+		\end{equation}
+	\end{exampleblock}
+	
+	\onslide<2>
+	\begin{block}{Considerações}
+		\begin{itemize}
+		  \item Velocidade angular tem prioridade sobre velocidade linear.
+		  \item É necessário sacrificar velocidade linear em caso de saturação.
+		\end{itemize}
+	\end{block}
+\end{frame}
+	
+\begin{frame}
+	\begin{algorithm}[H]
+		\algsetup{linenosize=\tiny}
+		\scriptsize
+		\caption{Uniciclo para Acionamento Diferencial priorizando $\omega$}
+		\begin{algorithmic}[1]
+			\onslide<1>
+			\REQUIRE $v, \omega$
+			\ENSURE $\omega_l, \omega_r$
+			
+			\IF{$v > 0$}
+				\STATE $vlim \leftarrow max(min(abs(v), R \cdot VEL\_MAX), R \cdot VEL\_MIN)$
+				\STATE $wlim \leftarrow max(min(abs(\omega), (R/L) \cdot (VEL\_MAX - VEL\_MIN)), 0)$
+				
+				\STATE $w_{l,lim}, w_{r,lim} \leftarrow uniToDiff(vlim, wlim)$
+				
+				\STATE $ velocidadeMaior \leftarrow max(w_{l,lim}, w_{r,lim})$
+				\STATE $ velocidadeMenor \leftarrow min(w_{l,lim}, w_{r,lim})$
+			
+				\IF{$velocidadeMaior > VEL\_MAX$}
+					\STATE $w_{l,lim} \leftarrow w_{l,lim} - (velocidadeMaior - VEL\_MAX)$
+					\STATE $w_{r,lim} \leftarrow w_{r,lim} - (velocidadeMaior - VEL\_MAX)$
+				\ELSIF{$velocidadeMenor < VEL\_MIN$}
+					\STATE $w_{l,lim} \leftarrow w_{l,lim} + (VEL\_MIN - velocidadeMenor)$
+					\STATE $w_{r,lim} \leftarrow w_{r,lim} + (VEL\_MIN - velocidadeMenor)$
+				\ENDIF
+				
+				\IF{$v \geq 0$}
+					\STATE $vlim \leftarrow 1$
+				\ELSE
+					\STATE $vlim \leftarrow -1$
+				\ENDIF
+				
+				\onslide<2>
+				\vspace{-6.5cm}
+				\IF{$\omega \geq 0$}
+					\STATE $wlim \leftarrow 1$
+				\ELSE
+					\STATE $wlim \leftarrow -1$
+				\ENDIF
+					
+				\STATE $v,\omega \leftarrow diffToUni(w_{l,lim},w_{r,lim})$
+				\STATE $v \leftarrow v \cdot vlim$
+				\STATE $\omega \leftarrow \omega \cdot wlim$
+			\ELSE
+				\IF{$abs(\omega) > (R/L) \cdot 2 \cdot VEL\_MIN$}
+					\IF{$\omega \geq 0$}
+						\STATE $\omega \leftarrow max(min(abs(\omega),(R/L) \cdot 2 \cdot VEL\_MAX),(R/L) \cdot 2 \cdot VEL\_MIN)$ 
+					\ELSE
+						\STATE $\omega \leftarrow -max(min(abs(\omega),(R/L) \cdot 2 \cdot VEL\_MAX),(R/L) \cdot 2 \cdot VEL\_MIN)$
+					\ENDIF
+				\ELSE
+					\STATE $\omega \leftarrow 0$
+				\ENDIF
+			\ENDIF
+				
+			\STATE $\omega_l, \omega_r \leftarrow uniToDiff(v,\omega)$
+		\end{algorithmic}
+	\end{algorithm}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comportamento Ir Para Objetivo (IPO)}
+	\input{Figuras/CompIPO}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}{Equações para Comportamento IPO}
+		\begin{equation}
+			\mathbf{u_{ipo}} = P_o - P_r
+		\end{equation}
+		
+		\pause
+		\begin{equation}
+			e_\theta = atan2(u_{ipo,y}, u_{ipo,x}) - \phi
+		\end{equation}
+		
+		\pause
+		\begin{itemize}
+		  \item $K_p = 4$
+		  \pause
+		  \item $K_i = 0,01$
+		  \pause
+		  \item $K_d = 0,01$
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comportamento Evitar Obstáculo (EO)}
+	\input{Figuras/CompEO}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Conversão de sistemas de coordenadas}
+		\begin{equation}
+			\mleft[ 
+			\begin{array}{c c}
+				x \\ y
+			\end{array}
+			\mright]_i^R = \mleft[
+			\begin{matrix}
+		  		\cos{\theta_i} & -\sin{\theta_i} \\
+		  		\sin{\theta_i} & \cos{\theta_i} \\
+			\end{matrix}
+			\mright] \mleft[ 
+			\begin{array}{c c}
+				d_i \\ 0
+			\end{array}
+			\mright] + \mleft[ 
+			\begin{array}{c c}
+				o_x \\ o_y
+			\end{array}
+			\mright]_i^R
+		\end{equation}
+	\end{block}
+	
+	\pause
+	\begin{exampleblock}{Combinação Linear}
+		\begin{equation}
+			\mathbf{u_{eo2}} = k_1 \mathbf{v_1} + k_2 \mathbf{v_2} + k_3 \mathbf{v_3} + 
+			k_4 \mathbf{v_4} + k_5 \mathbf{v_5}
+		\end{equation}
+	\end{exampleblock}
+	
+	\pause
+	\begin{block}{Equilíbrio}
+		\begin{equation}
+			\mathbf{u_{eo1}} = k_1 \mathbf{v_1} + k_2 \mathbf{v_2} + k_3 \mathbf{v_3} + 
+			k_4 \mathbf{v_4} + k_5 \mathbf{v_5} + \mathbf{v_{eq}}
+		\end{equation}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Parâmetros}
+		\begin{itemize}
+		  \item Constantes $k_i$:
+			  \subitem{$k_1 = 0,7$}
+			  \subitem{$k_2 = 2$}
+			  \subitem{$k_3 = 1,2$}
+			  \subitem{$k_4 = 2$} 
+			  \subitem{$k_5 = 0,7$}
+		  \pause
+		  \item $\mathbf{v_{eq}} = [-240 \ 0]^T$
+		  \pause
+		  \item $D_{insegura} = 25$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}{Comportamento EO completo}
+		\begin{equation}
+			\mathbf{u_{eo}} = 
+			\begin{cases}
+				\mathbf{u_{eo1}} & \text{para} \ | \mathbf{v_3} | \geq D_{insegura} \\
+				
+				\mleft[
+				\begin{matrix}
+		  			\cos{(90)} & -\sin{(90)} \\
+		  			\sin{(90)} & \cos{(90)} \\
+				\end{matrix}
+				\mright] \mathbf{u_{eo2}} & 				
+				\begin{matrix*}[l]
+		  			\text{para} \ | \mathbf{v_3} | < D_{insegura} \ \land \\
+		  			k_1 \ (|\mathbf{v_5}| - |\mathbf{v_1}|) + k_2 \ (|\mathbf{v_4}| - |\mathbf{v_2}|)
+					> 0 \\
+				\end{matrix*} \\
+				
+				\mleft[
+				\begin{matrix}
+		  			\cos{(-90)} & -\sin{(-90)} \\
+		  			\sin{(-90)} & \cos{(-90)} \\
+				\end{matrix}
+				\mright] \mathbf{u_{eo2}} & 
+				\begin{matrix*}[l]
+		  			\text{para} \ | \mathbf{v_3} | < D_{insegura} \ \land \\
+		  			k_1 \ (|\mathbf{v_5}| - |\mathbf{v_1}|) + k_2 \ (|\mathbf{v_4}| - |\mathbf{v_2}|)
+					\leq 0 \\
+				\end{matrix*} \\
+			\end{cases}
+		\end{equation}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comportamento Mesclado IPO + EO}
+	\begin{block}{Cálculo da recomendação}
+		\begin{equation}
+			\mathbf{u_{eo\_e\_ipo}} = k \ \hat{\mathbf{u}}_{ipo} + (1-k) \ \hat{\mathbf{u}}_{eo}
+		\end{equation}
+		
+		\pause
+		\begin{itemize}
+		  \item $k = 0,3$
+		\end{itemize}
+	\end{block}
+	
+	\pause
+	\begin{exampleblock}{IPO}
+		\begin{equation}
+			\mathbf{u_{ipo}} = P_o - P_r
+		\end{equation}
+	\end{exampleblock}
+	
+	\pause
+	\begin{block}{EO}
+		\begin{equation}
+			\mathbf{u_{eo1}} = k_1 \mathbf{v_1} + k_2 \mathbf{v_2} + k_3 \mathbf{v_3} + 
+			k_4 \mathbf{v_4} + k_5 \mathbf{v_5} + \mathbf{v_{eq}}
+		\end{equation}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{O problema dos Mínimos Locais}
+	\input{Figuras/minimosLocais}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comportamento Seguir Parede}
+	\input{Figuras/CompSP}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/CompSPVetor}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Equação para Comportamento Seguir Parede}
+		\begin{equation}
+			\mathbf{u_p} = \mathbf{u_a} - d \cdot \mathbf{u_t}
+		\end{equation}
+		
+		\pause
+		\begin{equation}
+			\mathbf{u_a} \cdot \mathbf{u_t} = \mid \mathbf{u_a} \mid \cdot \mid \mathbf{u_t} \mid \cos(\theta)
+		\end{equation}
+		\pause
+		\begin{equation}
+			\mathbf{u_a} \cdot \mathbf{u_t} = \mid \mathbf{u_a} \mid \cos(\theta) = d
+		\end{equation}
+		
+		\pause
+		\begin{equation}
+			\mathbf{u_{fw}} = \mathbf{u_t} + \beta \cdot \left(\mathbf{u_p} - d_{fw} \cdot 
+			\frac{\mathbf{u_p}}{\mid \mathbf{u_p} \mid}\right)
+		\end{equation}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}{Parâmetros}
+		\begin{itemize}
+		  \item $\beta = 5,5$
+		  \pause
+		  \item $d_{fw} = 50 cm$
+		  \pause
+		  \item Constantes do Controlador PID:
+		  	\subitem{$k_p = 2$}
+		  	\subitem{$k_i = 0$}
+		  	\subitem{$k_d = 0$}
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Autômato para arbitragem}
+	\begin{block}{Estados}
+		\input{Tabelas/AutomatoEstados}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}{Eventos}
+		\input{Tabelas/AutomatoTransicoes}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Evento No Objetivo (a)}
+		\begin{equation}
+			\mid \mathbf{v_{\text{objetivo}}} - \mathbf{v_{\text{robô}}} \mid < D_{STOP}
+		\end{equation}
+	\end{block}
+	\pause
+	\begin{exampleblock}{Parâmetro}
+		\begin{itemize}
+		  \item $D_{STOP} = 15$
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}{Evento Fez progresso (b)}
+		
+		\begin{algorithm}[H]
+		\algsetup{linenosize=\tiny}
+		\scriptsize
+		\caption{Verificação de progresso}
+		\begin{algorithmic}[1]
+	
+		\REQUIRE $d_{prog}, \mathbf{v_{\text{objetivo}}}, \mathbf{v_{\text{robô}}}$
+		\ENSURE $d_{prog}, retornoBooleano$
+	
+		\IF{$\mid \mathbf{v_{\text{objetivo}}} - \mathbf{v_{\text{robô}}} \mid < (d_{prog} - D_{PROG\_EPSILON})$}
+			\STATE $d_{prog} \leftarrow min(\mid \mathbf{v_{\text{objetivo}}} - \mathbf{v_{\text{robô}}} \mid, d_{prog})$
+			\STATE $retornoBooleano \leftarrow Verdadeiro$
+		\ELSIF{$abs(\mid \mathbf{v_{\text{objetivo}}} - \mathbf{v_{\text{robô}}} \mid - d_{prog}) \leq D_{PROG\_EPSILON}$}
+			\STATE $retornoBooleano \leftarrow Verdadeiro$
+		\ELSE
+			\STATE $retornoBooleano \leftarrow Falso$ 
+		\ENDIF
+	
+		\end{algorithmic}
+		\end{algorithm}
+		
+	\end{exampleblock}
+	\pause
+	\begin{block}{Parâmetro}
+		\begin{itemize}
+		  \item $d_{prog}$ inicial vale 1000.
+		  \pause
+		  \item $D_{PROG\_EPSILON} = 2$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Evento Tem Obstaculo (c)}
+		\begin{equation}
+			any(\mathbf{d_s} < D_{\text{EM\_OBSTÁCULO}})
+		\end{equation}		
+	\end{block}
+	\pause
+	\begin{exampleblock}{Parâmetro}
+		\begin{itemize}
+		  \item $D_{\text{EM\_OBSTÁCULO}} = 75$
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}{Evento Está inseguro (d)}
+		\begin{equation}
+			any(\mathbf{d_s} < D_{INSEGURO})
+		\end{equation}
+	\end{exampleblock}
+	\pause
+	\begin{block}{Parâmetro}
+		\begin{itemize}
+		  \item $D_{INSEGURO} = 25$
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Evento Livre de Obstáculo (e)}
+		\begin{equation}
+			all(\mathbf{d_s} > D_{\text{EM\_OBSTÁCULO}})
+		\end{equation}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}{Condição de contorno (eventos f e g)}
+		\begin{equation}
+			\left[\mathbf{u_{ipo}} \ \mathbf{u_{eo}}\right] 
+			\mleft[ 
+			\begin{array}{c c}
+			\sigma_1 \\ \sigma_2
+			\end{array}
+			\mright]
+			= \mathbf{u_{sp}}
+		\end{equation}
+		\begin{equation}
+			\mleft[ 
+			\begin{array}{c c}
+			\sigma_1 \\ \sigma_2
+			\end{array}
+			\mright] = \left[\mathbf{u_{ipo}} \ \mathbf{u_{eo}}\right]^{-1} \cdot \mathbf{u_{sp}}
+		\end{equation}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}{Algoritmo para verificação de situação de contorno}
+		\begin{algorithm}[H]
+		\algsetup{linenosize=\tiny}
+		\scriptsize
+		\caption{Verificação de situação de deslize em fronteira}
+		\begin{algorithmic}[1]
+	
+		\REQUIRE $sentidoDeContorno$
+		\ENSURE $retornoBooleano$
+	
+		\STATE $u_{ipo, x}, u_{ipo, y} \leftarrow vetorIrParaObjetivo()$ 
+		\STATE $u_{eo, x}, u_{eo, y} \leftarrow vetorEvitarObstaculo()$
+		\STATE $u_{sp, x}, u_{sp, y} \leftarrow vetorSeguirParede(sentidoDeContorno)$
+		
+		\STATE $determinante \leftarrow u_{ipo, x} u_{ao, y} - u_{ipo, y} u_{ao, x}$
+		\STATE $\sigma_1 \leftarrow (u_{ao, y} u_{sp, x} - u_{ao, x} u_{sp, y})/determinante$
+		\STATE $\sigma_2 \leftarrow (-u_{ipo, y} u_{sp, x} + u_{ipo, x} u_{sp, y})/determinante$
+		
+		\IF{$obstaculoPresente(sentidoDeContorno) E \sigma_1 > 0 E \sigma_2 > 0$}
+			\STATE $retornoBooleano \leftarrow Verdadeiro$
+		\ELSE
+			\STATE $retornoBooleano \leftarrow Falso$
+		\ENDIF
+	
+		\end{algorithmic}
+		\end{algorithm}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/automatoHibrido}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Explicação}
+		\begin{itemize}
+		  \item De todos os estados é possível chegar ao estado inicial ``Parar'' (0) por meio da 
+		condição ``No Objetivo'' (a), mas para sair dele, uma redefinição de objetivo provoca
+		a negação da condição de parada ($\neg a$) e o estado mesclado ``Ir para Objetivo e 
+		Evitar Obstáculo'' (3) assume controle.
+		\pause
+		  \item A partir desse último, as transições para ``Seguir Parede'' (4 e 5) dependem da condição 
+		``Não Fez Progresso'' ($\neg b$), mas a escolha do sentido de contorno depende das
+		condições ``contornando pela esquerda'' e ``contornando pela direita'' (f e g). A partir
+		dos estados 4 ou 5, o retorno para o estado 3 depende de não ter encontrado objetivo 
+		($\neg a$), voltar a fazer progresso (b) e deixar a situação de seguir fronteira 
+		($\neg f$ ou $\neg g$).
+		\end{itemize}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}{Explicação}
+		\begin{itemize}
+		  \item O estado 3 pode alcançar ``Ir Para Objetivo'' (1) quando está ``livre de obstáculo'' (e)
+		e retorna quando volta a ``ter obstáculo" (c). O estado 1 alcança ``Seguir Parede'' com
+		as mesmas condições utilizadas a partir do estado 3.
+		\pause 
+		  \item Os estados 1 e 3 podem alcançar ``Evitar Obstáculo'' (2) por meio da condição ``está
+		inseguro'' (d), mas uma vez neste estado, só pode retornar ao estado 3, com condição de
+		``não estar inseguro'' ($\neg d$).
+		\end{itemize}
+	\end{exampleblock}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+	\frametitle{Controlador Fuzzy}
+	\begin{exampleblock}{Cálculo do comportamento Ir Para Objetivo (IPO)}
+		\begin{equation}
+			\mathbf{u_{ipo,\mathit{fuzzy}}} = 
+			\begin{cases}
+				\mleft[
+				\begin{matrix}
+		  			cos(e_\theta) \\
+		  			sin(e_\theta) \\
+				\end{matrix}
+				\mright] & \text{, para} \ | \mathbf{u_{ipo}} | \geq 1 \\
+				| \mathbf{u_{ipo}} | \cdot \mleft[
+				\begin{matrix}
+		  			cos(e_\theta) \\
+		  			sin(e_\theta) \\
+				\end{matrix}
+				\mright] & \text{, para} \ | \mathbf{u_{ipo}} | < 1 \\
+			\end{cases}
+		\end{equation}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comportamento Evitar Obstáculo (EO)}
+	\input{Figuras/FuzzyEvitarObstaculoDiagrama}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/FuzzyEvitarObstaculoInput}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/FuzzyEvitarObstaculoOutputXY}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/FuzzyEvitarObstaculoOutputV}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Cálculo do Comportamento}
+		\begin{equation}
+				\mathbf{u_{eo,temp}} = 
+				\mleft[
+				\begin{matrix}
+			  		2 \cdot RecXSF \\
+			  		RecYSE + RecYSD + RecYSDE + RecYSDD \\
+				\end{matrix}
+				\mright]
+		\end{equation}
+		\pause
+		\begin{equation}
+				\mathbf{u_{eo,\mathit{fuzzy}}} = 
+				\begin{cases}
+					\mathbf{u_{eo,temp}} & \text{, para} \ | \mathbf{u_{eo,temp}} | \leq 1 \\
+					\frac{\mathbf{u_{eo,temp}}}{| \mathbf{u_{eo,temp}} |} & \text{, para} \ | \mathbf{u_{ipo}} | > 1 \\
+				\end{cases}
+		\end{equation}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{exampleblock}{Regras Fuzzy}
+		\input{Tabelas/FuzzyEvitarObstaculoTabelaRegras}
+	\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Comportamento Seguir Parede (SP)}
+	\input{Figuras/FuzzySeguirParedeCurvaAtivacao}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/FuzzySeguirParedeDiagrama}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/FuzzySeguirParedeSaidas}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Cálculo Para Seguir Parede}
+		\begin{algorithm}[H]
+			\algsetup{linenosize=\tiny}
+			\scriptsize
+			\caption{Cálculo Final da Recomendação ``Seguir Parede''}
+			\begin{algorithmic}[1]
+		
+			\REQUIRE $t$
+			\ENSURE $\mathbf{u_{sp,\mathit{fuzzy}, x}}, \mathbf{u_{sp,\mathit{fuzzy}, y}}$
+			
+			\STATE $C \leftarrow verificaAtivacaoSP()$
+			\STATE $u_{sp,temp,x}, u_{sp,temp,y} \leftarrow calculaSPFuzzy()$
+			
+			\IF{$C > 0$}
+				\STATE $definirSentidoDeContorno()$
+				\STATE $verificarPerdaDeReferencia()$
+				\STATE $normalizarEntradasVetor()$
+			\ELSE
+				\STATE $u_{sp,\mathit{fuzzy}, x} \leftarrow u_{sp,temp,x}$
+				\STATE $u_{sp,\mathit{fuzzy}, y} \leftarrow u_{sp,temp,y}$
+			\ENDIF
+		
+			\end{algorithmic}
+		\end{algorithm}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Função verificaAtivacaoSP()}
+		\begin{algorithm}[H]
+			\algsetup{linenosize=\tiny}
+			\scriptsize
+			\caption{Verificar constante de ativação}
+			\begin{algorithmic}[1]
+		
+			\REQUIRE $ativacaoSP$
+			\ENSURE $ativacaoSP, SPDir, C$
+			
+			\IF{$fezProgresso()$}
+				\IF{$ativacaoSP > 0$}
+					\STATE $ativacaoSP \leftarrow ativacaoSP - 1$
+				\ENDIF
+				\IF{$ativacaoSP < ATIVACAO_MARGEM$}
+					\STATE $SPDir \leftarrow 0$
+				\ENDIF
+			\ELSE
+				\IF{$ativacaoSP < ATIVACAO_PASSOS$}
+					\STATE $ativacaoSP \leftarrow ativacaoSP + 1$
+				\ENDIF
+			\ENDIF
+			
+			\STATE $C \leftarrow \frac{min(max(ativacaoSP, ATIVACAO\_MARGEM), ATIVACAO\_PASSOS-ATIVACAO\_MARGEM)}{(ATIVACAO\_PASSOS - 2*ATIVACAO\_MARGEM)}$
+			
+			\end{algorithmic}
+		\end{algorithm}
+	\end{block}
+
+\end{frame}
+	
+\begin{frame}
+	\begin{block}{Função definirSentidoDeContorno()}
+		\begin{algorithm}[H]
+			\algsetup{linenosize=\tiny}
+			\scriptsize
+			\caption{Verificação do sentido de contorno}
+			\begin{algorithmic}[1]
+		
+			\REQUIRE $SpDir, RegDistYSL, RegDistYSD$
+			\ENSURE $SpDir$
+			
+			\IF{$SpDir = 0$}
+				\IF{$RegDistYSL + 2,5 \cdot RegDistYSD > \epsilon$}
+					\STATE $SpDir \leftarrow 1$
+				\ELSIF{$RegDistYSL + 2,5 \cdot RegDistYSD < -\epsilon$}
+					\STATE $SpDir \leftarrow -1$
+				\ELSE
+					\STATE $SpDir \leftarrow SpDir$
+				\ENDIF
+			\ENDIF
+		
+			\end{algorithmic}
+		\end{algorithm}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Função verificarPerdaDeReferencia()}
+		\begin{algorithm}[H]
+			\algsetup{linenosize=\tiny}
+			\scriptsize
+			\caption{Verificar Perda de Referência}
+			\begin{algorithmic}[1]
+		
+			\REQUIRE $SpDir, u_{sp,\mathit{fuzzy}, x}, u_{sp,\mathit{fuzzy}, y}$
+			\ENSURE $u_{sp,\mathit{fuzzy}, y}$
+			
+			\IF{$\sqrt{u_{sp,\mathit{fuzzy}, x}^2 + u_{sp,\mathit{fuzzy}, y}^2} < 0,05$}
+				\IF{$SpDir = 1$}
+					\STATE $u_{sp,\mathit{fuzzy}, y} \leftarrow 0,3$
+				\ELSIF{$SpDir = -1$}
+					\STATE $u_{sp,\mathit{fuzzy}, y} \leftarrow -0,3$
+				\ELSE
+					\STATE $u_{sp,\mathit{fuzzy}, y} \leftarrow u_{sp,\mathit{fuzzy}, y}$
+				\ENDIF
+			\ENDIF
+		
+			\end{algorithmic}
+		\end{algorithm}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Função normalizarEntradasVetor()}
+		\begin{algorithm}[H]
+			\algsetup{linenosize=\tiny}
+			\scriptsize
+			\caption{Normalização de Componentes do vetor}
+			\begin{algorithmic}[1]
+		
+			\REQUIRE $u_{sp,\mathit{fuzzy}, x}, u_{sp,\mathit{fuzzy}, y}$
+			\ENSURE $u_{sp,\mathit{fuzzy}, x}, u_{sp,\mathit{fuzzy}, y}$
+			
+			\STATE $modulo \leftarrow \mid u_{sp,\mathit{fuzzy}, x} \mid$
+			\IF{$modulo > 1$}
+				\STATE $u_{sp,\mathit{fuzzy}, x} \leftarrow u_{sp,\mathit{fuzzy}, x}/modulo$
+				\STATE $u_{sp,\mathit{fuzzy}, y} \leftarrow u_{sp,\mathit{fuzzy}, y}/modulo$
+			\ENDIF
+			
+			\STATE $modulo \leftarrow \mid u_{sp,\mathit{fuzzy}, y} \mid$
+			\IF{$modulo > 1$}
+				\STATE $u_{sp,\mathit{fuzzy}, x} \leftarrow u_{sp,\mathit{fuzzy}, x}/modulo$
+				\STATE $u_{sp,\mathit{fuzzy}, y} \leftarrow u_{sp,\mathit{fuzzy}, y}/modulo$
+			\ENDIF
+		
+			\end{algorithmic}
+		\end{algorithm}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Regras para Seguir Parede}
+		\input{Tabelas/FuzzySeguirParedeTabelaRegras}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Controlador Fuzzy para Seguir Recomendação}
+	\begin{exampleblock}{Equação para fusão de comportamentos}
+		\begin{equation}
+			\mathbf{u_{final}} = 
+			(1 - C) \cdot (\mathbf{u_{ipo}} + \alpha \cdot \mathbf{u_{ao, \mathit{fuzzy}}})
+			+ C \cdot \mathbf{u_{sp, \mathit{fuzzy}}}
+		\end{equation}
+	\end{exampleblock}
+\end{frame}
+	
+\begin{frame}
+	\input{Figuras/FuzzySeguirVetorDiagrama}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/FuzzySeguirVetorEntradasXY}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/FuzzySeguirVetorEntradaV}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/FuzzySeguirVetorSaidasW}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/FuzzySeguirVetorSaidasW}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Tabela para Regras Fuzzy}
+		\input{Tabelas/FuzzySeguirVetorVelocidades}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\begin{block}{Equação para Regras Fuzzy}
+		\begin{equation}
+				\mleft[
+				\begin{matrix}
+			  		RecWl\\
+			  		RecWr\\
+				\end{matrix}
+				\mright] = \mleft[
+				\begin{matrix}
+			  		min(max(RecV - RecW,-4),4) \\
+			  		min(max(RecV + RecW,-4),4) \\
+				\end{matrix}
+				\mright]
+		\end{equation}
+	\end{block}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Circuitos}
+	\input{Figuras/EsquemaCircuito}
+\end{frame}
+
+\begin{frame}
+	\input{Figuras/JubileuBoard}
+\end{frame}
+	
+\begin{frame}
+	\frametitle{Comunicação}
+	\begin{block}{Interface por Linha de Comando}
+		\input{Tabelas/ComunicacaoComandos}	
+	\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% RESULTADO - SIMULACAO
+\begin{frame}
+	\frametitle{Resultado para Simulação - Controlador Híbrido}
+	\input{Figuras/SimulacaoHibrido}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Resultado para Simulação - Controlador Fuzzy}
+	\input{Figuras/SimulacaoFuzzy}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%% RESULTADO - ROBO
+\begin{frame}
+	\frametitle{Resultado Para o Robô - Controlador Híbrido}
+	\input{Figuras/ResultadoIPO}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Resultado Para o Robô - Controlador Híbrido}
+	\input{Figuras/ResultadoEO}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Resultado Para o Robô - Controlador Híbrido}
+	\input{Figuras/ResultadoMesclado}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Resultado Para o Robô - Controlador Híbrido}
+	\input{Figuras/ResultadoSP}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Resultado Para o Robô - Controlador Híbrido}
+	\input{Figuras/ResultadoHibrido}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Resultado Para o Robô - Controlador Fuzzy}
+	\input{Figuras/ResultadoFuzzy}
+\end{frame}

@@ -1,0 +1,103 @@
+\newcommand{\parede}[2]{
+	\node[inner sep = 0pt] (P1) at (0,0) {};
+	\node[inner sep = 0pt] (P2) at (#2,0) {};
+	\node[inner sep = 0pt] (P3) at (#2,0.5) {};
+	\node[inner sep = 0pt] (P4) at (0.5,0.5) {};
+	\node[inner sep = 0pt] (P5) at (0.5,#1) {};
+	\node[inner sep = 0pt] (P6) at (0,#1) {};
+	\draw[color = darkgray] (P1) -- (P2);
+	\draw[color = darkgray] (P2) -- (P3);
+	\draw[color = darkgray] (P3) -- (P4);
+	\draw[color = darkgray] (P4) -- (P5);
+	\draw[color = darkgray] (P5) -- (P6);
+	\draw[color = darkgray] (P6) -- (P1);
+}
+
+\newcommand{\sensorVisaoVetorSp}[1]{
+	\draw[->] (0,0) -- (0,#1);
+}
+
+\newcommand{\desenharSensoresTrianguloSPb}{
+	\begin{scope}[shift={(0.38,0.6)},rotate=-90]
+		\sensorVisaoTriangularSp{2-0.9}
+	\end{scope}
+	\begin{scope}[shift={(-0.38,0.6)},rotate=90]
+		\sensorVisaoTriangularSp{2}
+	\end{scope}
+	\begin{scope}[shift={(0.28,0.77)},rotate=-45]
+		\sensorVisaoTriangularSp{2-0.5}
+	\end{scope}
+	\begin{scope}[shift={(-0.28,0.77)},rotate=45]
+		\sensorVisaoTriangularSp{2}
+	\end{scope}	
+	\begin{scope}[shift={(0,0.87)},rotate=0]
+		\sensorVisaoTriangularSp{2-1}
+	\end{scope}
+}
+
+\newcommand{\desenharLinhasParedeA}{
+	\begin{scope}[shift={(-0.38,0.6)},rotate=90]
+		\begin{scope}[shift={(0,2-1.3)}]
+			\node[inner sep = 0pt] (P1) at (0,0) {};
+		\end{scope}
+	\end{scope}
+	\begin{scope}[shift={(-0.28,0.77)},rotate=45]
+		\begin{scope}[shift={(0,2)}]
+			\node[inner sep = 0pt] (P2) at (0,0) {};
+		\end{scope}
+	\end{scope}
+	
+	\draw (P1) -- (P2);
+}
+
+\newcommand{\desenharLinhasParedeB}{
+	\begin{scope}[shift={(0.38,0.6)},rotate=-90]
+		\begin{scope}[shift={(0,2-0.9)}]
+			\node[inner sep = 0pt] (P1) at (0,0) {};
+		\end{scope}
+	\end{scope}
+	\begin{scope}[shift={(0,0.87)},rotate=0]
+		\begin{scope}[shift={(0,2-1)}]
+			\node[inner sep = 0pt] (P2) at (0,0) {};
+		\end{scope}
+	\end{scope}
+	
+	\draw (P1) -- (P2);
+}
+
+\begin{figure}[ht]
+	\centering%
+	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering%
+		\begin{tikzpicture}[scale = 1.1]%
+			% Obstáculo
+			\parede{3}{2}
+			% Robô
+			\begin{scope}[shift={(-1.1,1.4)},rotate=180]
+				\meuRoboLindaoCompSP
+				\desenharSensoresTrianguloSPa
+				\desenharLinhasParedeA
+			\end{scope}
+		\end{tikzpicture}%
+		
+		\caption{Parede subestimada}%
+	\end{subfigure}%
+	~
+	\begin{subfigure}[t]{0.5\textwidth}%
+		\centering%
+		\begin{tikzpicture}[scale = 1.1]%
+			% Obstáculo
+			\begin{scope}[shift={(0,0)},xscale=-1,yscale=1]
+				\parede{3}{4}
+			\end{scope}
+			% Robô
+			\begin{scope}[shift={(-2.4,2)},rotate=-90]
+				\meuRoboLindaoCompSP
+				\desenharSensoresTrianguloSPb
+				\desenharLinhasParedeB
+			\end{scope}
+		\end{tikzpicture}%
+			
+		\caption{Parede superestimada}%
+	\end{subfigure}%
+\end{figure}

@@ -6,21 +6,23 @@
 \setbeamercolor{subsection in head/foot}{parent=palette primary}
 \setbeamercolor{author in head/foot}{parent=section in head/foot}
 \setbeamercolor{date in head/foot}{parent=section in head/foot}
+
 \setbeamertemplate{headline}
 {%
-   \hbox{%
-   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{section in
-   head/foot}%
-     \usebeamerfont{section in head/foot}\insertsectionhead\hspace*{2ex}
-   \end{beamercolorbox}%
-   \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{subsection in
-   head/foot}%
-     \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
-   \end{beamercolorbox}}%
-   
-   \vskip-0.2pt
-   \pgfuseshading{beamer@topshade}
-   \vskip-2pt
+	\hbox{%
+		\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{section in
+		head/foot}%
+			\usebeamerfont{section in head/foot}\insertsectionhead\hspace*{2ex}
+		\end{beamercolorbox}%
+		\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{subsection in
+		head/foot}%
+			\usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
+		\end{beamercolorbox}}%
+	
+	%\vskip-0.2pt
+	%\pgfuseshading{beamer@topshade}
+	%\vskip-2pt
+	\vskip2pt
 }
 
 %Para mudar posição das paradinhas na capa.
@@ -59,7 +61,6 @@
 
 \pgfdeclareimage[width=1.6cm]{logo}{Estilo/Logo/utfpr}
 \logo{\pgfuseimage{logo}}
-
 
 %%%% pacotes necessários
 \usepackage{amssymb,amsmath}               % simbolos matematicos
