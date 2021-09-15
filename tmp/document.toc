@@ -1,10 +1,9 @@
 \babel@toc {english}{}
 \beamer@sectionintoc {1}{Navegação em robôs móveis por Arbitragem e Fusão em Arquiteturas Comportamentais}{2}{0}{1}
 \beamer@subsectionintoc {1}{1}{Estrutura da Apresentação}{2}{0}{1}
-\beamer@subsectionintoc {1}{2}{Introdução}{3}{0}{1}
-\beamer@subsectionintoc {1}{3}{Objetivos}{8}{0}{1}
-\beamer@subsectionintoc {1}{4}{Fundamentos Teóricos}{10}{0}{1}
-\beamer@subsectionintoc {1}{5}{Materiais e Método}{53}{0}{1}
-\beamer@subsectionintoc {1}{6}{Desenvolvimento}{55}{0}{1}
-\beamer@subsectionintoc {1}{7}{Considerações Finais}{155}{0}{1}
-\beamer@subsectionintoc {1}{8}{Agradecimentos}{156}{0}{1}
+\beamer@subsectionintoc {1}{2}{Objetivos}{3}{0}{1}
+\beamer@subsectionintoc {1}{3}{Fundamentos Teóricos}{12}{0}{1}
+\beamer@subsectionintoc {1}{4}{Materiais e Método}{54}{0}{1}
+\beamer@subsectionintoc {1}{5}{Desenvolvimento}{56}{0}{1}
+\beamer@subsectionintoc {1}{6}{Considerações Finais e Trabalhos Futuros}{155}{0}{1}
+\beamer@subsectionintoc {1}{7}{Agradecimentos}{157}{0}{1}
