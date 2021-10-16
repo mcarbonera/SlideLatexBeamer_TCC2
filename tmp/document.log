@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.11.1)  15 SEP 2021 19:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.10) (preloaded format=pdflatex 2020.11.1)  5 OCT 2021 16:43
 entering extended mode
 **./document.tex
 (document.tex
@@ -1189,7 +1189,7 @@ Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
 \verbatim@out=\write5
-runsystem(echo 'write18-test-20219151186'>"document.w18")...disabled (restricte
+runsystem(echo 'write18-test-20211051003'>"document.w18")...disabled (restricte
 d).
 
 
@@ -5995,7 +5995,7 @@ Package rerunfilecheck Info: File `document.out' has not changed.
 Here is how much of TeX's memory you used:
  45068 strings out of 480224
  1069954 string characters out of 2889982
- 2041937 words of memory out of 3000000
+ 2041933 words of memory out of 3000000
  60107 multiletter control sequences out of 15000+200000
  588434 words of font info for 125 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -6018,7 +6018,7 @@ s/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX/fonts/type1/publi
 c/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm
 /cmsy8.pfb><C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C
 :/Program Files/MiKTeX/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on document.pdf (157 pages, 41161659 bytes).
+Output written on document.pdf (157 pages, 41161013 bytes).
 PDF statistics:
  3534 PDF objects out of 3580 (max. 8388607)
  346 named destinations out of 1000 (max. 500000)
